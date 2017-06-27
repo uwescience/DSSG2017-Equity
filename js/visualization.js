@@ -159,7 +159,7 @@ function drawChoropleth(){
     });
 
     all_data.dc = {
-      NBH_NAMES: "Washington, DC",
+      NBH_NAMES: "Seattle, WA",
       population_total_val: 647484,
       population_under_18_val: 110588,
       single_mother_families_perc: 0.421,
