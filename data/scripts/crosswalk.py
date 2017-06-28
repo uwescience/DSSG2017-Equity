@@ -1,7 +1,7 @@
+#edited to work with python 3.6
 import pandas as pd
 import numpy as np
-from Tkinter import *
-from ttk import *
+from tkinter import *
 import os, sys
 
 # Function to import file whether json or csv. Input: csv/json / output: df.
@@ -67,14 +67,14 @@ def main():
 	else:
 		weight = "weight"
 		cross[weight] = 1
-		print "No weight column specified, setting all weights equal to 1."
+		print ("No weight column specified, setting all weights equal to 1.")
 
 	if len(e6.get()) > 0:	
 		weight2 = e6.get().lower()
 	else:
 		weight2 = "weight2"
 		cross[weight2]= 1
-		print "No second weight column specified, setting all secondary weights to 1."
+		print ("No second weight column specified, setting all secondary weights to 1.")
 
 	# Merge crosswalk and data, weight data for new geography
 	merged = merge_and_weight(cross, data, geo_old, geo_new, weight, weight2)
@@ -108,7 +108,7 @@ def main():
 			count_agg[ratio] = count_agg[numer] / count_agg[denom]
 			count_agg[np.isinf(count_agg)] = 1 # Inf set equal to 1
 		except:
-			print "{0} or {1} missing for variable {2}.".format(numer, denom, ratio)
+			print ("{0} or {1} missing for variable {2}.".format(numer, denom, ratio))
 
 		if base in margins:
 			try:
@@ -116,7 +116,7 @@ def main():
 				# Source: https://www.census.gov/content/dam/Census/library/publications/2009/acs/ACSResearch.pdf
 				margin_agg[ratio_margin] = ((margin_agg[numer_margin]**2 + ((count_agg[ratio]**2)*margin_agg[denom_margin]**2))**.5)/count_agg[denom]
 			except:
-				print "{0}, {1}, {2}, {3} for variable {4}.".format(numer_margin, denom_margin, ratio, denom, ratio_margin)
+				print ("{0}, {1}, {2}, {3} for variable {4}.".format(numer_margin, denom_margin, ratio, denom, ratio_margin))
 
 		count_agg.drop([numer, denom], axis=1, inplace=True) #these need to go at the end because margin calculation needs denom var
 		margin_agg.drop([numer_margin, denom_margin], axis=1, inplace=True)
@@ -128,7 +128,7 @@ def main():
 	finalfile = "{0}_{1}.csv".format(name, geo_new)
 	output_file = os.path.join("outputs", finalfile)
 	final.to_csv(output_file)
-	print "Completed. Converted final data set named {}.".format(finalfile)
+	print ("Completed. Converted final data set named {}.".format(finalfile))
 
 # Make form for user inputs
 # Cannot press enter until all fields are filled
