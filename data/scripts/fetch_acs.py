@@ -1,5 +1,5 @@
-#edited to work with python 2.7
-import itertools, json, math, os, re, sys, urllib2, yaml
+#edited to work with python 3.6
+import itertools, json, math, os, re, sys, urllib.request, urllib.error, yaml
 
 DEFAULT_OUTPUT_DIRECTORY = "outputs"
 DEFAULT_OUTPUT_FILE = "acs_tract_data.json"
@@ -17,10 +17,10 @@ def census_query(acs_variables, base_url, geo):
     while start_index <= len(acs_variables):
         v = acs_variables[start_index:(start_index + 50)]
         url = "&".join([base_url, "get=" + ",".join(v), geo])
-        print "Fetching {} fields from ACS...".format(len(v))
-        print "URL: " + url
+        print ("Fetching {} fields from ACS...".format(len(v)))
+        print ("URL: " + url)
         # resp = json.loads(urllib.request.urlopen(url).read().decode("UTF-8"))
-        resp = json.loads(urllib2.urlopen(url).read().decode("UTF-8"))
+        resp = json.loads(urllib.request.urlopen(url).read().decode("UTF-8"))
         # colnames, *data = resp
         colnames = resp[0]
         data = resp[1:]
@@ -69,7 +69,7 @@ def main(args):
     # construct the base URL
 
     base_url = "http://api.census.gov/data/{}/acs{}?".format(acs_year, acs_period)
-    print "Using base URL: " + base_url
+    print ("Using base URL: " + base_url)
 
     # construct the geo parameter
 
@@ -79,10 +79,15 @@ def main(args):
 
     geo_for = "{}:{}".format(geo_for_key, geo_for_value)
     
-    ll = list(config["api"]["acs_geography"]["in"].items())[0]
-    geo_in = ":".join(str(x) for x in ll)
+    ll = list(config["api"]["acs_geography"]["in"].items())
+    print (ll)
+    geo_in = "+".join(str(":".join(str(y) for y in x)) for x in ll)
+    print (geo_in)
+    #geo_in = ":".join(str(x) for x in ll)
 
     geo = "for={}&in={}".format(geo_for, geo_in)
+
+
 
     # get the remaining configuration variables
 
@@ -96,11 +101,11 @@ def main(args):
         output_acs_variables = DEFAULT_OUTPUT_ACS_VARIABLES
 
     output_file = os.path.join(output_directory, output_file)
-    print "Using output file: " + output_file
+    print ("Using output file: " + output_file)
 
     for name in ["fields_rename", "fields_sum", "fields_sub", "fields_prod"]:
         if name not in config:
-            print "WARNING: {} does not appear in configuration".format(name)
+            print ("WARNING: {} does not appear in configuration".format(name))
 
     fields_rename = config["fields_rename"] or {}
     fields_sum = config["fields_sum"] or {}
