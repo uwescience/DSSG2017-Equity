@@ -143,7 +143,8 @@ function drawChoropleth(){
   queue()
     .defer(d3.csv, "data/fields.csv")
     //.defer(d3.json, "data/neighborhoods44.json")
-    .defer(d3.json, "data/cityBG.geojson")
+    //.defer(d3.json, "data/cityBG.geojson")
+    .defer(d3.json, "data/cityBG_simp20.json")
     .defer(d3.csv, "data/neighborhoods.csv")
     .defer(d3.csv, "data/source.csv")
     .await(setUpChoropleth);
@@ -160,7 +161,7 @@ function drawChoropleth(){
     });
 
     all_data.dc = {
-      NBH_NAMES: "Seattle, WA 5",
+      NBH_NAMES: "Seattle, WA 6",
       population_total_val: 647484,
       population_under_18_val: 110588,
       single_mother_families_perc: 0.421,
