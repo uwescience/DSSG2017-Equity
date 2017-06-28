@@ -160,7 +160,7 @@ function drawChoropleth(){
     });
 
     all_data.dc = {
-      NBH_NAMES: "Seattle, WA",
+      NBH_NAMES: "Seattle, WA 5",
       population_total_val: 647484,
       population_under_18_val: 110588,
       single_mother_families_perc: 0.421,
@@ -170,10 +170,10 @@ function drawChoropleth(){
     displayPopBox();
 
     gmap = new google.maps.Map(d3.select("#content").node(), {
-      zoom: 12,
-      minZoom: 10,
+      zoom: 12, //12
+      minZoom: 10, //10
       maxZoom: 14,
-      center: new google.maps.LatLng(47.602611, -122.330422), //center coors
+      center: new google.maps.LatLng(47.61, -122.330422), //center coors
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       streetViewControl: false,
       panControl: false,
@@ -209,13 +209,13 @@ function drawChoropleth(){
     var containerHeight = $("#content-wrapper").height();
 
     gmap.setZoom(
-      containerHeight < 250 ? 10 :
-      containerHeight < 520 ? 11 : 12
+      containerHeight < 250 ? 10 : //250
+      containerHeight < 620 ? 11 : 12 //520
     );
 
     var maxBounds = new google.maps.LatLngBounds(
-      new google.maps.LatLng(47.0,-123.6), //min coords
-      new google.maps.LatLng(48.2,-121.0) //max coords
+      new google.maps.LatLng(46.5,-123.6), //min coords
+      new google.maps.LatLng(49.7,-121.0) //max coords
     );
 
     // If a drag ends outside of our max bounds, bounce back to the default center.
