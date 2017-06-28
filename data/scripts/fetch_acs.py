@@ -2,7 +2,7 @@
 import itertools, json, math, os, re, sys, urllib.request, urllib.error, yaml
 
 DEFAULT_OUTPUT_DIRECTORY = "outputs"
-DEFAULT_OUTPUT_FILE = "acs_tract_data.json"
+DEFAULT_OUTPUT_FILE = "acs_block_data.json"
 DEFAULT_OUTPUT_ACS_VARIABLES = False
 
 def census_query(acs_variables, base_url, geo):
@@ -30,11 +30,11 @@ def census_query(acs_variables, base_url, geo):
 
             # convert all values to ints except the geo identifiers
             for k in r.keys():
-                if r[k] is not None and k not in ["state", "country", "tract"]:
+                if r[k] is not None and k not in ["state", "country", "tract","block group"]:
                     r[k] = int(r[k])
 
             # tract ids in the neighborhood file include the state and county number
-            tract_id = "11001" + r["tract"]
+            tract_id = "53033" + r["tract"] + r["block group"]
             if tract_id in tracts:
                 tracts[tract_id].update(r)
             else:
