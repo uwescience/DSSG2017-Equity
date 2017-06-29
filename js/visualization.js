@@ -141,17 +141,17 @@ function transform(d) {
 function drawChoropleth(){
 
   queue()
-    .defer(d3.csv, "data/fields.csv")
+    .defer(d3.csv, "data/fields_trial.csv")
     
     //.defer(d3.json, "data/neighborhoods44.json")
     //.defer(d3.json, "data/cityBG.geojson")
-    .defer(d3.json, "data/cityBG_simp20.json")
+    .defer(d3.json, "data/cityBG_simp20_trial.geojson")
     //.defer(d3.json, "data/cityCT_simp20.json")
     
-    .defer(d3.csv, "data/neighborhoods.csv")
+    .defer(d3.csv, "data/neighborhoods_trial3.csv")
     //.defer(d3.csv, "data/BlockGroups.csv")
     
-    .defer(d3.csv, "data/source.csv")
+    .defer(d3.csv, "data/source_trial.csv")
     .await(setUpChoropleth);
 
   function setUpChoropleth(error, fields, dc, choropleth, source) {
