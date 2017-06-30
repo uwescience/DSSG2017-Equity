@@ -9,7 +9,7 @@ def import_file(file_name, geo_old):
     if "json" in file_name:
         data = pd.read_json(file_name, orient="index", convert_axes=0) # make sure tracts remain tracts, not dates
         data[geo_old] = data.index
-        data.reset_index(level=0, inplace=True)
+        data.reset_index(level=None, inplace=True)
         data[geo_old] = data[geo_old].convert_objects(convert_numeric = True)
         data.drop("index", axis=1, inplace=True)
         data.columns = map(lambda x: x.lower(), data.columns)
