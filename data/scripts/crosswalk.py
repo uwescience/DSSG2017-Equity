@@ -76,8 +76,29 @@ def main():
 		cross[weight2]= 1
 		print ("No second weight column specified, setting all secondary weights to 1.")
 
+	# drop unnecessary columns in data
+	del data['block group']
+	del data['county']
+	del data['state']
+
 	# Merge crosswalk and data, weight data for new geography
 	merged = merge_and_weight(cross, data, geo_old, geo_new, weight, weight2)
+
+	# aggregate by tract, drop block group
+	data2 = data.groupby(['tract'], as_index=False).sum()
+	del data2['block_group']
+	# set tract as index
+	data2 = data2.set_index('tract')
+
+	del data['tract']
+	data = data.set_index('block_group')
+	name = e1.get().split(".")[0]
+	oldfile = "{0}.csv".format(name)
+	tractfile = "{0}_tract.csv".format(name)
+	output_oldfile = os.path.join("outputs", oldfile)
+	output_tractfile = os.path.join("outputs", tractfile)
+	data.to_csv(output_oldfile)
+	data2.to_csv(output_tractfile)
 
 	# Merge data and calculate ratios for counts and MOEs
 	# Split data into count and margin columns, to simplify code for aggregation/calculations
@@ -122,9 +143,10 @@ def main():
 		margin_agg.drop([numer_margin, denom_margin], axis=1, inplace=True)
 
 	final = pd.concat([count_agg, margin_agg], axis=1)
-
+	del final['tract']
+	del final['unnamed: 0']
 	# Output new file to csv
-	name = e1.get().split(".")[0]
+	
 	finalfile = "{0}_{1}.csv".format(name, geo_new)
 	output_file = os.path.join("outputs", finalfile)
 	final.to_csv(output_file)

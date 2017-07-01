@@ -9,7 +9,7 @@ api:
 
 output:
     directory: outputs
-    file: acs_block_data.json
+    file: acs_blockgroup_data.json
     acs_variables: false
 
 # The following sections define output variables to be computed from ACS

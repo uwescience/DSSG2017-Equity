@@ -2,7 +2,7 @@
 import itertools, json, math, os, re, sys, urllib.request, urllib.error, yaml
 
 DEFAULT_OUTPUT_DIRECTORY = "outputs"
-DEFAULT_OUTPUT_FILE = "acs_block_data.json"
+DEFAULT_OUTPUT_FILE = "acs_blockgroup_data.json"
 DEFAULT_OUTPUT_ACS_VARIABLES = False
 
 def census_query(acs_variables, base_url, geo):
