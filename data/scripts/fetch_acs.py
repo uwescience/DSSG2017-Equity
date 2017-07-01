@@ -34,7 +34,8 @@ def census_query(acs_variables, base_url, geo):
                     r[k] = int(r[k])
 
             # tract ids in the neighborhood file include the state and county number
-            tract_id = "53033" + r["tract"] + r["block group"]
+            r["tract"] = "53033" + r["tract"]
+            tract_id = r["tract"] + r["block group"]
             if tract_id in tracts:
                 tracts[tract_id].update(r)
             else:
