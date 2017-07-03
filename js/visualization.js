@@ -148,6 +148,7 @@ function drawChoropleth(){
     //.defer(d3.json, "data/NBH_simp60.geojson")
     
     .defer(d3.csv, "data/neighborhoods_trial3.csv")
+    //.defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data.csv")
     //.defer(d3.csv, "data/BlockGroups.csv")
     
     .defer(d3.csv, "data/source_trial.csv")
