@@ -515,7 +515,7 @@ function redrawPoints() {
 function drawPoints(type) {
   if (!type || type === "clear") { return; }
 
-  var isSchool = type === "dcps" || type === "charters",
+  var isSchool = type === "seattle_ps_elem" || type === "seattle_ps_ms" || type === "seattle_ps_high",
       packer = sm.packer(),
       color;
 
@@ -524,7 +524,7 @@ function drawPoints(type) {
       return d.name;
     });
 
-    if (type === "charters") {
+    if (type === "seattle_ps_ms") {
       poi.enter().append("rect")
         .attr("class", "poi " + type + (isSchool ? " school" : ""))
         .attr("width", 7)
