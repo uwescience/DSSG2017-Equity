@@ -1,10 +1,10 @@
-name,Address,Website,long,lat
-Denny International,8402 30th Ave SW,http://www.seattleschools.org/schools/denny/,-122.370709,47.527917
-Eckstein,3003 NE 75th St,http://www.ecksteineagles.org,-122.294983,47.682519
-Hamilton International,4400 Interlake Ave N,http://www.seattleschools.org/schools/hamilton/,-122.338026,47.657081
-Madison,3429 45th Ave SW,http://www.seattleschools.org/schools/madison/,-122.390281,47.572982
-Mcclure,1915 1st Ave W,http://www.seattleschools.org/schools/mcclure/,-122.358954,47.636827
-Mercer,1600 S Columbian Wy,http://www.seattleschools.org/schools/mercer/,-122.312083,47.564132
-Washington,2101 S Jackson St,http://65.110.89.109/index.asp,-122.30415,47.597956
-Whitman,9201 15th Ave NW,http://www.seattleschools.org/schools/whitman/,-122.377602,47.696752
-Aki Kurose Academy,3928 S Graham St,http://www.akikurose.org/,-122.281981,47.546321
+name,Address,Website,long,lat,enroll_val,math_perc,reading_perc,isa_perc,grad_perc
+Denny International,8402 30th Ave SW,http://www.seattleschools.org/schools/denny/,-122.370709,47.527917,122,0.88,0.97,0.43,0.12
+Eckstein,3003 NE 75th St,http://www.ecksteineagles.org,-122.294983,47.682519,122,0.88,0.97,0.43,0.12
+Hamilton International,4400 Interlake Ave N,http://www.seattleschools.org/schools/hamilton/,-122.338026,47.657081,122,0.88,0.97,0.43,0.12
+Madison,3429 45th Ave SW,http://www.seattleschools.org/schools/madison/,-122.390281,47.572982,122,0.88,0.97,0.43,0.12
+Mcclure,1915 1st Ave W,http://www.seattleschools.org/schools/mcclure/,-122.358954,47.636827,122,0.88,0.97,0.43,0.12
+Mercer,1600 S Columbian Wy,http://www.seattleschools.org/schools/mercer/,-122.312083,47.564132,122,0.88,0.97,0.43,0.12
+Washington,2101 S Jackson St,http://65.110.89.109/index.asp,-122.30415,47.597956,122,0.88,0.97,0.43,0.12
+Whitman,9201 15th Ave NW,http://www.seattleschools.org/schools/whitman/,-122.377602,47.696752,122,0.88,0.97,0.43,0.12
+Aki Kurose Academy,3928 S Graham St,http://www.akikurose.org/,-122.281981,47.546321,122,0.88,0.97,0.43,0.12
