@@ -23,3 +23,6 @@ household_male_family,census,
 household_female_family,census,
 household_nonfamily,census,
 seattle_libraries,"Open Data Seattle",https://data.seattle.gov/Community/Libraries/usk4-ujha
+seattle_ps_elem,"Open Data Seattle",https://data.seattle.gov/Community/Elementary-Schools/e2jt-9hzk
+seattle_ps_ms,"Open Data Seattle",https://data.seattle.gov/Community/Middle-Schools/iv34-s5mj
+seattle_ps_high,"Open Data Seattle",https://data.seattle.gov/Community/High-Schools/u4xu-443f

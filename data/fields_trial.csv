@@ -23,3 +23,6 @@ household_male_family,Household Male Family,neighborhood,Neighborhood Demographi
 household_female_family,Household Female Family,neighborhood,Neighborhood Demographics,
 household_nonfamily,Household Non-Family,neighborhood,Neighborhood Demographics,
 seattle_libraries,Libraries,poi,,
+seattle_ps_elem,Public Elementary Schools,schools,,
+seattle_ps_ms,Public Middle Schools,schools,,
+seattle_ps_high,Public High Schools,schools,,
