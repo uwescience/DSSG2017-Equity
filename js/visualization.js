@@ -524,6 +524,8 @@ function drawPoints(type) {
       return d.name;
     });
 
+    //make middle school a square, add different shape for high school
+    //why doesnt the legend match?
     if (type === "seattle_ps_ms") {
       poi.enter().append("rect")
         .attr("class", "poi " + type + (isSchool ? " school" : ""))
