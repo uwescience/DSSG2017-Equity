@@ -30,9 +30,22 @@ fields_rename:
     population_male: B01001_002E
     population_female: B01001_026E
 
-    population_25andover: B15003_001E
-    population_edu_associate: B15003_021E
+    # universe of population for education: 25 and older
+    population_edu_total: B15003_001E
     population_edu_bachelor: B15003_022E
+    
+    # classified in ACS: 16 and older, in labor force and unemployed (universe = B23025003)
+    population_unemployed: B23025_005E
+
+    # universe of employment industry: Civilian employed population 16 years and Over
+    population_industry_total: C24030_001E
+
+    # universe of population for transportation to work: workers 16 and older
+    population_trans_total: B08301_001E
+    # car = car+truck+van, alone or pooled
+    population_trans_car: B08301_002E
+    # public transportation, not including taxibar
+    population_trans_public: B08301_010E
 
     household_total: B11001_001E
     household_family: B11001_002E
@@ -41,6 +54,16 @@ fields_rename:
     household_female_family: B11001_006E
     household_nonfamily: B11001_007E
 
+    # tenure_total = occupied housing units
+    tenure_total: B25003_001E
+    tenure_owner: B25003_002E
+    renure_renter: B25003_003E
+
+    median_household_income: B19013_001E
+    per_capita_income: B19301_001E
+
+    median_house_value: B25077_001E
+    median_gross_rent: B25064_001E
 
 # Each variable in this section is defined by a list of ACS variables.
 # The named variable is computed by adding up the ACS variables.
@@ -55,6 +78,36 @@ fields_sum:
         - B01001_028E
         - B01001_029E
         - B01001_030E
+    
+    population_19to34:
+        - B01001_007E
+        - B01001_008E
+        - B01001_009E
+        - B01001_010E
+        - B01001_011E
+        - B01001_012E
+        - B01001_031E
+        - B01001_032E
+        - B01001_033E
+        - B01001_034E
+        - B01001_035E
+        - B01001_036E
+
+    population_35to64:
+        - B01001_013E
+        - B01001_014E
+        - B01001_015E
+        - B01001_016E
+        - B01001_017E
+        - B01001_018E
+        - B01001_019E
+        - B01001_037E
+        - B01001_038E
+        - B01001_039E
+        - B01001_040E
+        - B01001_041E
+        - B01001_042E
+        - B01001_043E
 
     population_65andover:
         - B01001_020E
@@ -70,6 +123,7 @@ fields_sum:
         - B01001_048E
         - B01001_049E
 
+    # less than high school
     population_edu_nodiploma:
         - B15003_002E
         - B15003_003E
@@ -91,26 +145,100 @@ fields_sum:
         - B15003_017E
         - B15003_018E
 
+    # some college (no degree) or associate's degree
     population_edu_somecollege:
         - B15003_019E
         - B15003_020E
-
+        - B15003_021E
+    
+    # graduate and above
     population_edu_advanced:
         - B15003_023E
         - B15003_024E
         - B15003_025E
 
+    # ratio of income to poverty level < 1, universe (C17002001)
+    population_poverty:
+        # ratio < 0.5
+        - C17002_002E
+        # ratio 0.5~0.99
+        - C17002_003E
+
+    population_no_health_insurance:
+        - B27010_017E
+        - B27010_033E
+        - B27010_050E
+        - B27010_066E
+
+    # agriculture = Agriculture, Forestry, Fishing and Hunting, and Mining
+    population_industry_agriculture:
+        - C24030_003E
+        - C24030_030E
+
+    population_industry_construction:
+        - C24030_006E
+        - C24030_033E
+
+    population_industry_manufacture:
+        - C24030_007E
+        - C24030_034E
+
+    population_industry_wholesale:
+        - C24030_008E
+        - C24030_035E
+
+    population_industry_retail:
+        - C24030_009E
+        - C24030_036E
+    # transportation = Transportation and Warehousing, and Utilities
+    population_industry_transportation:
+        - C24030_010E
+        - C24030_037E
+
+    population_industry_informatin:
+        - C24030_013E
+        - C24030_040E
+    # finance = Finance and Insurance, and Real Estate and Rental and Leasing
+    population_industry_finance:
+        - C24030_014E
+        - C24030_041E
+    # management = Professional, Scientific, and Management, And Administrative and Waste Management Services
+    population_industry_management:
+        - C24030_017E
+        - C24030_044E
+    # education = Educational Services, and Health Care and Social Assistance
+    population_industry_education:
+        - C24030_021E
+        - C24030_048E
+    # art = Arts, Entertainment, and Recreation, and Accommodation and Food Services
+    population_industry_art:
+        - C24030_024E
+        - C24030_051E
+    # public administration
+    population_industry_administration:
+        - C24030_028E
+        - C24030_055E
+    population_industry_other:
+        - C24030_027E
+        - C24030_054E
 
 # Each variable in this section is defined by a list of ACS variables.
 # The named variable is computed by starting with the first ACS variable and
 # subtracting the rest of the ACS variables.
 
 fields_sub:
+    # race other = total - white alone - black alone - asian alone
     population_race_other:
         - B02001_001E
         - B02001_002E
         - B02001_003E
         - B02001_005E
+
+    # other = total - vehicle - public transportation
+    population_trans_other:
+        - B08301_001E
+        - B08301_002E
+        - B08301_010E
 
 
 # Each variable in this section is defined by a list of ACS variables.
