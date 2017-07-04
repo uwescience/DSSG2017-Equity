@@ -1,11 +1,19 @@
-name,Address,Website,long,lat,enroll_val,math_perc,reading_perc,isa_perc,grad_perc
-Franklin,3013 S Mt. Baker Blvd,http://www.franklinquakers.org,-122.293647,47.575887,456,0.2,0.3,0.4,0.9
-Ingraham,1819 N 135TH St,http://www.ingrahamhigh.org,-122.336837,47.725699,456,0.2,0.3,0.4,0.9
-Roosevelt,1410 NE 66th St,http://www.rhsseattle.org/,-122.312808,47.67723,456,0.2,0.3,0.4,0.9
-Ballard,1418 NW 65th St,http://ballardbeavers.org/,-122.374888,47.67661,456,0.2,0.3,0.4,0.9
-Cleveland,5511 15th Ave S,http://www.seattleschools.org/schools/cleveland/,-122.31391,47.55237,456,0.2,0.3,0.4,0.9
-Garfield,400 23rd Ave,http://ghs.seattleschools.org/,-122.301903,47.605421,456,0.2,0.3,0.4,0.9
-Nathan Hale,10750 30th Ave NE,http://www.seattleschools.org/schools/hale/,-122.294532,47.707628,456,0.2,0.3,0.4,0.9
-Rainier Beach,8815 Seward Pk S,http://www.seattleschools.org/schools/rainierbeach/,-122.265859,47.524072,456,0.2,0.3,0.4,0.9
-Chief Sealth,5950 Delridge Wy SW,http://www.seattleschools.org/schools/chiefsealth/,-122.366155,47.528631,456,0.2,0.3,0.4,0.9
-West Seattle,3000 California Ave SW,http://www.seattleschools.org/schools/wshs/,-122.384592,47.57678,456,0.2,0.3,0.4,0.9
+name,Address,Website,long,lat,enroll_val,math_perc,reading_perc,isa_perc,s_per_t,fam_sat,stu_sat
+Ballard,1418 NW 65th St,http://ballardbeavers.org/,-122.374888,47.67661,1708,0.11138,0.898485,0.92536,21,0.705,0.514
+Cascade Parent Partnership,,,,,30,-,-,0.99974,23,-,-
+Chief Sealth,5950 Delridge Wy SW,http://www.seattleschools.org/schools/chiefsealth/,-122.366155,47.528631,1174,0.32937,0.713955,0.85841,18,0.588,0.424
+Cleveland,5511 15th Ave S,http://www.seattleschools.org/schools/cleveland/,-122.31391,47.55237,842,0.40952,0.69205,0.89692,19,0.803,0.533
+Franklin,3013 S Mt. Baker Blvd,http://www.franklinquakers.org,-122.293647,47.575887,1308,0.53114,0.69865,0.91117,19,0.757,0.491
+Garfield,400 23rd Ave,http://ghs.seattleschools.org/,-122.301903,47.605421,1722,0.01081,0.84383,0.90211,22,0.691,0.496
+Ingraham,1819 N 135TH St,http://www.ingrahamhigh.org,-122.336837,47.725699,1239,0.04983,0.82541,0.90095,20,0.791,0.564
+Interagency Academy,,,,,362,0.01439,0.26476,0.5739,12,0.742,0.578
+Middle College ,,,,,117,0.08696,0.665345,0.69942,10,0.819,0.661
+Nathan Hale,10750 30th Ave NE,http://www.seattleschools.org/schools/hale/,-122.294532,47.707628,1181,0.04815,0.85032,0.90707,18,0.797,0.558
+Nova,,,,,344,0.04878,0.70669,0.99668,20,0.806,0.725
+Rainier Beach,8815 Seward Pk S,http://www.seattleschools.org/schools/rainierbeach/,-122.265859,47.524072,673,0.18881,0.60674,0.84828,15,0.676,0.483
+Roosevelt,1410 NE 66th St,http://www.rhsseattle.org/,-122.312808,47.67723,1725,0.46353,0.944285,0.92437,21,0.733,0.57
+Seattle World,,,,,160,0.11765,0.080645,0.89515,11,-,0.709
+South Lake,,,,,96,0,0.291855,0.49102,9,-,0.442
+The Center School,,,,,270,0,0.93277,0.88378,18,0.773,0.552
+West Seattle,3000 California Ave SW,http://www.seattleschools.org/schools/wshs/,-122.384592,47.57678,1007,0.33621,0.74494,0.89445,19,0.626,0.477
+,,,,,,,,,,,
