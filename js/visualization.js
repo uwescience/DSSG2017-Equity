@@ -22,6 +22,7 @@ var dotRadius = 4;
 
 var currentMetric = null;
 var highlightedNeighborhood = null;
+var geom_granularity = null;
 
 var gmap_style=[
   {
@@ -76,8 +77,8 @@ var gmap_style=[
       { "color": "#cfddff" }
     ]
   },{
-     "featureType": "administrative.neighborhood",
-     "elementType": "labels.text",
+     "featureType": "administrative",
+     "elementType": "labels",
      "stylers": [
       { "visibility": "off" }
     ]
@@ -94,6 +95,9 @@ function init(){
   resizeContainer($("#content").parent().width());
   drawChoropleth();
   drawChart();
+
+  // set geom granularity to neighborhoods
+  geom_granularity = 'geom_nb';
 
   //====EVENT LISTENERS===//
 
@@ -124,6 +128,16 @@ function init(){
   $(window).resize(function(){
     resizeContainer($("#content").parent().width());
   });
+
+  $('#geom_nb').parent().click(function () {
+	  geom_granularity = 'geom_nb';
+  });
+  $('#geom_tract').parent().click(function () {
+	  geom_granularity = 'geom_tract';
+  });
+  $('#geom_bg').parent().click(function () {
+	  geom_granularity = 'geom_bg';
+  });
 }
 function resizeContainer(width){
   var new_height = $(window).width() < 797 ? Math.max($("#content").parent().width() * 0.75, 320) : 600;
@@ -142,15 +156,15 @@ function drawChoropleth(){
 
   queue()
     .defer(d3.csv, "data/fields_trial.csv")
-    
+
     .defer(d3.json, "data/cityBG_simp20_trial.geojson")
     //.defer(d3.json, "data/cityCT_simp20_export.geojson")
     //.defer(d3.json, "data/NBH_simp60.geojson")
-    
+
     .defer(d3.csv, "data/neighborhoods_trial3.csv")
     //.defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data.csv")
     //.defer(d3.csv, "data/BlockGroups.csv")
-    
+
     .defer(d3.csv, "data/source_trial.csv")
     .await(setUpChoropleth);
 
@@ -161,12 +175,12 @@ function drawChoropleth(){
     choropleth_data = choropleth;
     source_data = source;
     choropleth_data.forEach(function(d) {
-      all_data[d.gis_id] = d; //used for colour 
+      all_data[d.gis_id] = d; //used for colour
       choropleth_data[d.gis_id] = +d.population_total;
     });
 
-    all_data.dc = {
-      NBH_NAMES: "Seattle, WA 7",
+    all_data.sea = {
+      NBH_NAMES: "Seattle, WA",
       population_total_val: 647484,
       population_under_18_val: 110588,
       single_mother_families_perc: 0.421,
@@ -793,9 +807,11 @@ function redrawLabels() {
 function toggleMenu() {
   var $this = $(".menu-toggle");
   if ($this.parent().hasClass("toggled")){
-    $this.parent().animate({ "left" : 0 }, 350, function(){ $("#main-container").removeClass("toggled"); });
+	  $("#" + geom_granularity).parent().removeClass("active");
+      $this.parent().animate({ "left" : 0 }, 350, function(){ $("#main-container").removeClass("toggled"); });
   } else {
-    $this.parent().animate({ "left" : $("#nav-panel").width() }, 350, function(){ $("#main-container").addClass("toggled"); });
+	$("#" + geom_granularity).parent().addClass("active");
+	$this.parent().animate({ "left" : $("#nav-panel").width() }, 350, function(){ $("#main-container").addClass("toggled"); });
     removeNarrative();
   }
 }
@@ -807,7 +823,7 @@ function displayPopBox(d) {
   }
 
   var $popbox = $("#pop-info"),
-      highlighted = d ? all_data[d.properties.gis_id] : all_data.dc;
+      highlighted = d ? all_data[d.properties.gis_id] : all_data.sea;
 
   d3.select(".neighborhood").html(highlighted.NBH_NAMES);
 
