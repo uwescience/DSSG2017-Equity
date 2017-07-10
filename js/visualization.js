@@ -181,8 +181,8 @@ function drawChoropleth(){
 
     all_data.sea = {
       NBH_NAMES: "Seattle, WA",
-      population_total_val: 657330,
-      household_median_income: 75133,
+      population_total: 657330,
+      median_household_income: 75133,
       household_total: 298477,
       children_in_poverty_perc: 0.266
     };
