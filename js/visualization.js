@@ -19,10 +19,12 @@ var scale = d3.scale.linear().domain([0, 1]).range([h, 0]);
 var ord_scale = d3.scale.ordinal().domain(["Under 18", "Over 18"]).range([0, w]);
 var color = d3.scale.category20();
 var dotRadius = 4;
+var neighborhoods;
 
 var currentMetric = null;
 var highlightedNeighborhood = null;
 var geom_granularity = null;
+var raw_bg_map, raw_ct_map, raw_nb_map, raw_bg_data, raw_ct_data, raw_nb_data;
 
 var gmap_style=[
   {
@@ -131,12 +133,15 @@ function init(){
 
   $('#geom_nb').parent().click(function () {
 	  geom_granularity = 'geom_nb';
+	  changeNeighborhoodGranularity(geom_granularity, raw_nb_map);
   });
   $('#geom_tract').parent().click(function () {
 	  geom_granularity = 'geom_tract';
+	  changeNeighborhoodGranularity(geom_granularity, raw_ct_map);
   });
   $('#geom_bg').parent().click(function () {
 	  geom_granularity = 'geom_bg';
+	  changeNeighborhoodGranularity(geom_granularity, raw_bg_map);
   });
 }
 function resizeContainer(width){
@@ -158,8 +163,8 @@ function drawChoropleth(){
     .defer(d3.csv, "data/fields_trial.csv")
 
     .defer(d3.json, "data/cityBG_simp20_trial.geojson")
-    //.defer(d3.json, "data/cityCT_simp20_export.geojson")
-    //.defer(d3.json, "data/NBH_simp60.geojson")
+    .defer(d3.json, "data/cityCT_simp20_export.geojson")
+    .defer(d3.json, "data/NBH_simp60.geojson")
 
     .defer(d3.csv, "data/neighborhoods_trial3.csv")
     //.defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data.csv")
@@ -168,13 +173,17 @@ function drawChoropleth(){
     .defer(d3.csv, "data/source_trial.csv")
     .await(setUpChoropleth);
 
-  function setUpChoropleth(error, fields, dc, choropleth, source) {
+  function setUpChoropleth(error, fields, bg_map, ct_map, nb_map, bg_data, source) {
     populateNavPanel(fields);
 
     //clean choropleth data for display.
-    choropleth_data = choropleth;
+	raw_bg_map = bg_map;
+	raw_ct_map = ct_map;
+	raw_nb_map = nb_map;
+	raw_bg_data = bg_data;
+    choropleth_data = bg_data;
     source_data = source;
-    choropleth_data.forEach(function(d) {
+    bg_data.forEach(function(d) {
       all_data[d.gis_id] = d; //used for colour
       choropleth_data[d.gis_id] = +d.population_total;
     });
@@ -274,7 +283,7 @@ function drawChoropleth(){
       .attr("id","theSVGLayer");
 
       g = svg.append("g");
-      var neighborhoods = g.append("g").attr("id", "neighborhoods");
+      neighborhoods = g.append("g").attr("id", "neighborhoods");
       g.append("g").attr("id", "points");
       d3.select("#legend-container").append("svg")
           .attr("height", 200)
@@ -295,40 +304,7 @@ function drawChoropleth(){
 
         path = d3.geo.path().projection(gmapProjection);
 
-        // Have to remove all the paths and readd them otherwise the visualization was highlighting the old path
-        // and the new path when zooming.
-        neighborhoods.selectAll("path").remove();
-        neighborhoods.selectAll("path")
-          .data(dc.features)
-          .enter().append("path")
-          .attr("d", path)
-          .attr("id", function (d) { return "path" + d.properties.NCID; })
-          .attr("class", "nbhd")
-          .on("mouseover", hoverNeighborhood)
-          .on("mouseout", function () {
-            if ($("path.active").length === 0) {
-              activeId = 'dc';
-              $("#visualized-measure").text("");
-              displayPopBox();
-            }
-          })
-          .on("click", function(d) { highlightNeigborhood(d, false); })
-          .style("fill",function(d) {
-            if (currentMetric === null || all_data[d.properties.gis_id][currentMetric] === '0') { return defaultColor; }
-            else { return choro_color(all_data[d.properties.gis_id][currentMetric]); }
-          })
-          .style("fill-opacity",0.75);
-
-        g.select("#points").selectAll(".poi").remove();
-
-        //if there is a highlighted neighborhood then rehighlightit.
-        if(highlightedNeighborhood) {
-          highlightNeigborhood(highlightedNeighborhood, true);
-        }
-
-        redrawPoints();
-
-        if (hash) { $('a' + hash).click(); }
+		changeNeighborhoodGranularity("geom_nb", raw_nb_map);
       };
     };
 
@@ -338,6 +314,45 @@ function drawChoropleth(){
   } // setUpChoropleth function
 
 } // drawChoropleth function
+
+function changeNeighborhoodGranularity(data_name, gran_map) {
+	console.log("Changing granularity to :" + data_name);
+	// Have to remove all the paths and readd them otherwise the visualization was highlighting the old path
+	// and the new path when zooming.
+
+	neighborhoods.selectAll("path").remove();
+	neighborhoods.selectAll("path")
+	  .data(gran_map.features)
+	  .enter().append("path")
+	  .attr("d", path)
+	  .attr("id", function (d) { return "path" + d.properties.NCID; })
+	  .attr("class", "nbhd")
+	  .on("mouseover", hoverNeighborhood)
+	  .on("mouseout", function () {
+		if ($("path.active").length === 0) {
+		  activeId = 'dc';
+		  $("#visualized-measure").text("");
+		  displayPopBox();
+		}
+	  })
+	  .on("click", function(d) { highlightNeigborhood(d, false); })
+	  .style("fill",function(d) {
+		if (currentMetric === null || all_data[d.properties.gis_id][currentMetric] === '0') { return defaultColor; }
+		else { return choro_color(all_data[d.properties.gis_id][currentMetric]); }
+	  })
+	  .style("fill-opacity",0.75);
+
+	g.select("#points").selectAll(".poi").remove();
+
+	//if there is a highlighted neighborhood then rehighlightit.
+	if(highlightedNeighborhood) {
+	  highlightNeigborhood(highlightedNeighborhood, true);
+	}
+
+	redrawPoints();
+
+	if (hash) { $('a' + hash).click(); }
+}
 
 function populateNavPanel(data) {
   var fieldTemplate = _.template(
@@ -365,8 +380,6 @@ function populateNavPanel(data) {
     }
   });
 
-  // event listeners for changing d3
-  // choropleth color change
   $(".layer-toggle-menu > li").on("click", "a", function(e){
     e.preventDefault();
     if (!$(this).parent().hasClass('disabled')){
@@ -810,9 +823,8 @@ function toggleMenu() {
 	  $("#" + geom_granularity).parent().removeClass("active");
       $this.parent().animate({ "left" : 0 }, 350, function(){ $("#main-container").removeClass("toggled"); });
   } else {
-	$("#" + geom_granularity).parent().addClass("active");
-	$this.parent().animate({ "left" : $("#nav-panel").width() }, 350, function(){ $("#main-container").addClass("toggled"); });
-    removeNarrative();
+	$this.parent().animate({ "left" : $("#nav-panel").width() }, 350, function(){ $("#main-container").addClass("toggled"); $("#" + geom_granularity).parent().addClass("active");});
+	removeNarrative();
   }
 }
 
