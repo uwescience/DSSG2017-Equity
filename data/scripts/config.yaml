@@ -1,7 +1,7 @@
 api:
     acs_year: 2015
     acs_period: 5   # use 5-year estimates
-    # Return all tracts for DC (state = 53, county = 33)
+    # Return all tracts for Seattle (state = 53, county = 33)
     acs_geography:
         for: {block+group: all}
         in: {state: 53, county: 33}
@@ -53,17 +53,19 @@ fields_rename:
     household_male_family: B11001_005E
     household_female_family: B11001_006E
     household_nonfamily: B11001_007E
+    household_1_person: B11016_010E
 
-    # tenure_total = occupied housing units
-    tenure_total: B25003_001E
+    occupied_housing_units: B25003_001E
+    # universe of tenure = occupied housing units
     tenure_owner: B25003_002E
-    renure_renter: B25003_003E
+    tenure_renter: B25003_003E
 
     median_household_income: B19013_001E
     per_capita_income: B19301_001E
 
     median_house_value: B25077_001E
     median_gross_rent: B25064_001E
+    median_housing_cost: B25105_001E
 
 # Each variable in this section is defined by a list of ACS variables.
 # The named variable is computed by adding up the ACS variables.
@@ -221,6 +223,45 @@ fields_sum:
     population_industry_other:
         - C24030_027E
         - C24030_054E
+
+    household_2_person:
+        - B11016_003E
+        - B11016_011E
+    household_3_person:
+        - B11016_004E
+        - B11016_012E
+    household_4_person:
+        - B11016_005E
+        - B11016_013E
+    household_5_person:
+        - B11016_006E
+        - B11016_014E
+    household_6_person:
+        - B11016_007E
+        - B11016_015E
+    household_7ormore_person:
+        - B11016_008E
+        - B11016_016E
+
+    # universe of vehicle available = occupied housing units
+    vehicle_no:
+        - B25044_003E
+        - B25044_010E
+    vehicle_1:
+        - B25044_004E
+        - B25044_011E
+    vehicle_2:
+        - B25044_005E
+        - B25044_012E
+    vehicle_3:
+        - B25044_006E
+        - B25044_013E
+    vehicle_4:
+        - B25044_007E
+        - B25044_014E
+    vehicle_5ormore:
+        - B25044_008E
+        - B25044_015E
 
 # Each variable in this section is defined by a list of ACS variables.
 # The named variable is computed by starting with the first ACS variable and
