@@ -619,6 +619,7 @@ function drawPoints(type) {
       $schoolDisplay.find(".school-grad").html(getDisplayValue(school.grad_perc, "grad_perc", "perc"));
       $schoolDisplay.find(".school-stusat").html(getDisplayValue(school.stu_sat, "stu_sat", "perc"));
       $schoolDisplay.find(".school-famsat").html(getDisplayValue(school.fam_sat, "fam_sat", "perc"));
+      $schoolDisplay.find(".school-redlunch").html(getDisplayValue(school.red_lunch, "red_lunch", "perc"));
       return $schoolDisplay;
     }
 
