@@ -428,7 +428,8 @@ function changeNeighborhoodData(new_data_column) {
   var data_values = _.filter(_.map(choropleth_data, function(d){ return parseFloat(d[new_data_column]); }), function(d){ return !isNaN(d); });
   var jenks = _.filter(_.unique(ss.jenks(data_values, Math.min(5, data_values.length))), function(d){ return !isNaN(d); });
 
-  var color_palette = [ "#9ae3ff", "#45ccff", "#00adef", "#00709a", "#003245"];
+  //var color_palette = [ "#9ae3ff", "#45ccff", "#00adef", "#00709a", "#003245"]; 
+  var color_palette = [ "#FEC201", "#FFE65E", "#9CE3BF", "#47BD94", "#19858E"];
 
   // trim lighter colours from palette (if necessary)
   color_palette = color_palette.slice(6 - jenks.length);
