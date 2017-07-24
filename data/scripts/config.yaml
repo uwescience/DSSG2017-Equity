@@ -65,7 +65,6 @@ fields_rename:
 
     median_house_value: B25077_001E
     median_gross_rent: B25064_001E
-    median_housing_cost: B25105_001E
 
 # Each variable in this section is defined by a list of ACS variables.
 # The named variable is computed by adding up the ACS variables.
