@@ -925,7 +925,7 @@ function hoverNeighborhood(d) {
     //last neighborhood to display in popBox.
     activeId = d.properties.gis_id;
 
-    if (activeData !== "no_neighborhood_data") {
+    if (activeData == "no_neighborhood_data") {
       setVisMetric(activeData, all_data[activeId][activeData]);
       updateChart(all_data[activeId]);
     } else {
