@@ -5,7 +5,7 @@ var COUNT_SCHOOL_DISPLAY = 3;
 var centered;
 
 var svg, projection, gmapProjection, path, g, gmap;
-var activeId = 'dc',
+var activeId = 'sea',
     choropleth_data, source_data;
 var all_data = {}, activeData = "population_total";
 var min_population = 100;
@@ -166,7 +166,7 @@ function drawChoropleth(){
     .defer(d3.json, "data/cityCT_simp20_export.geojson")
     .defer(d3.json, "data/NBH_simp60.geojson")
 
-    .defer(d3.csv, "data/neighborhoods_trial3.csv")
+    .defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data.csv")
     //.defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data.csv")
     //.defer(d3.csv, "data/BlockGroups.csv")
 
@@ -184,8 +184,8 @@ function drawChoropleth(){
     choropleth_data = bg_data;
     source_data = source;
     bg_data.forEach(function(d) {
-      all_data[d.gis_id] = d; //used for colour
-      choropleth_data[d.gis_id] = +d.population_total;
+      all_data[d.block_group] = d; //used for colour
+      choropleth_data[d.block_group] = +d.population_total;
     });
 
     all_data.sea = {
@@ -330,7 +330,7 @@ function changeNeighborhoodGranularity(data_name, gran_map) {
 	  .on("mouseover", hoverNeighborhood)
 	  .on("mouseout", function () {
 		if ($("path.active").length === 0) {
-		  activeId = 'dc';
+		  activeId = 'sea';
 		  $("#visualized-measure").text("");
 		  displayPopBox();
 		}
@@ -428,7 +428,7 @@ function changeNeighborhoodData(new_data_column) {
   var data_values = _.filter(_.map(choropleth_data, function(d){ return parseFloat(d[new_data_column]); }), function(d){ return !isNaN(d); });
   var jenks = _.filter(_.unique(ss.jenks(data_values, Math.min(5, data_values.length))), function(d){ return !isNaN(d); });
 
-  //var color_palette = [ "#9ae3ff", "#45ccff", "#00adef", "#00709a", "#003245"]; 
+  //var color_palette = [ "#9ae3ff", "#45ccff", "#00adef", "#00709a", "#003245"];
   var color_palette = [ "#FEC201", "#FFE65E", "#9CE3BF", "#47BD94", "#19858E"];
 
   // trim lighter colours from palette (if necessary)
@@ -439,7 +439,7 @@ function changeNeighborhoodData(new_data_column) {
     .domain(jenks.slice(1,-1))
     .range(color_palette);
   choropleth_data.forEach(function(d) {
-    choropleth_data[d.gis_id] = +d[new_data_column];
+    choropleth_data[d.block_group] = +d[new_data_column];
   });
 
   g.select("#neighborhoods").selectAll("path")
@@ -983,7 +983,7 @@ function setVisMetric(metric, val, clear) {
     var typeDef = $metricType[0].id;
     typeDef = typeDef.slice(typeDef.lastIndexOf("_") + 1);
     $metric.text(metricText);
-    var newDesc = activeId === 'dc' ? '' : val === "" ? "N/A" : getDisplayValue(val, metricText, typeDef);
+    var newDesc = activeId === 'sea' ? '' : val === "" ? "N/A" : getDisplayValue(val, metricText, typeDef);
     $metricDesc.text(newDesc);
   }
 }
