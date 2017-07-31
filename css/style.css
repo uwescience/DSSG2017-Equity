@@ -31,6 +31,7 @@ p {
   color: #000;
 }
 
+
 .align-right { text-align: right; }
 .align-left { text-align: left; }
 
@@ -369,7 +370,7 @@ h4.school-name:after {
 }
 .axis text {
   font-family: font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: normal;
   fill: black;
 }

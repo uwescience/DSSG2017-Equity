@@ -11,7 +11,7 @@ var all_data = {}, activeData = "population_total";
 var min_population = 100;
 var defaultColor = "#aaa";
 var chartSvg, labels, anchors, links, label_array = [], anchor_array = [];
-var chartMargin = {top: 30, right: 80, bottom: 10, left: 80};
+var chartMargin = {top: 20, right: 10, bottom: 20, left: 20};
 var chartWidth = 268, chartHeight = 150;
 var w = chartWidth - chartMargin.left - chartMargin.right;
 var h = chartHeight - chartMargin.top - chartMargin.bottom;
@@ -20,11 +20,16 @@ var ord_scale = d3.scale.ordinal().domain(["Under 18", "Over 18"]).range([0, w])
 var color = d3.scale.category20();
 var dotRadius = 4;
 var neighborhoods;
+var color_palette = [ "#FEC201", "#FFE65E", "#9CE3BF", "#47BD94", "#19858E"];
+function choro_color() {return color_palette[0]};
 
 var currentMetric = null;
 var highlightedNeighborhood = null;
 var geom_granularity = null;
 var raw_bg_map, raw_ct_map, raw_nb_map, raw_bg_data, raw_ct_data, raw_nb_data;
+
+var col_data = [];
+var data_prct = [];
 
 var gmap_style=[
   {
@@ -96,7 +101,7 @@ $(document).ready(function() {
 function init(){
   resizeContainer($("#content").parent().width());
   drawChoropleth();
-  drawChart();
+  //drawChart();
 
   // set geom granularity to neighborhoods
   geom_granularity = 'geom_nb';
@@ -157,6 +162,16 @@ function transform(d) {
         .style("top", (d.y - 2) + "px");
 }
 
+function calculatePrct(col_data) {
+  Object.keys(col_data).forEach(function(col) {
+    var colMax = Math.max.apply(Math, col_data[col].filter(function(v) { return !!v; }));
+    data_prct[col] = [];
+    col_data[col].forEach(function(val) {
+      data_prct[col].push(val / colMax);
+    });
+  });
+}
+
 function drawChoropleth(){
 
   queue()
@@ -186,7 +201,15 @@ function drawChoropleth(){
     bg_data.forEach(function(d) {
       all_data[d.block_group] = d; //used for colour
       choropleth_data[d.block_group] = +d.population_total;
+	    Object.keys(d).forEach(function(e) {
+		      if (!(e in col_data)) {
+			         col_data[e] = [];
+		           }
+		  col_data[e].push(parseFloat(d[e]));
+	   });
     });
+
+    calculatePrct(col_data);
 
     all_data.sea = {
       NBH_NAMES: "Seattle, WA",
@@ -429,7 +452,7 @@ function changeNeighborhoodData(new_data_column) {
   var jenks = _.filter(_.unique(ss.jenks(data_values, Math.min(5, data_values.length))), function(d){ return !isNaN(d); });
 
   //var color_palette = [ "#9ae3ff", "#45ccff", "#00adef", "#00709a", "#003245"];
-  var color_palette = [ "#FEC201", "#FFE65E", "#9CE3BF", "#47BD94", "#19858E"];
+
 
   // trim lighter colours from palette (if necessary)
   color_palette = color_palette.slice(6 - jenks.length);
@@ -500,6 +523,8 @@ function changeNeighborhoodData(new_data_column) {
     } else {
       return d;
     }
+
+    drawChart(new_data_column, activeId);
 
   };
 
@@ -655,168 +680,79 @@ function removePoints(type) {
   }
 }
 
-function drawChart(){
+var tmp_bins, tmp_x, tmp_y, tmp_bar;
+
+function drawChart(data_column, activeId){
+  d3.select(".chart").select("svg").remove();
   chartSvg = d3.select(".chart").append("svg").attr("width",chartWidth).attr("height",chartHeight)
     .append("g")
     .attr("transform","translate(" + chartMargin.left + "," + chartMargin.top + ")");
 
-  var left_axis = d3.svg.axis().scale(scale).tickFormat("").orient("right").ticks(5);
-  var right_axis = d3.svg.axis().scale(scale).tickFormat("").orient("left").ticks(5);
+    //data in here
+    var point_orig = data_prct[Math.floor(Math.random()*data_prct.length)];
+    //console.log(point_orig);
+    var point = Math.round(point_orig*20)/20;
+    //console.log(point);
+    if(point_orig > point) {
+      point += .05;
+    }
 
-  chartSvg.append("g").attr("class","axis").call(left_axis)
-    .append("text").text("Under 18").attr("text-anchor","middle").attr("x",0).attr("y",-10);
+    var formatCount = d3.format(",.0f");
 
-  chartSvg.append("g").attr("class","axis").attr("transform","translate(" + w + ",0)").call(right_axis)
-    .append("text").text("Over 18").attr("class","axisTitle").attr("text-anchor","middle").attr("x",0).attr("y",-10);
+    var x = d3.scale.linear()
+        .domain([d3.min(col_data[data_column]), d3.max(col_data[data_column])])
+        .rangeRound([0, w]);
+    tmp_x = x;
 
-  var ethdata = [
-    {name: "white", under18: 0.193, over18: 0.370},
-    {name: "black", under18: 0.625, over18: 0.449},
-    {name: "hispanic", under18: 0.136, over18: 0.087},
-    {name: "other", under18: 0.123, over18: 0.093}
-  ];
+    var bins = d3.layout.histogram()
+        .bins(50)
+        (col_data[data_column]);
+    tmp_bins = bins;
 
-  var ethnicity = chartSvg.selectAll(".ethnicity")
-      .data(ethdata)
-    .enter().append("g")
-      .attr("class","ethnicity");
+    var y = d3.scale.linear()
+        .domain([0, d3.max(bins, function(d) { return d.length; })])
+        .range([0, h]);
+    tmp_y = y;
 
-  ethnicity.append("line")
-    .attr("x1", function(d) { return ord_scale("under18"); })
-    .attr("x2", function(d) { return ord_scale("over18"); })
-    .attr("y1", function(d) { return scale(d.under18); })
-    .attr("y2", function(d) { return scale(d.over18); })
-    .style("stroke",function(d){ return color(d.name); })
-    .style("stroke-width",2);
+    var bar = chartSvg.selectAll(".bar")
+      .data(bins)
+      .enter().append("g")
+      .attr("class", "bar")
+      .attr("transform", function(d) { return "translate(" + x(d.x) + "," + (h - y(d.y)) + ")"; });
+    tmp_bar = bar;
 
-  drawLabels(ethdata);
+    bar.append("rect")
+        .attr("y", 0)
+        .attr("x", 1)
+        .attr("width", x(bins[0].dx))
+        .attr("height", function(d) { return(y(d.y)); })
+        .attr("fill", function(d){
+          if (activeId == "sea") {
+            return "lightgrey";
+          } else if (d.x <= all_data[activeId][data_column] && (d.x + d.dx) > all_data[activeId][data_column]) {
+            return choro_color(d.x);
+          } else {
+            return "lightgrey";
+          }
+        });
 
-  var sim_ann = d3.labeler()
-    .label(label_array)
-    .anchor(anchor_array)
-    .width(w)
-    .height(h);
-    sim_ann.start(1000);
+    bar.append("text")
+        .attr("dy", ".75em")
+        .attr("y", function(d) {
+          if (d.x <= all_data[activeId][data_column] && (d.x + d.dx) > all_data[activeId][data_column]) {
+            return -15;
+          } else { return 1000; }
+        })
+        .attr("x", x(bins[0].x + bins[0].dx/2))
+        .attr("font-size", "7px")
+        .attr("text-anchor", "middle")
+        .style("fill", "black")
+        .text(function(d) { return formatCount(d.length); });
 
-  redrawLabels();
-}
-
-function updateChart(data){
-  var ethdata = [
-    {name: "white", under18: data.pop_nothisp_white_under18_perc || 0, over18: data.pop_nothisp_white_perc || 0},
-    {name: "black", under18: data.pop_nothisp_black_under18_perc || 0, over18: data.pop_nothisp_black_perc || 0},
-    {name: "hispanic", under18: data.pop_hisp_under18_perc || 0, over18: data.pop_hisp_perc || 0},
-    {name: "other", under18: data.pop_nothisp_other_under18_perc || 0, over18: data.pop_nothisp_other_perc || 0}
-  ];
-
-  chartSvg.selectAll(".ethnicity line")
-    .data(ethdata)
-    .transition()
-    .duration(500)
-    .attr("y1", function(d) { return scale(d.under18); })
-    .attr("y2", function(d) { return scale(d.over18); });
-
-  drawLabels(ethdata);
-
-  var sim_ann = d3.labeler()
-    .label(label_array)
-    .anchor(anchor_array)
-    .width(w)
-    .height(h);
-    sim_ann.start(1000);
-
-  redrawLabels();
-}
-
-function drawLabels(data){
-  label_array = [];
-  anchor_array = [];
-  var label, anchor;
-  for(i=0; i<4; i++){
-    label = {
-     x: ord_scale("under18"),
-     y: scale(data[i].under18),
-     width: 0.0,
-     height: 0.0,
-      name: Math.round(data[i].under18*100) + "% " + data[i].name,
-      ethnicity: data[i].name, agegroup: "under18"};
-    label_array.push(label);
-
-    label = {
-     x: ord_scale("over18"),
-     y: scale(data[i].over18),
-     width: 0.0,
-     height: 0.0,
-      name: Math.round(data[i].over18*100) + "% " + data[i].name,
-      ethnicity: data[i].name, agegroup: "over18"};
-    label_array.push(label);
-
-    anchor = {x: ord_scale("under18"), y: scale(data[i].under18), r: 4, ethnicity: data[i].name};
-    anchor_array.push(anchor);
-
-    anchor = {x: ord_scale("over18"), y: scale(data[i].over18), r: 4, ethnicity: data[i].name};
-    anchor_array.push(anchor);
-  }
-
-  chartSvg.selectAll(".dot").data([]).exit().remove();
-  chartSvg.selectAll(".label").data([]).exit().remove();
-  chartSvg.selectAll(".link").data([]).exit().remove();
-
-  labels = chartSvg.selectAll(".label")
-    .data(label_array).enter()
-    .append("text")
-    .attr("class", "label")
-    .attr("text-anchor", function(d) {
-      if(d.agegroup == "under18") return "end";
-      else return "start"; })
-    .attr("alignment-baseline","central")
-    .text(function(d) { return d.name; })
-    .attr("x", function(d) {
-     if(d.agegroup == "under18") return d.x - 10;
-     else return d.x + 10; })
-    .attr("y", function(d) { return (d.y); })
-    .attr("fill", function(d) { return color(d.ethnicity); });
-
-  var index = 0;
-  labels.each(function() {
-    label_array[index].width = this.getBBox().width;
-    label_array[index].height = this.getBBox().height;
-    index += 1;
-  });
-
-  links = chartSvg.selectAll(".link")
-    .data(label_array).enter()
-    .append("line")
-    .attr("class", "link")
-    .attr("x1", function(d) { return (d.x); })
-    .attr("y1", function(d) { return (d.y); })
-    .attr("x2", function(d) {
-     if(d.agegroup =="under18") return d.x - 10;
-     else return d.x + 10; })
-    .attr("y2", function(d) { return (d.y); });
-
-  anchors = chartSvg.selectAll(".dot")
-    .data(anchor_array)
-    .enter().append("circle")
-    .attr("class", "dot")
-    .attr("r", function(d) { return (d.r); })
-    .attr("cx", function(d) { return (d.x); })
-    .attr("cy", function(d) { return (d.y); })
-    .style("fill", function(d) { return color(d.ethnicity); });
-}
-
-function redrawLabels() {
-  labels
-  .transition()
-  .duration(500)
-  //.attr("x", function(d) { return (d.x); })
-  .attr("y", function(d) { return (d.y); });
-
-  links
-  .transition()
-  .duration(500)
-  //.attr("x2",function(d) { return (d.x); })
-  .attr("y2",function(d) { return (d.y); });
+    chartSvg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + h + ")")
+        .call(d3.svg.axis().scale(x).ticks(5).orient("bottom"));
 }
 
 function toggleMenu() {
@@ -886,7 +822,7 @@ function highlightNeigborhood(d, isOverlayDraw) {
       //last neighborhood to display in popBox.
       activeId = d.properties.gis_id;
       setVisMetric(activeData, all_data[activeId][activeData]);
-      updateChart(all_data[activeId]);
+      drawChart(activeData, activeId);
     }
   } else {
     g.selectAll("#path" + highlightedNeighborhood.properties.NCID).classed("active", true);
@@ -928,7 +864,7 @@ function hoverNeighborhood(d) {
 
     if (activeData !== "no_neighborhood_data") {
       setVisMetric(activeData, all_data[activeId][activeData]);
-      updateChart(all_data[activeId]);
+      drawChart(activeData, activeId);
     } else {
       setVisMetric(null, null, true);
     }
