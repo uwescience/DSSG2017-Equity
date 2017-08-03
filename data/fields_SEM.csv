@@ -1,0 +1,15 @@
+id,name,type,category,new
+socio_status, Socioeconomic well-being,neighborhood,Equity
+fam_friend, Family friendly housing,neighborhood,Housing
+connectivity, Connectivity,neighborhood,Mobility
+infra, Mobility infrastructure,neighborhood,Mobility
+ped_friend, Pedestrian friendly,neighborhood,Mobility
+tran_time, Average transit time,neighborhood,Mobility
+elem, Elementary school well-being,neighborhood,Education
+upper, Upper school well-being,neighborhood,Education
+seattle_libraries,Libraries,poi,,
+seattle_ps_elem,Public Elementary Schools,schools,,
+seattle_ps_ms,Public Middle Schools,schools,,
+seattle_ps_high,Public High Schools,schools,,
+summer_learning,Summer Learning Centres ,poi,,
+LightRail,Light rail link stations,poi,,
