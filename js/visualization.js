@@ -327,7 +327,14 @@ function drawChoropleth(){
 
         path = d3.geo.path().projection(gmapProjection);
 
-		changeNeighborhoodGranularity("geom_nb", raw_nb_map);
+        if (geom_granularity == null || geom_granularity == "geom_nb") {
+          changeNeighborhoodGranularity(geom_granularity, raw_nb_map);
+        } else if (geom_granularity == "geom_tract") {
+          changeNeighborhoodGranularity(geom_granularity, raw_ct_map);
+        } else {
+          changeNeighborhoodGranularity(geom_granularity, raw_bg_map);
+        }
+
       };
     };
 
