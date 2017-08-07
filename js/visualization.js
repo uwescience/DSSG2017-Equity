@@ -182,25 +182,47 @@ function drawChoropleth(){
     .defer(d3.json, "data/NBH_simp60.geojson")
 
     .defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data.csv")
-    //.defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data.csv")
-    //.defer(d3.csv, "data/BlockGroups.csv")
+    .defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data_tract.csv")
+    .defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data_neighborhood.csv")
 
     .defer(d3.csv, "data/source_trial.csv")
     .await(setUpChoropleth);
 
-  function setUpChoropleth(error, fields, bg_map, ct_map, nb_map, bg_data, source) {
+  function setUpChoropleth(error, fields, bg_map, ct_map, nb_map, bg_data, ct_data, nb_data, source) {
     populateNavPanel(fields);
 
     //clean choropleth data for display.
-	raw_bg_map = bg_map;
-	raw_ct_map = ct_map;
-	raw_nb_map = nb_map;
-	raw_bg_data = bg_data;
+    raw_bg_map = bg_map;
+    raw_ct_map = ct_map;
+    raw_nb_map = nb_map;
+    raw_bg_data = bg_data;
+    raw_ct_data = ct_data;
+    raw_nb_data = nb_data;
     choropleth_data = bg_data;
     source_data = source;
     bg_data.forEach(function(d) {
       all_data[d.block_group] = d; //used for colour
       choropleth_data[d.block_group] = +d.population_total;
+	    Object.keys(d).forEach(function(e) {
+		      if (!(e in col_data)) {
+			         col_data[e] = [];
+		           }
+		  col_data[e].push(parseFloat(d[e]));
+	   });
+    });
+    ct_data.forEach(function(d) {
+      all_data[d.tract] = d; //used for colour
+      choropleth_data[d.tract] = +d.population_total;
+	    Object.keys(d).forEach(function(e) {
+		      if (!(e in col_data)) {
+			         col_data[e] = [];
+		           }
+		  col_data[e].push(parseFloat(d[e]));
+	   });
+    });
+    nb_data.forEach(function(d) {
+      all_data[d.neighborhood] = d; //used for colour
+      choropleth_data[d.neighborhood] = +d.population_total;
 	    Object.keys(d).forEach(function(e) {
 		      if (!(e in col_data)) {
 			         col_data[e] = [];
