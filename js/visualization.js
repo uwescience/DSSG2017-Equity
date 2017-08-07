@@ -514,6 +514,8 @@ function changeNeighborhoodData(new_data_column) {
     }
   };
 
+  drawChart(new_data_column, activeId); //used to be in below function
+
   var legendNumber = function(d, typeDef){
     var column = String([new_data_column]);
     var number_formatter = d3.format(",");
@@ -531,7 +533,7 @@ function changeNeighborhoodData(new_data_column) {
       return d;
     }
 
-    drawChart(new_data_column, activeId);
+
 
   };
 
@@ -731,7 +733,7 @@ function drawChart(data_column, activeId){
     bar.append("rect")
         .attr("y", 0)
         .attr("x", 1)
-        .attr("width", x(bins[0].dx))
+        .attr("width", 5) //hard-coded in the width of each bar
         .attr("height", function(d) { return(y(d.y)); })
         .attr("fill", function(d){
           if (activeId == "sea") {
