@@ -20,8 +20,8 @@ var ord_scale = d3.scale.ordinal().domain(["Under 18", "Over 18"]).range([0, w])
 var color = d3.scale.category20();
 var dotRadius = 4;
 var neighborhoods;
-var color_palette = [ "#FEC201", "#FFE65E", "#9CE3BF", "#47BD94", "#19858E"];
-function choro_color() {return color_palette[0]};
+var fixed_color_palette = [ "#FEC201", "#FFE65E", "#9CE3BF", "#47BD94", "#19858E"];
+function choro_color() {return fixed_color_palette[0]};
 
 var currentMetric = null;
 var highlightedNeighborhood = null;
@@ -198,11 +198,15 @@ function drawChoropleth(){
     raw_bg_data = bg_data;
     raw_ct_data = ct_data;
     raw_nb_data = nb_data;
-    choropleth_data = bg_data;
+    choropleth_data = {};
     source_data = source;
+	choropleth_data['geom_bg'] = bg_data;
+	choropleth_data['geom_tract'] = ct_data;
+	choropleth_data['geom_nb'] = nb_data;
+
     bg_data.forEach(function(d) {
       all_data[d.block_group] = d; //used for colour
-      choropleth_data[d.block_group] = +d.population_total;
+      choropleth_data['geom_bg'][d.block_group] = +d.population_total;
 	    Object.keys(d).forEach(function(e) {
 		      if (!(e in col_data)) {
 			         col_data[e] = [];
@@ -212,7 +216,7 @@ function drawChoropleth(){
     });
     ct_data.forEach(function(d) {
       all_data[d.tract] = d; //used for colour
-      choropleth_data[d.tract] = +d.population_total;
+      choropleth_data['geom_tract'][d.tract] = +d.population_total;
 	    Object.keys(d).forEach(function(e) {
 		      if (!(e in col_data)) {
 			         col_data[e] = [];
@@ -222,7 +226,7 @@ function drawChoropleth(){
     });
     nb_data.forEach(function(d) {
       all_data[d.neighborhood] = d; //used for colour
-      choropleth_data[d.neighborhood] = +d.population_total;
+      choropleth_data['geom_nb'][d.neighborhood] = +d.population_total;
 	    Object.keys(d).forEach(function(e) {
 		      if (!(e in col_data)) {
 			         col_data[e] = [];
@@ -332,6 +336,7 @@ function drawChoropleth(){
       g.append("g").attr("id", "points");
       d3.select("#legend-container").append("svg")
           .attr("height", 200)
+		  .attr("width", 170)
         .append("g")
           .attr("id", "legend");
 
@@ -396,6 +401,8 @@ function changeNeighborhoodGranularity(data_name, gran_map) {
 
 	g.select("#points").selectAll(".poi").remove();
 
+	changeNeighborhoodData(currentMetric, data_name);
+
 	//if there is a highlighted neighborhood then rehighlightit.
 	if(highlightedNeighborhood) {
 	  highlightNeigborhood(highlightedNeighborhood, true);
@@ -437,7 +444,7 @@ function populateNavPanel(data) {
     if (!$(this).parent().hasClass('disabled')){
       currentMetric=(typeof $(this).attr("id")==="undefined")?null:$(this).attr("id");
       getSource(source_data,currentMetric);
-      changeNeighborhoodData(currentMetric);
+      changeNeighborhoodData(currentMetric, geom_granularity);
       $(this).parent().addClass("selected").siblings().removeClass("selected");
       $("#legend-panel").show();
       $("#details p.lead").show();
@@ -476,22 +483,31 @@ function populateNavPanel(data) {
   });
 }
 
-function changeNeighborhoodData(new_data_column) {
-  var data_values = _.filter(_.map(choropleth_data, function(d){ return parseFloat(d[new_data_column]); }), function(d){ return !isNaN(d); });
+function changeNeighborhoodData(new_data_column, granularity) {
+  console.log("changing neighborhood data:"+new_data_column+", "+granularity);
+  if (new_data_column == null) { return; }
+  var data_values = _.filter(_.map(choropleth_data[granularity], function(d){ return parseFloat(d[new_data_column]); }), function(d){ return !isNaN(d); });
   var jenks = _.filter(_.unique(ss.jenks(data_values, Math.min(5, data_values.length))), function(d){ return !isNaN(d); });
 
   //var color_palette = [ "#9ae3ff", "#45ccff", "#00adef", "#00709a", "#003245"];
 
 
   // trim lighter colours from palette (if necessary)
-  color_palette = color_palette.slice(6 - jenks.length);
+  color_palette = fixed_color_palette.slice(6 - jenks.length);
 
   activeData = new_data_column;
   choro_color = d3.scale.threshold()
     .domain(jenks.slice(1,-1))
     .range(color_palette);
-  choropleth_data.forEach(function(d) {
-    choropleth_data[d.block_group] = +d[new_data_column];
+  choropleth_data[granularity].forEach(function(d) {
+	  if (granularity == 'geom_nb') {
+		  choropleth_data[granularity][d.neighborhood] = +d[new_data_column];
+	  } else if (granularity == 'geom_bg') {
+		  choropleth_data[granularity][d.block_group] = +d[new_data_column];
+	  } else if (granularity == 'geom_tract') {
+		  choropleth_data[granularity][d.tract] = +d[new_data_column];
+	  }
+
   });
 
   g.select("#neighborhoods").selectAll("path")
@@ -588,7 +604,6 @@ function changeNeighborhoodData(new_data_column) {
     });
 
   updatedLegend.exit().remove();
-
 }
 
 function redrawPoints() {
