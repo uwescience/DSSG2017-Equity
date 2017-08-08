@@ -20,13 +20,13 @@ var ord_scale = d3.scale.ordinal().domain(["Under 18", "Over 18"]).range([0, w])
 var color = d3.scale.category20();
 var dotRadius = 4;
 var neighborhoods;
-var color_palette = [ "#FEC201", "#FFE65E", "#9CE3BF", "#47BD94", "#19858E"];
-function choro_color() {return color_palette[0]};
+var fixed_color_palette = [ "#FEC201", "#FFE65E", "#9CE3BF", "#47BD94", "#19858E"];
+function choro_color() {return fixed_color_palette[0]};
 
 var currentMetric = null;
 var highlightedNeighborhood = null;
 var geom_granularity = null;
-var raw_bg_map, raw_ct_map, raw_nb_map, raw_bg_data, raw_ct_data, raw_nb_data;
+var bg_map, raw_bg_map, raw_ct_map, raw_nb_map, raw_bg_data, raw_ct_data, raw_nb_data;
 
 var col_data = [];
 var data_prct = [];
@@ -50,9 +50,9 @@ var gmap_style=[
     ]
   },{
     "featureType": "landscape.man_made",
+    'elementType': 'geometry.stroke',
     "stylers": [
-      { "visibility": "on" },
-      { "color": "#ffffff" }
+      { "color": "#000000" }
     ]
   },{
     "featureType": "landscape.natural",
@@ -91,6 +91,109 @@ var gmap_style=[
     ]
   }
 ];
+
+
+var gmap_style_zoom = [
+  {
+    "featureType": 'poi.park',
+    "elementType": 'geometry.fill',
+    "stylers": [
+      {"visibility": 'on'},
+    ]
+  },
+  {
+    "featureType": "poi.school",
+    "stylers": [
+      {"color": "#F5E9D4"}, // #E7DFD5
+      {"visibility": "on"}
+    ]
+  },
+  {
+    "featureType": 'transit.line',
+    "elementType": 'geometry',
+    "stylers": [{"color": '#000000'}]
+  },
+  {
+    "featureType": "transit.station.bus",
+    "stylers": [
+      {
+        "color": "#ffeb3b"
+      },
+      {
+        "visibility": "on"
+      }
+    ]
+  },
+  {
+    'featureType': 'road.highway',
+    'elementType': 'geometry',
+    'stylers': [
+      {'visibility': 'on'},
+      {'color': '#FED89D'}
+    ]
+  },
+
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      { "color": "#000000" }
+    ]
+  },{
+    "featureType": "administrative",
+    "elementType": "geometry",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "poi",
+    "stylers": [
+      { "visibility": "on" }
+    ]
+  },{
+    "featureType": "landscape.man_made",
+    'elementType': 'geometry.stroke',
+    "stylers": [
+      { "visibility": "on" },
+      { "color": "#000000" }
+    ]
+  },{
+    "featureType": "landscape.natural",
+    "stylers": [
+      { "color": "#ffffff" }
+    ]
+  },/*{
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [
+      { "color": "#f6f4f3" }
+    ]
+  },*/{
+    "elementType": "labels.icon",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "water",
+    "elementType": "labels",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      { "visibility": "on" },
+      { "color": "#cfddff" }
+    ]
+  },{
+     "featureType": "administrative",
+     "elementType": "labels",
+     "stylers": [
+      { "visibility": "off" }
+    ]
+  }
+]
+
 
 var browserSupportsTouch = 'ontouchstart' in document.documentElement;
 
@@ -186,6 +289,10 @@ function drawChoropleth(){
     .defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data_neighborhood.csv")
 
     .defer(d3.csv, "data/source_trial.csv")
+
+    //trial
+    //.defer(d3.json, "data/seattle_washington_buildings.geojson")
+
     .await(setUpChoropleth);
 
   function setUpChoropleth(error, fields, bg_map, ct_map, nb_map, bg_data, ct_data, nb_data, source) {
@@ -198,11 +305,15 @@ function drawChoropleth(){
     raw_bg_data = bg_data;
     raw_ct_data = ct_data;
     raw_nb_data = nb_data;
-    choropleth_data = bg_data;
+    choropleth_data = {};
     source_data = source;
+	choropleth_data['geom_bg'] = bg_data;
+	choropleth_data['geom_tract'] = ct_data;
+	choropleth_data['geom_nb'] = nb_data;
+
     bg_data.forEach(function(d) {
       all_data[d.block_group] = d; //used for colour
-      choropleth_data[d.block_group] = +d.population_total;
+      choropleth_data['geom_bg'][d.block_group] = +d.population_total;
 	    Object.keys(d).forEach(function(e) {
 		      if (!(e in col_data)) {
 			         col_data[e] = [];
@@ -212,7 +323,7 @@ function drawChoropleth(){
     });
     ct_data.forEach(function(d) {
       all_data[d.tract] = d; //used for colour
-      choropleth_data[d.tract] = +d.population_total;
+      choropleth_data['geom_tract'][d.tract] = +d.population_total;
 	    Object.keys(d).forEach(function(e) {
 		      if (!(e in col_data)) {
 			         col_data[e] = [];
@@ -222,7 +333,7 @@ function drawChoropleth(){
     });
     nb_data.forEach(function(d) {
       all_data[d.neighborhood] = d; //used for colour
-      choropleth_data[d.neighborhood] = +d.population_total;
+      choropleth_data['geom_nb'][d.neighborhood] = +d.population_total;
 	    Object.keys(d).forEach(function(e) {
 		      if (!(e in col_data)) {
 			         col_data[e] = [];
@@ -246,7 +357,7 @@ function drawChoropleth(){
     gmap = new google.maps.Map(d3.select("#content").node(), {
       zoom: 12, //12
       minZoom: 10, //10
-      maxZoom: 14,
+      maxZoom: 22, // used to be 14
       center: new google.maps.LatLng(47.61, -122.330422), //center coors
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       streetViewControl: false,
@@ -254,6 +365,7 @@ function drawChoropleth(){
       scrollwheel: false,
       mapTypeControl: false,
       styles: gmap_style,
+      //styles: gmap_style_zoom,
       draggable: !browserSupportsTouch,
       zoomControl: !browserSupportsTouch,
       zoomControlOptions: {
@@ -332,6 +444,7 @@ function drawChoropleth(){
       g.append("g").attr("id", "points");
       d3.select("#legend-container").append("svg")
           .attr("height", 200)
+		  .attr("width", 170)
         .append("g")
           .attr("id", "legend");
 
@@ -374,6 +487,9 @@ function changeNeighborhoodGranularity(data_name, gran_map) {
 
 	neighborhoods.selectAll("path").remove();
 	neighborhoods.selectAll("path")
+    //trial
+    //.data(building_map.features)
+
 	  .data(gran_map.features)
 	  .enter().append("path")
 	  .attr("d", path)
@@ -388,13 +504,18 @@ function changeNeighborhoodGranularity(data_name, gran_map) {
 		}
 	  })
 	  .on("click", function(d) { highlightNeigborhood(d, false); })
+
+    .on("dblclick", function(d) {zoomtoNeighborhood(d,false); })
+
 	  .style("fill",function(d) {
 		if (currentMetric === null || all_data[d.properties.gis_id][currentMetric] === '0') { return defaultColor; }
 		else { return choro_color(all_data[d.properties.gis_id][currentMetric]); }
 	  })
-	  .style("fill-opacity",0.75);
+	  .style("fill-opacity",0.1); // grey layer when no dataset is chosen
 
 	g.select("#points").selectAll(".poi").remove();
+
+	changeNeighborhoodData(currentMetric, data_name);
 
 	//if there is a highlighted neighborhood then rehighlightit.
 	if(highlightedNeighborhood) {
@@ -437,7 +558,7 @@ function populateNavPanel(data) {
     if (!$(this).parent().hasClass('disabled')){
       currentMetric=(typeof $(this).attr("id")==="undefined")?null:$(this).attr("id");
       getSource(source_data,currentMetric);
-      changeNeighborhoodData(currentMetric);
+      changeNeighborhoodData(currentMetric, geom_granularity);
       $(this).parent().addClass("selected").siblings().removeClass("selected");
       $("#legend-panel").show();
       $("#details p.lead").show();
@@ -476,22 +597,31 @@ function populateNavPanel(data) {
   });
 }
 
-function changeNeighborhoodData(new_data_column) {
-  var data_values = _.filter(_.map(choropleth_data, function(d){ return parseFloat(d[new_data_column]); }), function(d){ return !isNaN(d); });
+function changeNeighborhoodData(new_data_column, granularity) {
+  console.log("changing neighborhood data:"+new_data_column+", "+granularity);
+  if (new_data_column == null) { return; }
+  var data_values = _.filter(_.map(choropleth_data[granularity], function(d){ return parseFloat(d[new_data_column]); }), function(d){ return !isNaN(d); });
   var jenks = _.filter(_.unique(ss.jenks(data_values, Math.min(5, data_values.length))), function(d){ return !isNaN(d); });
 
   //var color_palette = [ "#9ae3ff", "#45ccff", "#00adef", "#00709a", "#003245"];
 
 
   // trim lighter colours from palette (if necessary)
-  color_palette = color_palette.slice(6 - jenks.length);
+  color_palette = fixed_color_palette.slice(6 - jenks.length);
 
   activeData = new_data_column;
   choro_color = d3.scale.threshold()
     .domain(jenks.slice(1,-1))
     .range(color_palette);
-  choropleth_data.forEach(function(d) {
-    choropleth_data[d.block_group] = +d[new_data_column];
+  choropleth_data[granularity].forEach(function(d) {
+	  if (granularity == 'geom_nb') {
+		  choropleth_data[granularity][d.neighborhood] = +d[new_data_column];
+	  } else if (granularity == 'geom_bg') {
+		  choropleth_data[granularity][d.block_group] = +d[new_data_column];
+	  } else if (granularity == 'geom_tract') {
+		  choropleth_data[granularity][d.tract] = +d[new_data_column];
+	  }
+
   });
 
   g.select("#neighborhoods").selectAll("path")
@@ -506,7 +636,7 @@ function changeNeighborhoodData(new_data_column) {
         return choro_color(all_data[d.properties.gis_id][new_data_column]);
       }
     })
-    .style("fill-opacity",0.75);
+    .style("fill-opacity",0.8); // 0.8 normal, change to 0.3 when zooming into neighborhood
 
   if(new_data_column !== "no_neighborhood_data") {
     setVisMetric(new_data_column, all_data[activeId][new_data_column]);
@@ -588,7 +718,6 @@ function changeNeighborhoodData(new_data_column) {
     });
 
   updatedLegend.exit().remove();
-
 }
 
 function redrawPoints() {
@@ -818,12 +947,31 @@ function displayPopBox(d) {
 }
 
 
+//zooming
+function zoomtoNeighborhood (d, isOverlayDraw) {
+  console.log("zooming");
+  var polyBounds = new google.maps.Polygon({
+  paths: formatLatLng(d.geometry.coordinates[0])
+  }).getBounds();
+  gmap.fitBounds(polyBounds);
+
+  gmap.setZoom(gmap.getZoom() - 1);
+
+  gmap.setOptions({styles: gmap_style_zoom}); // change styling
+
+  // tmp trial on changing opacity
+  g.style("fill-opacity",0.2);
+}
+
+
 function highlightNeigborhood(d, isOverlayDraw) {
-  // click and zoom map to nbhd bounds
-  // var polyBounds = new google.maps.Polygon({
-  // paths: formatLatLng(d.geometry.coordinates[0])
-  // }).getBounds();
-  // gmap.fitBounds(polyBounds);
+  /*var polyBounds = new google.maps.Polygon({
+  paths: formatLatLng(d.geometry.coordinates[0])
+  }).getBounds();
+  gmap.fitBounds(polyBounds);*/
+
+  console.log("highlighting");
+
   removeNarrative();
   highlightedNeighborhood = d;
   var x, y, k;
