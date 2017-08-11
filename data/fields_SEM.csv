@@ -14,15 +14,15 @@ occupied_housing_units,Number of housing units,neighborhood,Family Housing
 infrastructure,Overall score,neighborhood,Mobility Infrastructure
 num_stops_area_norm,Number of bus stops per unit area,neighborhood,Mobility Infrastructure
 num_trips_area_norm,Number of unique bus trips available per unit area,neighborhood,Mobility Infrastructure
-sidewalk_availability,Sidewalk availability,neighborhood,Mobility Infrastructure
-total_bikelanes,Bike lane availability,neighborhood,Mobility Infrastructure
+sidewalk_availability,Sidewalk availability (unit length of sidewalks divided by unit area),neighborhood,Mobility Infrastructure
+total_bikelanes,Bike lane availability (unit length of bike lanes divided by unit area),neighborhood,Mobility Infrastructure
 connectivity, Overall score,neighborhood,Connectivity
 walk_time_LR,Walking time to a light rail station,neighborhood,Connectivity
 tran_time_LR,Public transit time to a light rail station,neighborhood,Connectivity
 walkscore,Walk score,neighborhood,Connectivity
 transitscore,Transit score,neighborhood,Connectivity
-avg_driving_time,Average driving time,neighborhood,Connectivity
-avg_transit_time,Average transit time,neighborhood,Connectivity
+avg_driving_time,Average driving time (to points evenly spread around the city),neighborhood,Connectivity
+avg_transit_time,Average transit time (to points evenly spread around the city),neighborhood,Connectivity
 elem,Overall score,neighborhood,Elementary school well-being
 math_perc_elem,Percentage of students math proficient,neighborhood,Elementary school well-being
 reading_perc_elem,Percentage of students reading proficient,neighborhood,Elementary school well-being
@@ -36,14 +36,14 @@ isa_upper,Average attendance,neighborhood,Upper school well-being
 fam_upper,Family satisfaction,neighborhood,Upper school well-being
 stu_upper,Student satisfaction,neighborhood,Upper school well-being
 health_inverse, Overall score,neighborhood,Public Health
-food_banks, Proximity to a food bank,neighborhood,Public Health
-farmers_market, Proximity to a farmers market,neighborhood,Public Health
-public_health, Proximity to a public health center,neighborhood,Public Health
-parks, Proximity to a park,neighborhood,Public Health
+food_banks, Proximity to a food bank (km),neighborhood,Public Health
+farmers_market, Proximity to a farmers market (km),neighborhood,Public Health
+public_health, Proximity to a public health center (km),neighborhood,Public Health
+parks, Proximity to a park (km),neighborhood,Public Health
 dev, Overall score,neighborhood,Development
 num_units,Number of apartment units planned or under construction,neighborhood,Development
 num_permits, Number of permits issued,neighborhood,Development
-total_value_permits, Total value of permits issued,neighborhood,Development
+total_value_permits, Total value of permits issued ($),neighborhood,Development
 seattle_libraries,Libraries,poi,,
 seattle_ps_elem,Public Elementary Schools,schools,,
 seattle_ps_ms,Public Middle Schools,schools,,
