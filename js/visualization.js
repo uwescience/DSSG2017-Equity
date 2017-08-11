@@ -187,7 +187,8 @@ function drawChoropleth(){
     .defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data_tract.csv")
     .defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data_neighborhood.csv")
 
-    .defer(d3.csv, "data/source_trial.csv")
+    //.defer(d3.csv, "data/source_trial.csv")
+    .defer(d3.csv, "data/source_SEM.csv")
     .await(setUpChoropleth);
 
   function setUpChoropleth(error, fields, bg_map, ct_map, nb_map, bg_data, ct_data, nb_data, source) {

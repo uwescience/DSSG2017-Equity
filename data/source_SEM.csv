@@ -1,0 +1,46 @@
+layer,source,url
+socio_status,,
+median_household_income,Census,
+per_capita_income,Census,
+education_level,Census,
+median_house_value,Census,
+pop_perc_poc,Census,
+pop_perc_no_HI,Census,
+fam_friendliness,,
+perc_family,Census,
+perc_owner,Census,
+avg_occupancy,Census,
+occupied_housing_units,Census,
+infrastructure,,
+num_stops_area_norm,King County GTFS,http://metro.kingcounty.gov/gtfs/
+num_trips_area_norm,King County GTFS,http://metro.kingcounty.gov/gtfs/
+sidewalk_availability,Seattle Open Data Portal,https://data.seattle.gov/Transportation/SDOT-Sidewalks/dsed-gzpp
+total_bikelanes,Seattle Open Data Portal,https://data.seattle.gov/dataset/SDOT-Existing-and-Planned-Bike-Facilities/y2h9-mi2b
+connectivity,,
+walk_time_LR,Google Distance Matrix API,https://developers.google.com/maps/documentation/distance-matrix/
+tran_time_LR,Google Distance Matrix API,https://developers.google.com/maps/documentation/distance-matrix/
+walkscore,Walk score API,https://www.walkscore.com/professional/ 
+transitscore,Transit score API,https://www.walkscore.com/professional/
+avg_driving_time,Google Distance Matrix API,https://developers.google.com/maps/documentation/distance-matrix/
+avg_transit_time,Google Distance Matrix API,https://developers.google.com/maps/documentation/distance-matrix/
+elem,,
+math_perc_elem,Seattle Public School Reports, http://www.seattleschools.org/cms/One.aspx?portalId=627&pageId=6369011
+reading_perc_elem,Seattle Public School Reports, http://www.seattleschools.org/cms/One.aspx?portalId=627&pageId=6369011
+isa_perc_elem,Seattle Public School Reports, http://www.seattleschools.org/cms/One.aspx?portalId=627&pageId=6369011
+fam_sat_elem,Seattle Public School Reports, http://www.seattleschools.org/cms/One.aspx?portalId=627&pageId=6369011
+stu_sat_elem,Seattle Public School Reports, http://www.seattleschools.org/cms/One.aspx?portalId=627&pageId=6369011
+upper,,
+math_upper,Seattle Public School Reports, http://www.seattleschools.org/cms/One.aspx?portalId=627&pageId=6369011
+reading_upper,Seattle Public School Reports, http://www.seattleschools.org/cms/One.aspx?portalId=627&pageId=6369011
+isa_upper,Seattle Public School Reports, http://www.seattleschools.org/cms/One.aspx?portalId=627&pageId=6369011
+fam_upper,Seattle Public School Reports, http://www.seattleschools.org/cms/One.aspx?portalId=627&pageId=6369011
+stu_upper,Seattle Public School Reports, http://www.seattleschools.org/cms/One.aspx?portalId=627&pageId=6369011
+health_inverse,,
+food_banks,Seattle Open Data Portal,https://data.seattle.gov/Community/Food-Banks/ryz5-i54h
+farmers_market,Seattle Farmers Markets,http://seattlefarmersmarkets.org/
+public_health,King County, http://www.kingcounty.gov/depts/health/locations.aspx
+parks,Seattle Open Data Portal, https://data.seattle.gov/Parks-and-Recreation/Seattle-Parks-And-Recreation-Park-Addresses/v5tj-kqhc
+dev,,
+num_units,Dupre and Scott, http://www.duprescott.com/publications/
+num_permits,Seattle Open Data Portal, https://data.seattle.gov/Permitting/Building-Permits-Current/mags-97de
+total_value_permits,Seattle Open Data Portal, https://data.seattle.gov/Permitting/Building-Permits-Current/mags-97de
