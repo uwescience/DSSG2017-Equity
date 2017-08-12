@@ -630,10 +630,8 @@ function drawPoints(type) {
     //make middle school a square, add different shape for high school
     //why doesnt the legend match?
     if (type === "seattle_ps_ms") {
-      poi.enter().append("rect")
+      poi.enter().append("circle")
         .attr("class", "poi " + type + (isSchool ? " school" : ""))
-        .attr("width", 7)
-        .attr("height", 7)
         .attr("r", 4)
         .attr("transform", function(d) {
           return "translate(" + gmapProjection([d.long, d.lat]) + ")";})

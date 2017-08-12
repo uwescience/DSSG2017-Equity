@@ -1,16 +1,16 @@
 layer,source,url
 socio_status,,
-median_household_income,Census,
-per_capita_income,Census,
-education_level,Census,
-median_house_value,Census,
-pop_perc_poc,Census,
-pop_perc_no_HI,Census,
+median_household_income,Census,https://api.census.gov/data.html
+per_capita_income,Census,https://api.census.gov/data.html
+education_level,Census,https://api.census.gov/data.html
+median_house_value,Census,https://api.census.gov/data.html
+pop_perc_poc,Census,https://api.census.gov/data.html
+pop_perc_no_HI,Census,https://api.census.gov/data.html
 fam_friendliness,,
-perc_family,Census,
-perc_owner,Census,
-avg_occupancy,Census,
-occupied_housing_units,Census,
+perc_family,Census,https://api.census.gov/data.html
+perc_owner,Census,https://api.census.gov/data.html
+avg_occupancy,Census,https://api.census.gov/data.html
+occupied_housing_units,Census,https://api.census.gov/data.html
 infrastructure,,
 num_stops_area_norm,King County GTFS,http://metro.kingcounty.gov/gtfs/
 num_trips_area_norm,King County GTFS,http://metro.kingcounty.gov/gtfs/
