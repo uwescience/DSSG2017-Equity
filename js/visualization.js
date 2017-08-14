@@ -661,8 +661,7 @@ function changeNeighborhoodData(new_data_column, granularity) {
     .style("fill", function(d) {
       if(typeof all_data[d.properties.gis_id] ==="undefined" ||
         all_data[d.properties.gis_id].population_total < min_population ||
-        !all_data[d.properties.gis_id][new_data_column] ||
-        all_data[d.properties.gis_id][currentMetric] === '0'){
+        !all_data[d.properties.gis_id][new_data_column]){
         return defaultColor;
       } else {
         return choro_color(all_data[d.properties.gis_id][new_data_column]);
@@ -711,9 +710,9 @@ function changeNeighborhoodData(new_data_column, granularity) {
       return "$" + number_formatter(parseInt(d, 10));
     } else if(column.split("_").pop() == 'ratio'){
       num = Math.round(d * 100)/100;
-      return num;
+      return num.toLocaleString(2);
     } else {
-      return d;
+      return d.toLocaleString(2);
     }
   };
 
