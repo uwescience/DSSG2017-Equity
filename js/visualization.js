@@ -278,21 +278,19 @@ function calculatePrct(col_data) {
 function drawChoropleth(){
 
   queue()
-    .defer(d3.csv, "data/fields_trial.csv")
+    //.defer(d3.csv, "data/fields_trial.csv")
+    .defer(d3.csv, "data/fields_SEM.csv")
 
     .defer(d3.json, "data/cityBG_simp20_trial.geojson")
     .defer(d3.json, "data/cityCT_simp20_export.geojson")
     .defer(d3.json, "data/NBH_simp60.geojson")
 
-    .defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data.csv")
+    //.defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data.csv")
+    .defer(d3.csv, "data/BG_SEM.csv")
     .defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data_tract.csv")
     .defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data_neighborhood.csv")
 
-    .defer(d3.csv, "data/source_trial.csv")
-
-    //trial
-    //.defer(d3.json, "data/seattle_washington_buildings.geojson")
-
+    .defer(d3.csv, "data/source_SEM.csv")
     .await(setUpChoropleth);
 
   function setUpChoropleth(error, fields, bg_map, ct_map, nb_map, bg_data, ct_data, nb_data, source) {
@@ -741,10 +739,8 @@ function drawPoints(type) {
     //make middle school a square, add different shape for high school
     //why doesnt the legend match?
     if (type === "seattle_ps_ms") {
-      poi.enter().append("rect")
+      poi.enter().append("circle")
         .attr("class", "poi " + type + (isSchool ? " school" : ""))
-        .attr("width", 7)
-        .attr("height", 7)
         .attr("r", 4)
         .attr("transform", function(d) {
           return "translate(" + gmapProjection([d.long, d.lat]) + ")";})
