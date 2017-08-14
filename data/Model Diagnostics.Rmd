@@ -1,0 +1,40 @@
+---
+title: "Model Diagnostics"
+author: "Jacob Rich"
+date: "July 24, 2017"
+output:
+  pdf_document: default
+  html_document: default
+---
+```{r, echo = F}
+library(dplyr)
+library(magrittr)
+library(gclus)
+library(corrplot)
+
+setwd("~/Desktop/DSSG2017-Equity/Data")
+dat <- read.csv("neighborhoods_trial3.csv", stringsAsFactors = F)
+dat <- dat[,-(1:5)]
+suppressWarnings(dat[,1:60] %<>%lapply(as.numeric))
+dat <- dat[complete.cases(dat),]
+dat.cors <- abs(cor(dat))
+dat.cors.col <- dmat.color(dat.cors)
+```
+
+
+```{r, echo = F, results='asis'}
+index <- seq(from = 1, to=60, by=5)
+for(i in index){
+  cat("\n\n\\pagebreak\n")
+  temp <- dat[,i:(i+4)]
+  readline(prompt="Press [enter] to continue:")
+  temp.r <- abs(cor(temp)) # get correlations
+  temp.col <- dmat.color(temp.r) # get colors
+  temp.o <- order.single(temp.r)
+  cpairs(temp, order = temp.o, panel.colors = temp.col)
+  cat("\n")
+  corrplot(cor(temp), type = "lower")
+}
+
+
+```
