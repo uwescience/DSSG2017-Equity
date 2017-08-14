@@ -170,7 +170,7 @@ circle.poi:hover {
   height: 200px;
 }
 
-#nav-panel {
+#nav-panel-inner {
   height: 600px;
   overflow: scroll;
 }
