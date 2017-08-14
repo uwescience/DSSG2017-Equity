@@ -33,28 +33,23 @@ var data_prct = [];
 
 var gmap_style=[
   {
-    "elementType": "labels.text.fill",
-    "stylers": [
-      { "color": "#000000" }
-    ]
-  },{
     "featureType": "administrative",
     "elementType": "geometry",
     "stylers": [
-      { "visibility": "off" }
+      { "visibility": "on" }
     ]
   },{
     "featureType": "poi",
     "stylers": [
       { "visibility": "off" }
     ]
-  },{
+  },/*{
     "featureType": "landscape.man_made",
     'elementType': 'geometry.stroke',
     "stylers": [
       { "color": "#000000" }
     ]
-  },{
+  },*/{
     "featureType": "landscape.natural",
     "stylers": [
       { "color": "#ffffff" }
@@ -87,24 +82,51 @@ var gmap_style=[
      "featureType": "administrative",
      "elementType": "labels",
      "stylers": [
-      { "visibility": "off" }
+      { "visibility": "on" }
+    ]
+  },{
+    "featureType": "road",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
     ]
   }
 ];
 
 
+// tweak for zoom-in display
 var gmap_style_zoom = [
   {
     "featureType": 'poi.park',
     "elementType": 'geometry.fill',
     "stylers": [
       {"visibility": 'on'},
+      {"color": "#8DB890"}
+    ]
+  },
+  {
+    "featureType": 'poi.business',
+    "elementType": 'geometry.fill',
+    "stylers": [
+      {"visibility": 'on'},
+      {"color": "#8DB890"}
+    ]
+  },
+  {
+    "featureType": 'poi.medical',
+    "elementType": 'geometry.fill',
+    "stylers": [
+      {"visibility": 'on'},
+      {"color": "#6088BB"}
     ]
   },
   {
     "featureType": "poi.school",
+    "elementType": 'geometry.fill',
     "stylers": [
-      {"color": "#F5E9D4"}, // #E7DFD5
+      {"color": "#A64452"},
       {"visibility": "on"}
     ]
   },
@@ -113,17 +135,24 @@ var gmap_style_zoom = [
     "elementType": 'geometry',
     "stylers": [{"color": '#000000'}]
   },
-  {
+  /*{
     "featureType": "transit.station.bus",
+    "elementType": "labels.icon",
     "stylers": [
-      {
-        "color": "#ffeb3b"
-      },
       {
         "visibility": "on"
       }
     ]
   },
+  {
+    "featureType": "transit.station.rail",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "on"
+      }
+    ]
+  },*/
   {
     'featureType': 'road.highway',
     'elementType': 'geometry',
@@ -132,17 +161,11 @@ var gmap_style_zoom = [
       {'color': '#FED89D'}
     ]
   },
-
   {
-    "elementType": "labels.text.fill",
-    "stylers": [
-      { "color": "#000000" }
-    ]
-  },{
     "featureType": "administrative",
     "elementType": "geometry",
     "stylers": [
-      { "visibility": "off" }
+      { "visibility": "on" }
     ]
   },{
     "featureType": "poi",
@@ -154,25 +177,15 @@ var gmap_style_zoom = [
     'elementType': 'geometry.stroke',
     "stylers": [
       { "visibility": "on" },
-      { "color": "#000000" }
     ]
-  },{
-    "featureType": "landscape.natural",
-    "stylers": [
-      { "color": "#ffffff" }
-    ]
-  },/*{
-    "featureType": "road",
-    "elementType": "geometry",
-    "stylers": [
-      { "color": "#f6f4f3" }
-    ]
-  },*/{
+  },
+  {
     "elementType": "labels.icon",
     "stylers": [
       { "visibility": "off" }
     ]
-  },{
+  },
+  {
     "featureType": "water",
     "elementType": "labels",
     "stylers": [
@@ -189,7 +202,16 @@ var gmap_style_zoom = [
      "featureType": "administrative",
      "elementType": "labels",
      "stylers": [
-      { "visibility": "off" }
+      { "visibility": "on" }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
     ]
   }
 ]
@@ -597,12 +619,23 @@ function populateNavPanel(data) {
 
 function changeNeighborhoodData(new_data_column, granularity) {
   console.log("changing neighborhood data:"+new_data_column+", "+granularity);
-  if (new_data_column == null) { return; }
+
+  if (gmap.getZoom() >= 13) {
+    neighborhoods.selectAll("path").style("fill-opacity",0.3);
+    gmap.setOptions({styles: gmap_style_zoom});
+  } else if (gmap.getZoom() <= 12) {
+    neighborhoods.selectAll("path").style("fill-opacity",0.8);
+    gmap.setOptions({styles: gmap_style});
+  }
+
+  if (new_data_column == null) {
+    neighborhoods.selectAll("path").style("fill-opacity",0.1);
+    return;
+  }
   var data_values = _.filter(_.map(choropleth_data[granularity], function(d){ return parseFloat(d[new_data_column]); }), function(d){ return !isNaN(d); });
   var jenks = _.filter(_.unique(ss.jenks(data_values, Math.min(5, data_values.length))), function(d){ return !isNaN(d); });
 
   //var color_palette = [ "#9ae3ff", "#45ccff", "#00adef", "#00709a", "#003245"];
-
 
   // trim lighter colours from palette (if necessary)
   color_palette = fixed_color_palette.slice(6 - jenks.length);
@@ -619,7 +652,6 @@ function changeNeighborhoodData(new_data_column, granularity) {
 	  } else if (granularity == 'geom_tract') {
 		  choropleth_data[granularity][d.tract] = +d[new_data_column];
 	  }
-
   });
 
   g.select("#neighborhoods").selectAll("path")
@@ -634,7 +666,6 @@ function changeNeighborhoodData(new_data_column, granularity) {
         return choro_color(all_data[d.properties.gis_id][new_data_column]);
       }
     })
-    .style("fill-opacity",0.8); // 0.8 normal, change to 0.3 when zooming into neighborhood
 
   if(new_data_column !== "no_neighborhood_data") {
     setVisMetric(new_data_column, all_data[activeId][new_data_column]);
@@ -682,9 +713,6 @@ function changeNeighborhoodData(new_data_column, granularity) {
     } else {
       return d;
     }
-
-
-
   };
 
   var updatedLegend = d3.select("#legend").selectAll(".legend")
@@ -716,6 +744,7 @@ function changeNeighborhoodData(new_data_column, granularity) {
     });
 
   updatedLegend.exit().remove();
+
 }
 
 function redrawPoints() {
@@ -942,30 +971,20 @@ function displayPopBox(d) {
   });
 }
 
-
 //zooming
 function zoomtoNeighborhood (d, isOverlayDraw) {
   console.log("zooming");
+
   var polyBounds = new google.maps.Polygon({
   paths: formatLatLng(d.geometry.coordinates[0])
   }).getBounds();
   gmap.fitBounds(polyBounds);
 
-  gmap.setZoom(gmap.getZoom() - 1);
-
-  gmap.setOptions({styles: gmap_style_zoom}); // change styling
-
-  // tmp trial on changing opacity
-  g.style("fill-opacity",0.2);
+  //gmap.setZoom(gmap.getZoom() - 1);
 }
 
 
 function highlightNeigborhood(d, isOverlayDraw) {
-  /*var polyBounds = new google.maps.Polygon({
-  paths: formatLatLng(d.geometry.coordinates[0])
-  }).getBounds();
-  gmap.fitBounds(polyBounds);*/
-
   console.log("highlighting");
 
   removeNarrative();
