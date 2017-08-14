@@ -310,7 +310,8 @@ function drawChoropleth(){
     //.defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data.csv")
     .defer(d3.csv, "data/BG_SEM.csv")
     .defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data_tract.csv")
-    .defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data_neighborhood.csv")
+    //.defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data_neighborhood.csv")
+    .defer(d3.csv, "data/NBH_SEM.csv")
 
     .defer(d3.csv, "data/source_SEM.csv")
     .await(setUpChoropleth);
