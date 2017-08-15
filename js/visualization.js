@@ -510,10 +510,14 @@ function drawChoropleth(){
       neighborhoods = g.append("g").attr("id", "neighborhoods");
       g.append("g").attr("id", "points");
       d3.select("#legend-container").append("svg")
-          .attr("height", 200)
+          .attr("height", 170)
 		  .attr("width", 170)
         .append("g")
           .attr("id", "legend");
+	  d3.select("#legend-container").append("p")
+		  .attr("id", "legend-comments");
+
+	  $("#legend-comments").text("Missing data shown as grey");
 
       overlay.draw = function() {
         var data_values = _.filter(_.map(choropleth_data, function(d){ return parseFloat(d[currentMetric]); }), function(d){ return !isNaN(d); });
