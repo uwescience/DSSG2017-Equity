@@ -82,9 +82,76 @@ var gmap_style=[
      "featureType": "administrative",
      "elementType": "labels",
      "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "road",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  }
+];
+
+var gmap_style_neighborhood=[
+  {
+    "featureType": "administrative",
+    "elementType": "geometry",
+    "stylers": [
       { "visibility": "on" }
     ]
   },{
+    "featureType": "poi",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "landscape.natural",
+    "stylers": [
+      { "color": "#ffffff" }
+    ]
+  },{
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [
+      { "color": "#f6f4f3" }
+    ]
+  },{
+    "elementType": "labels.icon",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "water",
+    "elementType": "labels",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      { "visibility": "on" },
+      { "color": "#cfddff" }
+    ]
+  },{
+     "featureType": "administrative",
+     "elementType": "labels",
+     "stylers": [
+      { "visibility": "on" },
+    ]
+  },{
+    "featureType": "administrative",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#000000"
+      }
+    ]
+  },
+  {
     "featureType": "road",
     "elementType": "labels",
     "stylers": [
@@ -625,7 +692,10 @@ function changeNeighborhoodData(new_data_column, granularity) {
   if (gmap.getZoom() >= 13) {
     neighborhoods.selectAll("path").style("fill-opacity",0.3);
     gmap.setOptions({styles: gmap_style_zoom});
-  } else if (gmap.getZoom() <= 12) {
+  } else if (gmap.getZoom() == 12) {
+    neighborhoods.selectAll("path").style("fill-opacity",0.8);
+    gmap.setOptions({styles: gmap_style_neighborhood});
+  } else if (gmap.getZoom() <= 11) {
     neighborhoods.selectAll("path").style("fill-opacity",0.8);
     gmap.setOptions({styles: gmap_style});
   }
