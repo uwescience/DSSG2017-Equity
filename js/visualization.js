@@ -31,6 +31,7 @@ var bg_map, raw_bg_map, raw_ct_map, raw_nb_map, raw_bg_data, raw_ct_data, raw_nb
 var col_data = [];
 var data_prct = [];
 
+// default style for city-scale map
 var gmap_style=[
   {
     "featureType": "administrative",
@@ -43,13 +44,7 @@ var gmap_style=[
     "stylers": [
       { "visibility": "off" }
     ]
-  },/*{
-    "featureType": "landscape.man_made",
-    'elementType': 'geometry.stroke',
-    "stylers": [
-      { "color": "#000000" }
-    ]
-  },*/{
+  },{
     "featureType": "landscape.natural",
     "stylers": [
       { "visibility": "off" }
@@ -88,13 +83,12 @@ var gmap_style=[
     "featureType": "road",
     "elementType": "labels",
     "stylers": [
-      {
-        "visibility": "off"
-      }
+      { "visibility": "off" }
     ]
   }
 ];
 
+// intermediate display style, with neighborhood labels
 var gmap_style_neighborhood=[
   {
     "featureType": "administrative",
@@ -146,18 +140,14 @@ var gmap_style_neighborhood=[
     "featureType": "administrative",
     "elementType": "labels.text.fill",
     "stylers": [
-      {
-        "color": "#000000"
-      }
+      { "color": "#000000" }
     ]
   },
   {
     "featureType": "road",
     "elementType": "labels",
     "stylers": [
-      {
-        "visibility": "off"
-      }
+      { "visibility": "off" }
     ]
   }
 ];
@@ -202,24 +192,6 @@ var gmap_style_zoom = [
     "elementType": 'geometry',
     "stylers": [{"color": '#000000'}]
   },
-  /*{
-    "featureType": "transit.station.bus",
-    "elementType": "labels.icon",
-    "stylers": [
-      {
-        "visibility": "on"
-      }
-    ]
-  },
-  {
-    "featureType": "transit.station.rail",
-    "elementType": "labels.icon",
-    "stylers": [
-      {
-        "visibility": "on"
-      }
-    ]
-  },*/
   {
     'featureType': 'road.highway',
     'elementType': 'geometry',
@@ -247,9 +219,17 @@ var gmap_style_zoom = [
     ]
   },
   {
+    "featureType": "poi",
     "elementType": "labels.icon",
     "stylers": [
       { "visibility": "off" }
+    ]
+  },
+  {
+    "featureType": "transit.station",
+    "elementType": "labels.icon",
+    "stylers": [
+      { "visibility": "on" }
     ]
   },
   {
@@ -276,9 +256,7 @@ var gmap_style_zoom = [
     "featureType": "road",
     "elementType": "labels",
     "stylers": [
-      {
-        "visibility": "off"
-      }
+      { "visibility": "off" }
     ]
   }
 ]
