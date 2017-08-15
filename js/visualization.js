@@ -31,6 +31,7 @@ var bg_map, raw_bg_map, raw_ct_map, raw_nb_map, raw_bg_data, raw_ct_data, raw_nb
 var col_data = [];
 var data_prct = [];
 
+// default style for city-scale map
 var gmap_style=[
   {
     "featureType": "administrative",
@@ -43,16 +44,10 @@ var gmap_style=[
     "stylers": [
       { "visibility": "off" }
     ]
-  },/*{
-    "featureType": "landscape.man_made",
-    'elementType': 'geometry.stroke',
-    "stylers": [
-      { "color": "#000000" }
-    ]
-  },*/{
+  },{
     "featureType": "landscape.natural",
     "stylers": [
-      { "color": "#ffffff" }
+      { "visibility": "off" }
     ]
   },{
     "featureType": "road",
@@ -82,15 +77,77 @@ var gmap_style=[
      "featureType": "administrative",
      "elementType": "labels",
      "stylers": [
-      { "visibility": "on" }
+      { "visibility": "off" }
     ]
   },{
     "featureType": "road",
     "elementType": "labels",
     "stylers": [
-      {
-        "visibility": "off"
-      }
+      { "visibility": "off" }
+    ]
+  }
+];
+
+// intermediate display style, with neighborhood labels
+var gmap_style_neighborhood=[
+  {
+    "featureType": "administrative",
+    "elementType": "geometry",
+    "stylers": [
+      { "visibility": "on" }
+    ]
+  },{
+    "featureType": "poi",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "landscape.natural",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [
+      { "color": "#f6f4f3" }
+    ]
+  },{
+    "elementType": "labels.icon",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "water",
+    "elementType": "labels",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      { "visibility": "on" },
+      { "color": "#cfddff" }
+    ]
+  },{
+     "featureType": "administrative",
+     "elementType": "labels",
+     "stylers": [
+      { "visibility": "on" },
+    ]
+  },{
+    "featureType": "administrative",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      { "color": "#000000" }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels",
+    "stylers": [
+      { "visibility": "off" }
     ]
   }
 ];
@@ -135,24 +192,6 @@ var gmap_style_zoom = [
     "elementType": 'geometry',
     "stylers": [{"color": '#000000'}]
   },
-  /*{
-    "featureType": "transit.station.bus",
-    "elementType": "labels.icon",
-    "stylers": [
-      {
-        "visibility": "on"
-      }
-    ]
-  },
-  {
-    "featureType": "transit.station.rail",
-    "elementType": "labels.icon",
-    "stylers": [
-      {
-        "visibility": "on"
-      }
-    ]
-  },*/
   {
     'featureType': 'road.highway',
     'elementType': 'geometry',
@@ -180,9 +219,17 @@ var gmap_style_zoom = [
     ]
   },
   {
+    "featureType": "poi",
     "elementType": "labels.icon",
     "stylers": [
       { "visibility": "off" }
+    ]
+  },
+  {
+    "featureType": "transit.station",
+    "elementType": "labels.icon",
+    "stylers": [
+      { "visibility": "on" }
     ]
   },
   {
@@ -209,9 +256,7 @@ var gmap_style_zoom = [
     "featureType": "road",
     "elementType": "labels",
     "stylers": [
-      {
-        "visibility": "off"
-      }
+      { "visibility": "off" }
     ]
   }
 ]
@@ -309,8 +354,10 @@ function drawChoropleth(){
 
     //.defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data.csv")
     .defer(d3.csv, "data/BG_SEM.csv")
-    .defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data_tract.csv")
-    .defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data_neighborhood.csv")
+    //.defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data_tract.csv")
+    //.defer(d3.csv, "data/scripts/outputs/acs_blockgroup_data_neighborhood.csv")
+    .defer(d3.csv, "data/tract_SEM.csv")
+    .defer(d3.csv, "data/NBH_SEM.csv")
 
     .defer(d3.csv, "data/source_SEM.csv")
     .await(setUpChoropleth);
@@ -463,10 +510,14 @@ function drawChoropleth(){
       neighborhoods = g.append("g").attr("id", "neighborhoods");
       g.append("g").attr("id", "points");
       d3.select("#legend-container").append("svg")
-          .attr("height", 200)
+          .attr("height", 170)
 		  .attr("width", 170)
         .append("g")
           .attr("id", "legend");
+	  d3.select("#legend-container").append("p")
+		  .attr("id", "legend-comments");
+
+	  $("#legend-comments").text("Missing data shown as grey");
 
       overlay.draw = function() {
         var data_values = _.filter(_.map(choropleth_data, function(d){ return parseFloat(d[currentMetric]); }), function(d){ return !isNaN(d); });
@@ -623,7 +674,10 @@ function changeNeighborhoodData(new_data_column, granularity) {
   if (gmap.getZoom() >= 13) {
     neighborhoods.selectAll("path").style("fill-opacity",0.3);
     gmap.setOptions({styles: gmap_style_zoom});
-  } else if (gmap.getZoom() <= 12) {
+  } else if (gmap.getZoom() == 12) {
+    neighborhoods.selectAll("path").style("fill-opacity",0.8);
+    gmap.setOptions({styles: gmap_style_neighborhood});
+  } else if (gmap.getZoom() <= 11) {
     neighborhoods.selectAll("path").style("fill-opacity",0.8);
     gmap.setOptions({styles: gmap_style});
   }
@@ -659,8 +713,7 @@ function changeNeighborhoodData(new_data_column, granularity) {
     .style("fill", function(d) {
       if(typeof all_data[d.properties.gis_id] ==="undefined" ||
         all_data[d.properties.gis_id].population_total < min_population ||
-        !all_data[d.properties.gis_id][new_data_column] ||
-        all_data[d.properties.gis_id][currentMetric] === '0'){
+        !all_data[d.properties.gis_id][new_data_column]){
         return defaultColor;
       } else {
         return choro_color(all_data[d.properties.gis_id][new_data_column]);
@@ -709,9 +762,9 @@ function changeNeighborhoodData(new_data_column, granularity) {
       return "$" + number_formatter(parseInt(d, 10));
     } else if(column.split("_").pop() == 'ratio'){
       num = Math.round(d * 100)/100;
-      return num;
+      return num.toLocaleString(2);
     } else {
-      return d;
+      return d.toLocaleString(2);
     }
   };
 

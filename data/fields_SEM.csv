@@ -1,4 +1,11 @@
 id,name,type,category,new
+population_total,Total population,neighborhood,General,
+population_female_perc,Female population,neighborhood,General,
+population_male_perc,Male population,neighborhood,General,
+perc_under18,18 and under population,neighborhood,General,
+perc_19to34,19 to 34 population,neighborhood,General,
+perc_35to64,35 to 64 population,neighborhood,General,
+perc_over65,65 and over population,neighborhood,General,
 socio_status,Overall Score,neighborhood,Socioeconomic well-being,
 median_household_income,Median household income,neighborhood,Socioeconomic well-being,
 per_capita_income,Per capita income,neighborhood,Socioeconomic well-being,
@@ -16,7 +23,7 @@ num_stops_area_norm,Number of bus stops per unit area,neighborhood,Mobility Infr
 num_trips_area_norm,Number of unique bus trips available per unit area,neighborhood,Mobility Infrastructure
 sidewalk_availability,Sidewalk availability (unit length of sidewalks divided by unit area),neighborhood,Mobility Infrastructure
 total_bikelanes,Bike lane availability (unit length of bike lanes divided by unit area),neighborhood,Mobility Infrastructure
-connectivity, Overall score,neighborhood,Connectivity
+connectivity,Overall score,neighborhood,Connectivity
 walk_time_LR,Walking time to a light rail station,neighborhood,Connectivity
 tran_time_LR,Public transit time to a light rail station,neighborhood,Connectivity
 walkscore,Walk score,neighborhood,Connectivity
