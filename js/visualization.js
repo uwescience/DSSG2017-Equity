@@ -407,6 +407,7 @@ function drawChoropleth(){
 	   });
     });
     nb_data.forEach(function(d) {
+	  d["NBH_NAMES"] = d.neighborhood;
       all_data[d.neighborhood] = d; //used for colour
       choropleth_data['geom_nb'][d.neighborhood] = +d.population_total;
 	    Object.keys(d).forEach(function(e) {
