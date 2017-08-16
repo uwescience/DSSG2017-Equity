@@ -26,10 +26,11 @@ function choro_color() {return fixed_color_palette[0]};
 var currentMetric = null;
 var highlightedNeighborhood = null;
 var geom_granularity = null;
-var bg_map, raw_bg_map, raw_ct_map, raw_nb_map, raw_bg_data, raw_ct_data, raw_nb_data;
+var bg_map, raw_bg_map, raw_ct_map, raw_nb_map, raw_bg_data, raw_ct_data, raw_nb_data, raw_jenks;
 
 var col_data = [];
 var data_prct = [];
+var fields_format = {};
 
 // default style for city-scale map
 var gmap_style=[
@@ -365,6 +366,13 @@ function drawChoropleth(){
   function setUpChoropleth(error, fields, bg_map, ct_map, nb_map, bg_data, ct_data, nb_data, source) {
     populateNavPanel(fields);
 
+	fields_format = fields;
+
+	fields.forEach(function(d) {
+	  console.log("field:"+d.id+",  legend_format:"+d.legend_format+",  reverse:"+d.reverse);
+	  fields_format[d.id] = [d.legend_format, d.reverse];
+	});
+
     //clean choropleth data for display.
     raw_bg_map = bg_map;
     raw_ct_map = ct_map;
@@ -688,11 +696,14 @@ function changeNeighborhoodData(new_data_column, granularity) {
   }
   var data_values = _.filter(_.map(choropleth_data[granularity], function(d){ return parseFloat(d[new_data_column]); }), function(d){ return !isNaN(d); });
   var jenks = _.filter(_.unique(ss.jenks(data_values, Math.min(5, data_values.length))), function(d){ return !isNaN(d); });
+  raw_jenks = jenks;
 
   //var color_palette = [ "#9ae3ff", "#45ccff", "#00adef", "#00709a", "#003245"];
 
   // trim lighter colours from palette (if necessary)
-  color_palette = fixed_color_palette.slice(6 - jenks.length);
+  color_palette = fields_format[new_data_column][1] == 'y' ?
+  	fixed_color_palette.slice(6 - jenks.length).reverse() : fixed_color_palette.slice(6 - jenks.length);
+
 
   activeData = new_data_column;
   choro_color = d3.scale.threshold()
@@ -736,7 +747,7 @@ function changeNeighborhoodData(new_data_column, granularity) {
     return _.max(_.filter(a, function(d){ return d < n; } ));
   };
 
-  var legendText = function(d, jenks){
+  var legendText = function(d, i, jenks){
     if(d == _.min(jenks)) {
       if (zeroElement) { return "0"; }
       return "Less than " + legendNumber(d);
@@ -744,28 +755,26 @@ function changeNeighborhoodData(new_data_column, granularity) {
       if (jenks.length === 0) { return "0 and above"; }
       return legendNumber(_.max(jenks)) + " and above";
     } else {
-      return legendNumber(previousElement(d, jenks)) + " - " + legendNumber(d);
+      return legendNumber(previousElement(d, jenks)) + " to " + legendNumber(d);
     }
   };
 
   drawChart(new_data_column, activeId); //used to be in below function
 
-  var legendNumber = function(d, typeDef){
-    var column = String([new_data_column]);
-    var number_formatter = d3.format(",");
-    if (column.split("_").pop() == 'perc'){
-      return parseInt(d * 100, 10) + "%";
-    } else if(column.split("_").pop() == 'val'){
-      num = Math.round(d);
-      return number_formatter(parseInt(d, 10));
-    } else if(column.split("_").pop() == 'cur'){
-      return "$" + number_formatter(parseInt(d, 10));
-    } else if(column.split("_").pop() == 'ratio'){
-      num = Math.round(d * 100)/100;
-      return num.toLocaleString(2);
-    } else {
-      return d.toLocaleString(2);
-    }
+  var legendNumber = function(d) {
+	var num = parseFloat(d);
+	switch(fields_format[new_data_column][0]) {
+      case "perc":
+        return d3.format(".0%")(num);
+      case "val":
+        return d3.format(",.2r")(num);
+      case "curr":
+        return d3.format("$,.0f")(num);
+      case "minutes":
+        return d3.format(",.0f")(num);
+	  default:
+	  	return d3.format(",.2r")(num);
+	}
   };
 
   var updatedLegend = d3.select("#legend").selectAll(".legend")
@@ -788,10 +797,11 @@ function changeNeighborhoodData(new_data_column, granularity) {
     .attr("text-anchor", "middle");
 
   updatedLegend.select("text")
-    .text(function(d){ return legendText(d, jenks.slice(1,-1));});
+    .text(function(d, i){ return legendText(d, i, jenks.slice(1,-1));});
 
   updatedLegend.select("rect")
     .style("fill", function(d, i) {
+	  console.log("d="+d+", i="+i);
       if (zeroElement && jenks.length - i === 2) { return defaultColor; };
       return color_palette[color_palette.length - i - 1];
     });
@@ -1125,29 +1135,23 @@ function hoverNeighborhood(d) {
 //typeDef = The type of value (perc = percentage, val = a number, cur = a dollar amount)
 function getDisplayValue(strNum, name, typeDef) {
   var num = parseFloat(strNum);
-  var number_formatter = d3.format(",");
 
-  if (isNaN(num)) { return strNum; }
-
-  name = name.toLowerCase();
-
-  switch(typeDef) {
-    case "perc":
-      return parseInt(Math.round(num * 100), 10) + "%";
-    case "val":
-      num = Math.round(num);
-      return number_formatter(parseInt(num, 10));
-    case "cur":
-      return "$" + number_formatter(parseInt(num, 10));
-    case "ratio":
-      num = Math.round(num * 100)/100;
-      return num;
+  if (!(name in fields_format)) {
+	  return d3.format(",")(num);
   }
 
-  // just return the number if we can't figure out what type of value it is.
-  num = Math.round(num);
-  return number_formatter(parseInt(num, 10));
-
+  switch(fields_format[name][0]) {
+	case "perc":
+	  return d3.format(".1%")(num);
+	case "val":
+	  return d3.format(",")(num);
+	case "curr":
+	  return d3.format("$,.2f")(num);
+	case "minutes":
+	  return d3.format(",.1f")(num);
+	default:
+	  return d3.format(",")(num);
+  }
 }
 
 function setVisMetric(metric, val, clear) {
