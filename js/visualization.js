@@ -608,7 +608,7 @@ function changeNeighborhoodGranularity(data_name, gran_map) {
 
 function populateNavPanel(data) {
   var fieldTemplate = _.template(
-        '<li><a id="<%= field.id %>" href="#"><%- field.name %> <% if (field.new === "TRUE") { %><span class="label label-danger">New</span></a><% } %></li>',
+        '<li><a id="<%= field.id %>" href="#">&emsp;<%- field.name %> <% if (field.new === "TRUE") { %><span class="label label-danger">New</span></a><% } %></li>',
         { variable: 'field' }
       ),
       categoryTemplate = _.template('<li class="nav-header disabled"><a><%=category%></a></li>', {variable: 'category'});
