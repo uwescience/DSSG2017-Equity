@@ -324,7 +324,7 @@ div#legend-panel {
   bottom: 90px;
   left: 15px;
   width: 200px;
-  height: 200px;
+  height: 220px;
   display: none;
 }
 
@@ -343,6 +343,14 @@ div#legend-panel {
 .stepFour { background: #9ad363;}
 .stepFive { background: #6eb43f;}
 
+#legend-comments {
+  font-size: 12px;
+  color: #696969;
+  font-style: italic;
+  display: block;
+  margin-top: 3px;
+  text-align: center;
+}
 
 h4.school-name {
   cursor: pointer;

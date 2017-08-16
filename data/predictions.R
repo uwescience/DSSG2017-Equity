@@ -68,7 +68,24 @@ final.preds.fun("fam_upper")
 
 
 
+home <- read.csv("predictions_median_home_value.csv")
+unit <- read.csv("predictions_occupied_housing_units.csv")
+transit <- read.csv("predictions_avg_transit_time.csv")
+fam <- read.csv("predictions_fam_upper.csv")
 
+translation <- read.csv("Housing_indicators.csv")
+block_group <- translation$block_group
+block_group <- rep(block_group,5)
+
+home <- cbind(block_group, home)
+unit <- cbind(block_group, unit)
+transit <- cbind(block_group, transit)
+fam <- cbind(block_group, fam)
+
+write.csv(home, "predictions_median_home_value.csv")
+write.csv(unit, "predictions_occupied_housing_units.csv")
+write.csv(transit, "predictions_avg_transit_time.csv")
+write.csv(fam, "predictions_fam_upper.csv")
 
 
 
