@@ -31,6 +31,7 @@ var bg_map, raw_bg_map, raw_ct_map, raw_nb_map, raw_bg_data, raw_ct_data, raw_nb
 var col_data = [];
 var data_prct = [];
 var fields_format = {};
+var nbh_names = {};
 
 // default style for city-scale map
 var gmap_style=[
@@ -348,6 +349,7 @@ function drawChoropleth(){
   queue()
     //.defer(d3.csv, "data/fields_trial.csv")
     .defer(d3.csv, "data/fields_SEM.csv")
+	.defer(d3.csv, "data/NBH_names.csv")
 
     .defer(d3.json, "data/cityBG_simp20_trial.geojson")
     .defer(d3.json, "data/cityCT_simp20_export.geojson")
@@ -363,7 +365,7 @@ function drawChoropleth(){
     .defer(d3.csv, "data/source_SEM.csv")
     .await(setUpChoropleth);
 
-  function setUpChoropleth(error, fields, bg_map, ct_map, nb_map, bg_data, ct_data, nb_data, source) {
+  function setUpChoropleth(error, fields, nb_names, bg_map, ct_map, nb_map, bg_data, ct_data, nb_data, source) {
     populateNavPanel(fields);
 
 	fields_format = fields;
@@ -386,6 +388,10 @@ function drawChoropleth(){
 	choropleth_data['geom_tract'] = ct_data;
 	choropleth_data['geom_nb'] = nb_data;
 
+	nb_names.forEach(function(d) {
+	  nbh_names[d.CRA_NO] = d.CRA_NAME;
+  });
+
     bg_data.forEach(function(d) {
       all_data[d.block_group] = d; //used for colour
       choropleth_data['geom_bg'][d.block_group] = +d.population_total;
@@ -407,7 +413,7 @@ function drawChoropleth(){
 	   });
     });
     nb_data.forEach(function(d) {
-	  d["NBH_NAMES"] = d.neighborhood;
+	  d["NBH_NAMES"] = nbh_names[d.neighborhood];
       all_data[d.neighborhood] = d; //used for colour
       choropleth_data['geom_nb'][d.neighborhood] = +d.population_total;
 	    Object.keys(d).forEach(function(e) {
@@ -1038,7 +1044,7 @@ function displayPopBox(d) {
   $.each($popbox.find("tr"), function(k, row){
     key = $(row).attr("data-type");
     val = highlighted[key];
-    typeDef = key.slice(key.lastIndexOf("_") + 1);
+    typeDef = key in fields_format ? fields_format[key][0] : "val";
     $(row).find(".count").html(getDisplayValue(val, key, typeDef));
   });
 }
@@ -1143,13 +1149,10 @@ function hoverNeighborhood(d) {
 //name = The Display Name.
 //typeDef = The type of value (perc = percentage, val = a number, cur = a dollar amount)
 function getDisplayValue(strNum, name, typeDef) {
+  console.log("getDisplayValue("+strNum+", "+name+", "+typeDef+")");
   var num = parseFloat(strNum);
 
-  if (!(name in fields_format)) {
-	  return d3.format(",")(num);
-  }
-
-  switch(fields_format[name][0]) {
+  switch(typeDef) {
 	case "perc":
 	  return d3.format(".1%")(num);
 	case "val":
@@ -1166,6 +1169,7 @@ function getDisplayValue(strNum, name, typeDef) {
 function setVisMetric(metric, val, clear) {
   var $metric = $("#visualized-metric");
   var $metricDesc = $("#visualized-measure");
+  var typeDef;
 
   if (clear) {
     $metric.text("");
@@ -1173,15 +1177,12 @@ function setVisMetric(metric, val, clear) {
     return;
   }
 
-  var $metricType = $("a#" + metric);
-  if($metricType.length > 0) {
-    var metricText = $metricType.text();
-    var typeDef = $metricType[0].id;
-    typeDef = typeDef.slice(typeDef.lastIndexOf("_") + 1);
-    $metric.text(metricText);
-    var newDesc = activeId === 'sea' ? '' : val === "" ? "N/A" : getDisplayValue(val, metricText, typeDef);
-    $metricDesc.text(newDesc);
-  }
+  typeDef = metric in fields_format ? fields_format[metric][0] : "val";
+
+  var metricText = $("a#" + metric).text();
+  $metric.text(metricText);
+  var newDesc = activeId === 'sea' ? '' : val === "" ? "N/A" : getDisplayValue(val, metric, typeDef);
+  $metricDesc.text(newDesc);
 }
 
 function formatLatLng(coords){
