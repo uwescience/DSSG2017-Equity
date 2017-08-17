@@ -26,10 +26,12 @@ function choro_color() {return fixed_color_palette[0]};
 var currentMetric = null;
 var highlightedNeighborhood = null;
 var geom_granularity = null;
-var bg_map, raw_bg_map, raw_ct_map, raw_nb_map, raw_bg_data, raw_ct_data, raw_nb_data;
+var bg_map, raw_bg_map, raw_ct_map, raw_nb_map, raw_bg_data, raw_ct_data, raw_nb_data, raw_jenks;
 
 var col_data = [];
 var data_prct = [];
+var fields_format = {};
+var nbh_names = {};
 
 // default style for city-scale map
 var gmap_style=[
@@ -347,6 +349,7 @@ function drawChoropleth(){
   queue()
     //.defer(d3.csv, "data/fields_trial.csv")
     .defer(d3.csv, "data/fields_SEM.csv")
+	.defer(d3.csv, "data/NBH_names.csv")
 
     .defer(d3.json, "data/cityBG_simp20_trial.geojson")
     .defer(d3.json, "data/cityCT_simp20_export.geojson")
@@ -362,8 +365,15 @@ function drawChoropleth(){
     .defer(d3.csv, "data/source_SEM.csv")
     .await(setUpChoropleth);
 
-  function setUpChoropleth(error, fields, bg_map, ct_map, nb_map, bg_data, ct_data, nb_data, source) {
+  function setUpChoropleth(error, fields, nb_names, bg_map, ct_map, nb_map, bg_data, ct_data, nb_data, source) {
     populateNavPanel(fields);
+
+	fields_format = fields;
+
+	fields.forEach(function(d) {
+	  console.log("field:"+d.id+",  legend_format:"+d.legend_format+",  reverse:"+d.reverse);
+	  fields_format[d.id] = [d.legend_format, d.reverse];
+	});
 
     //clean choropleth data for display.
     raw_bg_map = bg_map;
@@ -377,6 +387,10 @@ function drawChoropleth(){
 	choropleth_data['geom_bg'] = bg_data;
 	choropleth_data['geom_tract'] = ct_data;
 	choropleth_data['geom_nb'] = nb_data;
+
+	nb_names.forEach(function(d) {
+	  nbh_names[d.CRA_NO] = d.CRA_NAME;
+  });
 
     bg_data.forEach(function(d) {
       all_data[d.block_group] = d; //used for colour
@@ -399,6 +413,7 @@ function drawChoropleth(){
 	   });
     });
     nb_data.forEach(function(d) {
+	  d["NBH_NAMES"] = nbh_names[d.neighborhood];
       all_data[d.neighborhood] = d; //used for colour
       choropleth_data['geom_nb'][d.neighborhood] = +d.population_total;
 	    Object.keys(d).forEach(function(e) {
@@ -600,7 +615,7 @@ function changeNeighborhoodGranularity(data_name, gran_map) {
 
 function populateNavPanel(data) {
   var fieldTemplate = _.template(
-        '<li><a id="<%= field.id %>" href="#"><%- field.name %> <% if (field.new === "TRUE") { %><span class="label label-danger">New</span></a><% } %></li>',
+        '<li><a id="<%= field.id %>" href="#">&emsp;<%- field.name %> <% if (field.new === "TRUE") { %><span class="label label-danger">New</span></a><% } %></li>',
         { variable: 'field' }
       ),
       categoryTemplate = _.template('<li class="nav-header disabled"><a><%=category%></a></li>', {variable: 'category'});
@@ -686,13 +701,16 @@ function changeNeighborhoodData(new_data_column, granularity) {
     neighborhoods.selectAll("path").style("fill-opacity",0.1);
     return;
   }
+
   var data_values = _.filter(_.map(choropleth_data[granularity], function(d){ return parseFloat(d[new_data_column]); }), function(d){ return !isNaN(d); });
   var jenks = _.filter(_.unique(ss.jenks(data_values, Math.min(5, data_values.length))), function(d){ return !isNaN(d); });
+  raw_jenks = jenks;
 
   //var color_palette = [ "#9ae3ff", "#45ccff", "#00adef", "#00709a", "#003245"];
 
   // trim lighter colours from palette (if necessary)
-  color_palette = fixed_color_palette.slice(6 - jenks.length);
+  color_palette = (new_data_column in fields_format && fields_format[new_data_column][1] == 'y') ?
+  	fixed_color_palette.slice(6 - jenks.length).reverse() : fixed_color_palette.slice(6 - jenks.length);
 
   activeData = new_data_column;
   choro_color = d3.scale.threshold()
@@ -720,14 +738,16 @@ function changeNeighborhoodData(new_data_column, granularity) {
       }
     })
 
-  if(new_data_column !== "no_neighborhood_data") {
-    setVisMetric(new_data_column, all_data[activeId][new_data_column]);
-  } else {
+	if (new_data_column == "no_neighborhood_data") {
     setVisMetric(null, null, true);
-    removePoints("clear");
-    $(".selected").removeClass("selected");
-    $("#details p.lead").hide();
-    $("#legend-panel").hide();
+	removePoints("clear");
+  	setTimeout(function() {
+	  $(".selected").removeClass("selected");
+      $("#details p.lead").hide();
+      $("#legend-panel").hide();
+    }, 50);
+  } else {
+  	setVisMetric(new_data_column, all_data[activeId][new_data_column]);
   }
 
   var zeroElement = jenks[0] === 0 && jenks[1] === 1;
@@ -736,7 +756,7 @@ function changeNeighborhoodData(new_data_column, granularity) {
     return _.max(_.filter(a, function(d){ return d < n; } ));
   };
 
-  var legendText = function(d, jenks){
+  var legendText = function(d, i, jenks){
     if(d == _.min(jenks)) {
       if (zeroElement) { return "0"; }
       return "Less than " + legendNumber(d);
@@ -744,28 +764,26 @@ function changeNeighborhoodData(new_data_column, granularity) {
       if (jenks.length === 0) { return "0 and above"; }
       return legendNumber(_.max(jenks)) + " and above";
     } else {
-      return legendNumber(previousElement(d, jenks)) + " - " + legendNumber(d);
+      return legendNumber(previousElement(d, jenks)) + " to " + legendNumber(d);
     }
   };
 
   drawChart(new_data_column, activeId); //used to be in below function
 
-  var legendNumber = function(d, typeDef){
-    var column = String([new_data_column]);
-    var number_formatter = d3.format(",");
-    if (column.split("_").pop() == 'perc'){
-      return parseInt(d * 100, 10) + "%";
-    } else if(column.split("_").pop() == 'val'){
-      num = Math.round(d);
-      return number_formatter(parseInt(d, 10));
-    } else if(column.split("_").pop() == 'cur'){
-      return "$" + number_formatter(parseInt(d, 10));
-    } else if(column.split("_").pop() == 'ratio'){
-      num = Math.round(d * 100)/100;
-      return num.toLocaleString(2);
-    } else {
-      return d.toLocaleString(2);
-    }
+  var legendNumber = function(d) {
+	var num = parseFloat(d);
+	switch(fields_format[new_data_column][0]) {
+      case "perc":
+        return d3.format(".0%")(num);
+      case "val":
+        return d3.format(",.2r")(num);
+      case "curr":
+        return d3.format("$,.0f")(num);
+      case "minutes":
+        return d3.format(",.0f")(num);
+	  default:
+	  	return d3.format(",.2r")(num);
+	}
   };
 
   var updatedLegend = d3.select("#legend").selectAll(".legend")
@@ -788,10 +806,11 @@ function changeNeighborhoodData(new_data_column, granularity) {
     .attr("text-anchor", "middle");
 
   updatedLegend.select("text")
-    .text(function(d){ return legendText(d, jenks.slice(1,-1));});
+    .text(function(d, i){ return legendText(d, i, jenks.slice(1,-1));});
 
   updatedLegend.select("rect")
     .style("fill", function(d, i) {
+	  console.log("d="+d+", i="+i);
       if (zeroElement && jenks.length - i === 2) { return defaultColor; };
       return color_palette[color_palette.length - i - 1];
     });
@@ -921,7 +940,13 @@ function removePoints(type) {
 var tmp_bins, tmp_x, tmp_y, tmp_bar;
 
 function drawChart(data_column, activeId){
-  d3.select(".chart").select("svg").remove();
+  d3.select("div.chart").select("svg").remove();
+  $("h4.chart").show();
+  d3.select("h4.chart").html("Distribution across Seattle");
+  if (!(data_column in col_data)) {
+	  $("h4.chart").hide();
+	  return;
+  }
   chartSvg = d3.select(".chart").append("svg").attr("width",chartWidth).attr("height",chartHeight)
     .append("g")
     .attr("transform","translate(" + chartMargin.left + "," + chartMargin.top + ")");
@@ -1019,7 +1044,7 @@ function displayPopBox(d) {
   $.each($popbox.find("tr"), function(k, row){
     key = $(row).attr("data-type");
     val = highlighted[key];
-    typeDef = key.slice(key.lastIndexOf("_") + 1);
+    typeDef = key in fields_format ? fields_format[key][0] : "val";
     $(row).find(".count").html(getDisplayValue(val, key, typeDef));
   });
 }
@@ -1124,35 +1149,27 @@ function hoverNeighborhood(d) {
 //name = The Display Name.
 //typeDef = The type of value (perc = percentage, val = a number, cur = a dollar amount)
 function getDisplayValue(strNum, name, typeDef) {
+  console.log("getDisplayValue("+strNum+", "+name+", "+typeDef+")");
   var num = parseFloat(strNum);
-  var number_formatter = d3.format(",");
-
-  if (isNaN(num)) { return strNum; }
-
-  name = name.toLowerCase();
 
   switch(typeDef) {
-    case "perc":
-      return parseInt(Math.round(num * 100), 10) + "%";
-    case "val":
-      num = Math.round(num);
-      return number_formatter(parseInt(num, 10));
-    case "cur":
-      return "$" + number_formatter(parseInt(num, 10));
-    case "ratio":
-      num = Math.round(num * 100)/100;
-      return num;
+	case "perc":
+	  return d3.format(".1%")(num);
+	case "val":
+	  return d3.format(",")(num);
+	case "curr":
+	  return d3.format("$,.2f")(num);
+	case "minutes":
+	  return d3.format(",.1f")(num);
+	default:
+	  return d3.format(",")(num);
   }
-
-  // just return the number if we can't figure out what type of value it is.
-  num = Math.round(num);
-  return number_formatter(parseInt(num, 10));
-
 }
 
 function setVisMetric(metric, val, clear) {
   var $metric = $("#visualized-metric");
   var $metricDesc = $("#visualized-measure");
+  var typeDef;
 
   if (clear) {
     $metric.text("");
@@ -1160,15 +1177,12 @@ function setVisMetric(metric, val, clear) {
     return;
   }
 
-  var $metricType = $("a#" + metric);
-  if($metricType.length > 0) {
-    var metricText = $metricType.text();
-    var typeDef = $metricType[0].id;
-    typeDef = typeDef.slice(typeDef.lastIndexOf("_") + 1);
-    $metric.text(metricText);
-    var newDesc = activeId === 'sea' ? '' : val === "" ? "N/A" : getDisplayValue(val, metricText, typeDef);
-    $metricDesc.text(newDesc);
-  }
+  typeDef = metric in fields_format ? fields_format[metric][0] : "val";
+
+  var metricText = $("a#" + metric).text();
+  $metric.text(metricText);
+  var newDesc = activeId === 'sea' ? '' : val === "" ? "N/A" : getDisplayValue(val, metric, typeDef);
+  $metricDesc.text(newDesc);
 }
 
 function formatLatLng(coords){
