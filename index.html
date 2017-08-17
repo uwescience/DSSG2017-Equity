@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no">
-  <title>Indicators of Gentrification and Inequity in Seattle</title>
+  <title>Equity Modeler</title>
   <link href='//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/style.css" />
@@ -23,8 +23,8 @@
     <button class="btn btn-danger pull-right hidden-xs" data-toggle="modal" data-target="#myModal">
       Project Description
     </button>
-    <h1 style="font-size: 30px !important">Indicators of Gentrification and Inequity in Seattle</h1>
-    <p class="intro" style="font-size:1em !important;">This interactive mapping tool investigates the ongoing gentrification and inequitable access to opportunities across Seattle’s neighborhoods. The project uses publically available data to map equity indicators on the city and neighborhood scale. Based on a structural equation model, it establishes and predicts relationships between indicators and analyzes policies intended to initiate positive change. The tool allows stakeholders in the city’s development process to analyze, model, and visualize existing trends and the impact of potential changes in the built environment.</p>
+    <h1 style="font-size: 30px !important">Equity Modeler</h1>
+    <p class="intro" style="font-size:18px !important;">Visualizing equity indicators and modeling their correlation to support positive change.</p>
     <!--
 	<div class="social-media pull-right">
       <a href="https://twitter.com/share" class="twitter-share-button" data-text="See how children fare in your neighborhood with Data Tools 2.0" data-via="ActforDChildren">Tweet</a>
@@ -87,12 +87,11 @@
 </span>
   </li>
   <li>
-    <a id="no_neighborhood_data" href="#"><button type="button" class="btn btn-danger btn-sm" style="width:100%"><span class="glyphicon glyphicon-trash"></span>Clear selection</button></a></li>
+    <a id="no_neighborhood_data" href="#"><button type="button" class="btn btn-danger btn-sm" style="width:100%"><span class="glyphicon glyphicon-trash"></span> Clear selection</button></a></li>
 </ul>
 <div id="nav-panel-inner" class="posabs">
-    <h4 class="hidden-xs">School data</h4>
+	<h4 class="hidden-xs">Points of interest</h4>
     <ul class="nav nav-pills nav-stacked schools-menu points-menu hidden-xs"></ul>
-    <h4 class="hidden-xs">Points of interest</h4>
     <ul class="nav nav-pills nav-stacked poi-menu points-menu hidden-xs"></ul>
     <h4>Themes</h4>
     <ul class="nav nav-pills nav-stacked layer-toggle-menu neighborhood-menu"></ul>
@@ -142,8 +141,8 @@
   <div id="details" class="panel panel-default">
     <div class="panel-body">
       <p class="lead">
-        <span id="visualized-metric">Total population</span><br />
-        <span id="visualized-measure">657,330</span>
+        <span id="visualized-metric"></span><br />
+        <span id="visualized-measure"></span>
       </p>
       <h4 class="neighborhood">Seattle, WA</h4>
       <table id="pop-info" class="table table-hover">
@@ -164,7 +163,7 @@
           <td class="count align-right"></td>
         </tr> --->
       </table>
-      <h4 class="chart">Histogram.</h4>
+      <h4 class="chart"></h4>
       <div class="chart"></div>
     </div>
   </div> <!-- narrative cards here -->
@@ -225,12 +224,19 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h2 class="modal-title" id="myModalLabel">Data science for urban equity: Making gentrification an accessible topic for data scientists, policymakers, and the community</h2>
+        <h2 class="modal-title" id="myModalLabel">Project description</h2>
       </div>
       <div id="how-to" class="modal-body">
-		<p>This tool is a product of the University of Washington eScience Institute's 2017 Data Science for Social Good (DSSG) <b>Equitable Futures’</b> project, which investigates the ongoing gentrification process and the increasingly inequitable access to opportunities in Seattle. Similar processes can be observed in many major cities. The project connects issues usually analyzed in the disciplines of the built environment, geography, sociology, economics, social work and city governments with data science methodologies and visualizations.
-		<br><br>
-		The project team developed a tool that allows stakeholders in the city’s development process to analyze, model, and visualize existing trends and the impact of potential changes in the built environment. This website uses publicly available data to create an interactive web mapping tool that visualizes equity indicators—primarily related to housing and development, income, mobility, and education—on the city and neighborhood scale.</p>
+		<p>This interactive mapping tool allows users to examine equity in Seattle across multiple scales including block groups, Census tracts, and neighborhoods.
+
+		Users can explore and analyze equity in multiple ways:
+		<ul>
+			<li>In the <i>Points of Interest</i> section, users can examine key points of interest in the city and find out more about each one; for example, a public school's performance, or the size and amenities of a city park.</li>
+			<li>A range of <i>Equity Indicators</i> are grouped thematically so that users can explore how different combinations of indicators interact with one another and how they play out spatially across the city.</li>
+			<li>Along with the interactive tool, the UW team developed a <i>structural equation model</i> that tests the correlation among each themed set of indicators. Results of the model are fed back into the tool to allow users to explore the relative impact of the analysis on neighborhoods across the city.</li>
+			<li>As a prototype, we have enabled predictive abilities for four indicators, allowing user inputs to adjust a quantity in the model.</li>
+		</ul>
+		</p>
 		<!--
         <div class="row">
           <div class="col-lg-12">

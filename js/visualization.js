@@ -695,6 +695,7 @@ function changeNeighborhoodData(new_data_column, granularity) {
     neighborhoods.selectAll("path").style("fill-opacity",0.1);
     return;
   }
+
   var data_values = _.filter(_.map(choropleth_data[granularity], function(d){ return parseFloat(d[new_data_column]); }), function(d){ return !isNaN(d); });
   var jenks = _.filter(_.unique(ss.jenks(data_values, Math.min(5, data_values.length))), function(d){ return !isNaN(d); });
   raw_jenks = jenks;
@@ -702,9 +703,8 @@ function changeNeighborhoodData(new_data_column, granularity) {
   //var color_palette = [ "#9ae3ff", "#45ccff", "#00adef", "#00709a", "#003245"];
 
   // trim lighter colours from palette (if necessary)
-  color_palette = fields_format[new_data_column][1] == 'y' ?
+  color_palette = (new_data_column in fields_format && fields_format[new_data_column][1] == 'y') ?
   	fixed_color_palette.slice(6 - jenks.length).reverse() : fixed_color_palette.slice(6 - jenks.length);
-
 
   activeData = new_data_column;
   choro_color = d3.scale.threshold()
@@ -732,14 +732,16 @@ function changeNeighborhoodData(new_data_column, granularity) {
       }
     })
 
-  if(new_data_column !== "no_neighborhood_data") {
-    setVisMetric(new_data_column, all_data[activeId][new_data_column]);
-  } else {
+	if (new_data_column == "no_neighborhood_data") {
     setVisMetric(null, null, true);
-    removePoints("clear");
-    $(".selected").removeClass("selected");
-    $("#details p.lead").hide();
-    $("#legend-panel").hide();
+	removePoints("clear");
+  	setTimeout(function() {
+	  $(".selected").removeClass("selected");
+      $("#details p.lead").hide();
+      $("#legend-panel").hide();
+    }, 50);
+  } else {
+  	setVisMetric(new_data_column, all_data[activeId][new_data_column]);
   }
 
   var zeroElement = jenks[0] === 0 && jenks[1] === 1;
@@ -932,7 +934,13 @@ function removePoints(type) {
 var tmp_bins, tmp_x, tmp_y, tmp_bar;
 
 function drawChart(data_column, activeId){
-  d3.select(".chart").select("svg").remove();
+  d3.select("div.chart").select("svg").remove();
+  $("h4.chart").show();
+  d3.select("h4.chart").html("Distribution across Seattle");
+  if (!(data_column in col_data)) {
+	  $("h4.chart").hide();
+	  return;
+  }
   chartSvg = d3.select(".chart").append("svg").attr("width",chartWidth).attr("height",chartHeight)
     .append("g")
     .attr("transform","translate(" + chartMargin.left + "," + chartMargin.top + ")");
