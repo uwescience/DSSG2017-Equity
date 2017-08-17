@@ -1164,7 +1164,7 @@ function displayPopBox(d) {
     key = $(row).attr("data-type");
     val = highlighted[key];
     typeDef = key in fields_format ? fields_format[key][0] : "val";
-    $(row).find(".count").html(getDisplayValue(val, key, typeDef));
+    $(row).find(".count").html(getDisplayValue(val, key, typeDef, $(row).hasClass("sub-from-1")));
   });
 }
 
@@ -1286,8 +1286,8 @@ function hoverNeighborhood(d) {
 //strNum = The Value for the metric.
 //name = The Display Name.
 //typeDef = The type of value (perc = percentage, val = a number, cur = a dollar amount)
-function getDisplayValue(strNum, name, typeDef) {
-  var num = parseFloat(strNum);
+function getDisplayValue(strNum, name, typeDef, sub_from_1 = false) {
+  var num = sub_from_1 ? (1-parseFloat(strNum)) : parseFloat(strNum);
 
   switch(typeDef) {
 	case "perc":
