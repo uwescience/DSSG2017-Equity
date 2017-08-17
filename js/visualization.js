@@ -523,8 +523,9 @@ function drawChoropleth(){
       NBH_NAMES: "Seattle, WA",
       population_total: 657330,
       median_household_income: 75133,
-      household_total: 298477,
-      children_in_poverty_perc: 0.266
+      perc_owner: .522
+      //household_total: 298477,
+      //children_in_poverty_perc: 0.266
     };
 
     displayPopBox();
