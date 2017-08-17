@@ -7,6 +7,10 @@
   <link href='//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+  input.predict-slider { width: 235px; }
+  div.predict { padding-left: 15px; }
+  </style>
 </head>
 <body>
 <div class="navbar navbar-default">
@@ -158,13 +162,54 @@
           <td>Total number of households</td>
           <td class="count align-right"></td>
         </tr>
-        <!---<tr data-type="children_in_poverty_perc">
-          <td>Children in poverty</td>
-          <td class="count align-right"></td>
-        </tr> --->
       </table>
       <h4 class="chart"></h4>
       <div class="chart"></div>
+	  <h4 class="predict">Model Prediction  <span class="label label-warning">Experimental</span></h4>
+	  <div class="predict">
+	    <p style="text-align:left;">Actual value: <span id="predict-actual-val" style="float:right;">0</span></p>
+	    <p style="text-align:left;">Select new value: <span id="predict-slider-val" style="float:right;">0</span></p>
+	    <div class="predict-slider">
+		  <input class="predict-slider" type="range" value="3" min="1" max="5" ticks="1" onchange="checkPredictSlider()"/>
+		  <datalist id="predict-ticks">
+		  </datalist>
+	    </div>
+		<p>Predictions:</p>
+	  <table id="predict-info" class="table table-hover">
+        <tr data-type="fam_friendlnss">
+		  <td>Family Housing</td>
+          <td class="count align-right"></td>
+        </tr>
+        <tr data-type="infrastructure">
+          <td>Mobility Infrastructure</td>
+          <td class="count align-right"></td>
+        </tr>
+        <tr data-type="conn">
+          <td>Connectivity</td>
+          <td class="count align-right"></td>
+        </tr>
+		<tr data-type="elem">
+          <td>Elem. School Well-being</td>
+          <td class="count align-right"></td>
+        </tr>
+        <tr data-type="upper">
+          <td>Upper School Well-being</td>
+          <td class="count align-right"></td>
+        </tr>
+        <tr data-type="health">
+          <td>Public Health</td>
+          <td class="count align-right"></td>
+        </tr>
+		<tr data-type="dev">
+          <td>Development</td>
+          <td class="count align-right"></td>
+        </tr>
+        <tr data-type="socio_status">
+          <td>Socio-economic</td>
+          <td class="count align-right"></td>
+        </tr>
+      </table>
+      </div>
     </div>
   </div> <!-- narrative cards here -->
   <div id="schools_panel" class="panel panel-default hide">

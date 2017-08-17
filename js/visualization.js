@@ -22,6 +22,7 @@ var dotRadius = 4;
 var neighborhoods;
 var fixed_color_palette = [ "#FEC201", "#FFE65E", "#9CE3BF", "#47BD94", "#19858E"];
 function choro_color() {return fixed_color_palette[0]};
+var predict_metrics = ["avg_transit_time", "median_house_value", "occupied_housing_units", "fam_upper"];
 
 var currentMetric = null;
 var highlightedNeighborhood = null;
@@ -32,6 +33,7 @@ var col_data = [];
 var data_prct = [];
 var fields_format = {};
 var nbh_names = {};
+var prediction_data = {};
 
 // default style for city-scale map
 var gmap_style=[
@@ -271,9 +273,10 @@ $(document).ready(function() {
 }); // end document ready function
 
 function init(){
+  $(".predict").hide();
   resizeContainer($("#content").parent().width());
   drawChoropleth();
-  //drawChart();
+  preparePredictions();
 
   // set geom granularity to neighborhoods
   geom_granularity = 'geom_nb';
@@ -344,6 +347,88 @@ function calculatePrct(col_data) {
   });
 }
 
+function checkPredictSlider() {
+	var value = $("input.predict-slider").val();
+	$("#predict-slider-val").text(getDisplayValue(value, null, fields_format[currentMetric][0]));
+	displayLatentInfo(currentMetric, activeId, value);
+}
+
+function preparePredictions() {
+  queue()
+    .defer(d3.csv, "data/predictions_avg_transit_time.csv")
+    .defer(d3.csv, "data/predictions_median_home_value.csv")
+    .defer(d3.csv, "data/predictions_occupied_housing_units.csv")
+    .defer(d3.csv, "data/predictions_fam_upper.csv")
+    .await(setupPredictions);
+
+  function setupPredictions(error, pred_avg_transit_time, pred_median_house_value,
+	  pred_occupied_housing_units, pred_fam_upper) {
+	prediction_data["avg_transit_time"] = {};
+	pred_avg_transit_time.forEach(function(d) {
+		if (!(d.block_group in prediction_data["avg_transit_time"])) {
+			prediction_data["avg_transit_time"][d.block_group] = {};
+		}
+		prediction_data["avg_transit_time"][d.block_group][d.indicator] = {
+			'socio_status': d.socio_status,
+			'fam_friendlnss': d.fam_friendlnss,
+			'infrastructure': d.infrastructure,
+			'conn': d.conn,
+			'elem': d.elem,
+			'upper': d.upper,
+			'health': d.health,
+			'dev':d.dev};
+	});
+
+	prediction_data["median_house_value"] = {};
+	pred_median_house_value.forEach(function(d) {
+		if (!(d.block_group in prediction_data["median_house_value"])) {
+			prediction_data["median_house_value"][d.block_group] = {};
+		}
+		prediction_data["median_house_value"][d.block_group][d.indicator] = {
+			'socio_status': d.socio_status,
+			'fam_friendlnss': d.fam_friendlnss,
+			'infrastructure': d.infrastructure,
+			'conn': d.conn,
+			'elem': d.elem,
+			'upper': d.upper,
+			'health': d.health,
+			'dev':d.dev};
+	});
+
+	prediction_data["occupied_housing_units"] = {};
+	pred_occupied_housing_units.forEach(function(d) {
+		if (!(d.block_group in prediction_data["occupied_housing_units"])) {
+			prediction_data["occupied_housing_units"][d.block_group] = {};
+		}
+		prediction_data["occupied_housing_units"][d.block_group][d.indicator] = {
+			'socio_status': d.socio_status,
+			'fam_friendlnss': d.fam_friendlnss,
+			'infrastructure': d.infrastructure,
+			'conn': d.conn,
+			'elem': d.elem,
+			'upper': d.upper,
+			'health': d.health,
+			'dev':d.dev};
+	});
+
+	prediction_data["fam_upper"] = {};
+	pred_fam_upper.forEach(function(d) {
+		if (!(d.block_group in prediction_data["fam_upper"])) {
+			prediction_data["fam_upper"][d.block_group] = {};
+		}
+		prediction_data["fam_upper"][d.block_group][d.indicator] = {
+			'socio_status': d.socio_status,
+			'fam_friendlnss': d.fam_friendlnss,
+			'infrastructure': d.infrastructure,
+			'conn': d.conn,
+			'elem': d.elem,
+			'upper': d.upper,
+			'health': d.health,
+			'dev':d.dev};
+	});
+  };
+}
+
 function drawChoropleth(){
 
   queue()
@@ -368,11 +453,8 @@ function drawChoropleth(){
   function setUpChoropleth(error, fields, nb_names, bg_map, ct_map, nb_map, bg_data, ct_data, nb_data, source) {
     populateNavPanel(fields);
 
-	fields_format = fields;
-
 	fields.forEach(function(d) {
-	  console.log("field:"+d.id+",  legend_format:"+d.legend_format+",  reverse:"+d.reverse);
-	  fields_format[d.id] = [d.legend_format, d.reverse];
+	  fields_format[d.id] = [d.legend_format, d.reverse, d.name];
 	});
 
     //clean choropleth data for display.
@@ -588,6 +670,7 @@ function changeNeighborhoodGranularity(data_name, gran_map) {
 		  $("#visualized-measure").text("");
 		  displayPopBox();
 		}
+		showPredictionPanel(currentMetric, activeId);
 	  })
 	  .on("click", function(d) { highlightNeigborhood(d, false); })
 
@@ -615,7 +698,7 @@ function changeNeighborhoodGranularity(data_name, gran_map) {
 
 function populateNavPanel(data) {
   var fieldTemplate = _.template(
-        '<li><a id="<%= field.id %>" href="#">&emsp;<%- field.name %> <% if (field.new === "TRUE") { %><span class="label label-danger">New</span></a><% } %></li>',
+        '<li><a id="<%= field.id %>" href="#">&emsp;<%- field.name %>&ensp;<% if (field.new === "TRUE") { %><span class="label label-danger">New</span></a><% } %><% if (predict_metrics.indexOf(field.id) != -1) { %><span class="label label-warning">Predict</span></a><% } %></li>',
         { variable: 'field' }
       ),
       categoryTemplate = _.template('<li class="nav-header disabled"><a><%=category%></a></li>', {variable: 'category'});
@@ -745,6 +828,7 @@ function changeNeighborhoodData(new_data_column, granularity) {
 	  $(".selected").removeClass("selected");
       $("#details p.lead").hide();
       $("#legend-panel").hide();
+	  return;
     }, 50);
   } else {
   	setVisMetric(new_data_column, all_data[activeId][new_data_column]);
@@ -768,7 +852,10 @@ function changeNeighborhoodData(new_data_column, granularity) {
     }
   };
 
-  drawChart(new_data_column, activeId); //used to be in below function
+  if (new_data_column != null && new_data_column != "no_neighborhood_data") {
+	drawChart(new_data_column, activeId); //used to be in below function
+	showPredictionPanel(new_data_column, activeId);
+  }
 
   var legendNumber = function(d) {
 	var num = parseFloat(d);
@@ -810,7 +897,6 @@ function changeNeighborhoodData(new_data_column, granularity) {
 
   updatedLegend.select("rect")
     .style("fill", function(d, i) {
-	  console.log("d="+d+", i="+i);
       if (zeroElement && jenks.length - i === 2) { return defaultColor; };
       return color_palette[color_palette.length - i - 1];
     });
@@ -939,6 +1025,19 @@ function removePoints(type) {
 
 var tmp_bins, tmp_x, tmp_y, tmp_bar;
 
+function showPredictionPanel(data_column, activeId) {
+  console.log("showPredictionPanel("+data_column+", "+activeId+")");
+  if (geom_granularity == "geom_bg" && activeId != "sea" && predict_metrics.indexOf(data_column) != -1) {
+	console.log("showing prediction");
+	var visualized_measure = $("#visualized-measure").text();
+	$("#predict-actual-val").text(visualized_measure);
+	$(".predict").show();
+	checkPredictSlider();
+  } else {
+	$(".predict").hide();
+  }
+}
+
 function drawChart(data_column, activeId){
   d3.select("div.chart").select("svg").remove();
   $("h4.chart").show();
@@ -1049,6 +1148,22 @@ function displayPopBox(d) {
   });
 }
 
+function displayLatentInfo(indicator, activeId, selected) {
+  console.log("displayLatentInfo("+indicator+", "+activeId+", "+selected+")");
+  var $predbox = $("#predict-info"),
+      data = prediction_data[indicator][activeId][selected];
+
+  var val, key, typeDef;
+  $.each($predbox.find("tr"), function(k, row){
+    key = $(row).attr("data-type");
+    val = data[key];
+	console.log(data);
+	console.log(val);
+    typeDef = "minutes";
+	$(row).find(".count").html(getDisplayValue(val, null, typeDef));
+  });
+}
+
 //zooming
 function zoomtoNeighborhood (d, isOverlayDraw) {
   console.log("zooming");
@@ -1063,7 +1178,7 @@ function zoomtoNeighborhood (d, isOverlayDraw) {
 
 
 function highlightNeigborhood(d, isOverlayDraw) {
-  console.log("highlighting");
+	console.log("highlight neighborhood("+d+", "+isOverlayDraw+")");
 
   removeNarrative();
   highlightedNeighborhood = d;
@@ -1094,12 +1209,13 @@ function highlightNeigborhood(d, isOverlayDraw) {
       //last neighborhood to display in popBox.
       activeId = d.properties.gis_id;
       setVisMetric(activeData, all_data[activeId][activeData]);
-      drawChart(activeData, activeId);
     }
   } else {
     g.selectAll("#path" + highlightedNeighborhood.properties.NCID).classed("active", true);
     bringNeighborhoodToFront();
   }
+
+  showPredictionPanel(activeData, activeId);
 }
 
 function bringNeighborhoodToFront() {
@@ -1134,8 +1250,10 @@ function hoverNeighborhood(d) {
     //last neighborhood to display in popBox.
     activeId = d.properties.gis_id;
 
-    if (activeData !== "no_neighborhood_data") {
+    if (activeData != null && activeData != "no_neighborhood_data") {
       setVisMetric(activeData, all_data[activeId][activeData]);
+	  var visualized_measure = $("#visualized-measure").text();
+	  $("#predict-actual-val").text(visualized_measure);
       drawChart(activeData, activeId);
     } else {
       setVisMetric(null, null, true);
@@ -1149,7 +1267,6 @@ function hoverNeighborhood(d) {
 //name = The Display Name.
 //typeDef = The type of value (perc = percentage, val = a number, cur = a dollar amount)
 function getDisplayValue(strNum, name, typeDef) {
-  console.log("getDisplayValue("+strNum+", "+name+", "+typeDef+")");
   var num = parseFloat(strNum);
 
   switch(typeDef) {
@@ -1179,7 +1296,7 @@ function setVisMetric(metric, val, clear) {
 
   typeDef = metric in fields_format ? fields_format[metric][0] : "val";
 
-  var metricText = $("a#" + metric).text();
+  var metricText = metric in fields_format ? fields_format[metric][2] : "";
   $metric.text(metricText);
   var newDesc = activeId === 'sea' ? '' : val === "" ? "N/A" : getDisplayValue(val, metric, typeDef);
   $metricDesc.text(newDesc);
