@@ -486,6 +486,7 @@ function drawChoropleth(){
   });
 
     bg_data.forEach(function(d) {
+	  d["NBH_NAMES"] = nbh_names[d.CRA];
       all_data[d.block_group] = d; //used for colour
       choropleth_data['geom_bg'][d.block_group] = +d.population_total;
 	    Object.keys(d).forEach(function(e) {
@@ -496,6 +497,7 @@ function drawChoropleth(){
 	   });
     });
     ct_data.forEach(function(d) {
+	  d["NBH_NAMES"] = nbh_names[d.CRA];
       all_data[d.tract] = d; //used for colour
       choropleth_data['geom_tract'][d.tract] = +d.population_total;
 	    Object.keys(d).forEach(function(e) {
