@@ -1122,10 +1122,19 @@ function drawChart(data_column, activeId){
         .style("fill", "black")
         .text(function(d) { return formatCount(d.length); });
 
+	var tick_format;
+	if (fields_format[data_column][0] == "perc") {
+		tick_format = d3.format(".0%");
+	} else if (fields_format[data_column][0] == "curr") {
+		tick_format = d3.format("$.1s");
+	} else {
+		tick_format = d3.format(".1s");
+	}
+
     chartSvg.append("g")
         .attr("class", "x axis")
         .attr("transform", "translate(0," + h + ")")
-        .call(d3.svg.axis().scale(x).ticks(5).orient("bottom"));
+        .call(d3.svg.axis().scale(x).ticks(5).orient("bottom").tickFormat(tick_format));
 }
 
 function toggleMenu() {
