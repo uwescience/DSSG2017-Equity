@@ -349,7 +349,9 @@ function calculatePrct(col_data) {
 
 function checkPredictSlider() {
 	var value = $("input.predict-slider").val();
-	$("#predict-slider-val").text(getDisplayValue(value, null, fields_format[currentMetric][0]));
+	var display_value = prediction_data["ids"][currentMetric][value];
+	console.log("display_value:")
+	$("#predict-slider-val").text(getDisplayValue(display_value, null, fields_format[currentMetric][0]));
 	displayLatentInfo(currentMetric, activeId, value);
 }
 
@@ -359,10 +361,11 @@ function preparePredictions() {
     .defer(d3.csv, "data/predictions_median_home_value.csv")
     .defer(d3.csv, "data/predictions_occupied_housing_units.csv")
     .defer(d3.csv, "data/predictions_fam_upper.csv")
+	.defer(d3.csv, "data/prediction_values_ids.csv")
     .await(setupPredictions);
 
   function setupPredictions(error, pred_avg_transit_time, pred_median_house_value,
-	  pred_occupied_housing_units, pred_fam_upper) {
+	  pred_occupied_housing_units, pred_fam_upper, pred_ids) {
 	prediction_data["avg_transit_time"] = {};
 	pred_avg_transit_time.forEach(function(d) {
 		if (!(d.block_group in prediction_data["avg_transit_time"])) {
@@ -426,6 +429,14 @@ function preparePredictions() {
 			'health': d.health,
 			'dev':d.dev};
 	});
+
+	prediction_data["ids"] = {};
+	pred_ids.forEach(function(d) {
+		if (!(d.var in prediction_data["ids"])) {
+			prediction_data["ids"][d.var] = {};
+		}
+		prediction_data["ids"][d.var][d.id] = d.val;
+	})
   };
 }
 
