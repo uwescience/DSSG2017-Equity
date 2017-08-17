@@ -7,7 +7,7 @@ var centered;
 var svg, projection, gmapProjection, path, g, gmap;
 var activeId = 'sea',
     choropleth_data, source_data;
-var all_data = {}, activeData = "population_total";
+var all_data = {}, activeData = null;
 var min_population = 100;
 var defaultColor = "#aaa";
 var chartSvg, labels, anchors, links, label_array = [], anchor_array = [];
