@@ -7,6 +7,10 @@
   <link href='//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+  input.predict-slider { width: 235px; }
+  div.predict { padding-left: 15px; }
+  </style>
 </head>
 <body>
 <div class="navbar navbar-default">
@@ -24,7 +28,7 @@
       Project Description
     </button>
     <h1 style="font-size: 30px !important">Equity Modeler</h1>
-    <p class="intro" style="font-size:18px !important;">Visualizing equity indicators and modeling their correlation to support positive change.</p>
+    <p class="intro" style="font-size:18px !important;">Visualizing equity indicators and modeling their relationships to support positive change.</p>
     <!--
 	<div class="social-media pull-right">
       <a href="https://twitter.com/share" class="twitter-share-button" data-text="See how children fare in your neighborhood with Data Tools 2.0" data-via="ActforDChildren">Tweet</a>
@@ -74,7 +78,7 @@
 	<div id="nav-panel" class="posabs">
     <ul class="nav nav-pills nav-stacked layer-toggle-menu" style="text-align: center">
 	<li class="disabled" style="padding: 4px" display="inline-block">
-		<span class="btn-group" data-toggle="buttons">
+		<div class="btn-group" data-toggle="buttons">
 	<label class="btn btn-sm btn-warning">
 	  <input type="radio" name="options" id="geom_nb" autocomplete="off" checked>Neighborhoods
 	</label>
@@ -84,7 +88,7 @@
 	<label class="btn btn-sm btn-warning">
 	  <input type="radio" name="options" id="geom_bg" autocomplete="off">Block groups
 	</label>
-</span>
+</div>
   </li>
   <li>
     <a id="no_neighborhood_data" href="#"><button type="button" class="btn btn-danger btn-sm" style="width:100%"><span class="glyphicon glyphicon-trash"></span> Clear selection</button></a></li>
@@ -154,17 +158,58 @@
           <td>Household median income</td>
           <td class="count align-right"></td>
         </tr>
-        <tr data-type="household_total">
-          <td>Total number of households</td>
+        <tr data-type="perc_owner" class="sub-from-1">
+          <td>Percentage of renters</td>
           <td class="count align-right"></td>
         </tr>
-        <!---<tr data-type="children_in_poverty_perc">
-          <td>Children in poverty</td>
-          <td class="count align-right"></td>
-        </tr> --->
       </table>
       <h4 class="chart"></h4>
       <div class="chart"></div>
+	  <h4 class="predict">Model Prediction  <span class="label label-warning">Experimental</span></h4>
+	  <div class="predict">
+	    <p style="text-align:left;">Actual value: <span id="predict-actual-val" style="float:right;">0</span></p>
+	    <p style="text-align:left;">Select new value: <span id="predict-slider-val" style="float:right;">0</span></p>
+	    <div class="predict-slider">
+		  <input class="predict-slider" type="range" value="3" min="1" max="5" ticks="1" onchange="checkPredictSlider()"/>
+		  <datalist id="predict-ticks">
+		  </datalist>
+	    </div>
+		<p>Predictions:</p>
+	  <table id="predict-info" class="table table-hover">
+        <tr data-type="fam_friendlnss">
+		  <td>Family Housing</td>
+          <td class="count align-right"></td>
+        </tr>
+        <tr data-type="infrastructure">
+          <td>Mobility Infrastructure</td>
+          <td class="count align-right"></td>
+        </tr>
+        <tr data-type="conn">
+          <td>Connectivity</td>
+          <td class="count align-right"></td>
+        </tr>
+		<tr data-type="elem">
+          <td>Elem. School Well-being</td>
+          <td class="count align-right"></td>
+        </tr>
+        <tr data-type="upper">
+          <td>Upper School Well-being</td>
+          <td class="count align-right"></td>
+        </tr>
+        <tr data-type="health">
+          <td>Public Health</td>
+          <td class="count align-right"></td>
+        </tr>
+		<tr data-type="dev">
+          <td>Development</td>
+          <td class="count align-right"></td>
+        </tr>
+        <tr data-type="socio_status">
+          <td>Socio-economic</td>
+          <td class="count align-right"></td>
+        </tr>
+      </table>
+      </div>
     </div>
   </div> <!-- narrative cards here -->
   <div id="schools_panel" class="panel panel-default hide">
