@@ -1,0 +1,766 @@
+County,Submarket,Neighborhood,Status,Units,End construction,Property name,Street number,Street name,City,Zip, Census tract ,Developer,Property ID
+King,K-N,Shoreline,U,221,Jun-2018,Paceline,17202,Aurora Avenue N,Shoreline,98133, 207.00 ,Metropolitan Development Company,472
+King,K-SE,Renton,X,157,Oct-2019,Notch,13750,Newcastle Golf Club Road,Newcastle,98059, 251.02 ,Goodman Real Estate,713
+Pierce,Pie,Puyallup/Sumner,R,216,Mar-2017,Vintage at South Hill,14104,Meridian Avenue E,Puyallup,98373, 731.07 ,Vintage Housing,722
+King,K-E,Bellevue-West,X,183,Jan-2050,Cadillac Site II,1001,106th Avenue NE,Bellevue,98004, 238.02 ,MetLife Real Estate Investments,1171
+King,K-E,Woodinville/Totem Lake,A,95,Mar-2017,Woodin Creek Village I - Bldg C,17300,135th Avenue NE,Woodinville,98072, 323.19 ,Weidner Company,1197
+King,K-S,West Seattle,U,260,Jul-2017,Whittaker-North Tower,4755,Fauntleroy Way SW,Seattle,98116, 105.00 ,Lennar Multifamily,1397
+King,K-E,Bellevue-West,C,20,Jan-2050,,131,102nd Avenue SE,Bellevue,98004, 238.02 ,Vander Hoek Corp,1496
+King,K-S,Rainier Valley,X,85,Dec-2018,Cubix Othello,7339,43rd Avenue S,Seattle,98118, 111.01 ,Parkstone Properties,1497
+Pierce,Pie,Fircrest/University Place,X,120,Apr-2019,Lot 12,3626,Market Place W,University Place,98466, 723.10 ,SEB,1519
+King,K-C,Belltown/Dwntn/S Lk Union,X,539,Jan-2050,Ava,802,Pine Street,Seattle,98101, 73.00 ,Fana Group of Companies,1658
+King,K-C,Queen Anne,X,70,Sep-2018,Queen Anne,800,5th Avenue N,Seattle,98109, 67.00 ,Blueprint Capital,2069
+King,K-E,Redmond,X,323,Sep-2018,Avalon Esterra Park II,2690,152nd Avenue NE,Redmond,98052, 228.03 ,Avalon Bay Communities,2070
+King,K-C,Belltown/Dwntn/S Lk Union,X,332,May-2019,Potala Tower Seattle,2116,4th Avenue,Seattle,98121, 72.00 ,Molasky Group of Companies,2083
+King,K-E,Redmond,X,139,Dec-2018,Bond,6000 E,Lake Sammamish Parkway,Redmond,98052, 323.13 ,Main Street Property Group,2125
+King,K-E,Redmond,X,192,Jun-2019,Alexan Central Park,16160 NE,80th Street,Redmond,98052, 323.09 ,Trammel Crow Residential,2142
+Snohomish,Sno,Central Everett,X,275,Jun-2019,Wharf's End,1301 E,Marine View Drive,Everett,98201, 402.00 ,SeaLevel Properties,2177
+King,K-C,Central,X,45,Jun-2019,2301 E Denny,2301 E,Denny Way,Seattle,98122, 77.00 ,Teshome Family,2185
+King,K-C,Capitol Hill/Eastlake,X,22,Jul-2018,,2303,Franklin Avenue E,Seattle,98102, 61.00 ,Rudd Development,2207
+King,K-C,First Hill,X,565,Jul-2020,North Block,1119,8th Avenue,Seattle,98101, 82.00 ,Lennar Multifamily,2212
+King,K-N,Ballard,X,75,Apr-2019,,6416,15th Avenue NW,Seattle,98107, 33.00 ,Pryde + Johnson,2222
+King,K-N,Greenlake/Wallingford,X,51,Feb-2019,,4035,Stone Way N,Seattle,98103, 54.00 ,Pryde + Johnson,2223
+King,K-N,Greenlake/Wallingford,X,51,Dec-2018,4201 Stone,4201,Stone Way N,Seattle,98103, 50.00 ,Isola Capital Management,2225
+King,K-S,Beacon Hill,X,49,Jun-2018,Jefferson Park,2902,Beacon Avenue S,Seattle,98144, 100.00 ,Edge Developers,2245
+King,K-C,Central,X,550,Oct-2019,Promenade 23,2301 S,Jackson Street,Seattle,98144, 89.00 ,Vulcan Northwest,2252
+King,K-C,First Hill,S,130,Jul-2018,,200,9th Avenue,Seattle,98104, 85.00 ,Seattle Housing Authority,2267
+King,K-SE,Auburn,R,295,Jan-2050,Reserve @ Auburn,1233,A Street NE,Auburn,, 305.01 ,AVS Communities,2281
+King,K-C,Belltown/Dwntn/S Lk Union,X,136,Oct-2019,,2121,5th Avenue,Seattle,98121, 72.00 ,2121 5th Avenue LLC,2306
+King,K-C,First Hill,X,36,Mar-2019,First Hill,1320,University Street,Seattle,98101, 84.00 ,Cyzner Properties,2335
+King,K-C,Capitol Hill/Eastlake,X,20,Sep-2018,13th,614,13th Avenue E,Seattle,98102, 65.00 ,Hardy Development Companies,2350
+King,K-E,Bellevue-East,X,204,May-2019,AMLI Spring District,1375,121st Avenue NE,Bellevue,98005, 236.01 ,AMLI Residential,2375
+King,K-N,Shoreline,X,34,Jan-2050,,3803 NE,155th Street,Lake Forest Park,98155, 213.00 ,AML Construction & Development,2400
+King,K-S,Beacon Hill,X,43,Apr-2018,,1807,13th Avenue S,Seattle,98144, 94.00 ,Build Urban,2430
+Pierce,Pie,Downtown Tacoma,X,180,Jan-2021,Tacoma Town Center Phase 2,2100,Jefferson Avenue,Tacoma,98402, 616.02 ,North American Asset Management Group,2478
+King,K-E,Bellevue-West,C,335,Jun-2018,,752,108th Avenue NE,Bellevue,98004, 238.02 ,Plus Investments USA,2558
+King,K-S,Rainier Valley,X,32,Jul-2018,,4716,38th Avenue S,Seattle,98118, 103.00 ,Thatch Real Estate Group,2563
+King,K-SE,Auburn,S,295,Sep-2018,Villas @ Auburn,1235,A Street NE,Auburn,98002, 305.01 ,AVS Communities,2564
+King,K-C,Capitol Hill/Eastlake,U,42,Dec-2017,,1901,Franklin Avenue E,Seattle,98102, 66.00 ,Meter LLC,2605
+King,K-N,University,X,29,Feb-2019,,7012,Roosevelt Way NE,Seattle,98115, 26.00 ,Noren Development,2647
+King,K-C,First Hill,R,243,Jan-2019,,620,Terry Avenue,Seattle,98104, 85.00 ,Columbia Pacific Advisors,2675
+King,K-S,Beacon Hill,X,72,Jan-2050,Beacon Station Dev,2912,Beacon Avenue S,Seattle,98144, 100.00 ,Landmark Property Holdings,2682
+King,K-C,Central,X,280,Jan-2020,,1032 S,Jackson Street,Seattle,98104, 91.00 ,Chinn Investments,2691
+King,K-S,Rainier Valley,X,52,Aug-2018,Columbia City Flats,5511,Rainier Avenue S,Seattle,98118, 103.00 ,Columbia Modern Urban,2698
+King,K-S,Rainier Valley,X,36,Dec-2019,City Flats,3948 S,Farrar Street,Seattle,98118, 103.00 ,Columbia Modern Urban,2701
+King,K-C,Queen Anne,X,42,Jun-2018,,1622,Aurora Avenue N,Seattle,98109, 67.00 ,Cadence Real Estate,2709
+King,K-C,Central,X,475,Jan-2050,MidTown Center,2301 E,Union Street,Seattle,98122, 88.00 ,Lennar Multifamily,2710
+King,K-E,Bellevue-East,R,30,Jan-2050,,14434 NE,8th Street,Bellevue,98007, 236.03 ,,2712
+King,K-E,Bellevue-West,X,257,Aug-2019,Brio,1021,112th Avenue NE,Bellevue,98004, 238.02 ,SU Development,2719
+King,K-N,North Seattle,X,24,Jan-2050,,8509,14th Avenue NW,Seattle,98117, 16.00 ,Hybrid Architecture,2723
+King,K-N,North Seattle,X,54,Jan-2050,,10540,Greenwood Avenue N,Seattle,98133, 14.00 ,Tiek Guan Company,2734
+King,K-N,University,X,64,May-2018,,4536,20th Avenue NE,Seattle,98105, 43.00 ,SeaLevel Properties,2740
+King,K-C,Central,S,285,Sep-2018,Seattle University Dorm,1107 E,Madison Street,Seattle,98122, 86.00 ,,2741
+Pierce,Pie,Stadium District,U,139,Jul-2017,Grand on Broadway,252,Broadway Avenue,Tacoma,98402, 615.00 ,Wise Real Estate Investments Inc,2745
+King,K-N,University,X,59,Oct-2018,University Way Mixed Use,5247,University Way NE,Seattle,98105, 44.00 ,Golden Academy LLC,2747
+King,K-C,Central,X,75,Nov-2019,,2925 E,Madison Street,Seattle,98112, 77.00 ,Velmeir Companies,2763
+King,K-SE,Auburn,x,149,Jan-2050,,100,A Street SW,Auburn,98002, 305.01 ,Pillar Properties,2770
+King,K-SE,Renton,X,74,May-2018,Avana Ridge,17249,Benson Road S,Renton,98055, 258.01 ,SeaLevel Properties,2776
+King,K-SE,Kent,R,131,Jan-2050,Larc @ Kent Station,601,1st Avenue N,Kent,98032, 292.03 ,American Capital Development,2786
+King,K-C,Central,X,75,Mar-2019,Metro Line Flats,915 E,Spruce Street,Seattle,98122, 86.00 ,Shelter Holdings,2791
+King,K-C,Queen Anne,X,77,Jan-2050,,2031,Westlake Avenue N,Seattle,98109, 67.00 ,Midby Companies,2803
+King,K-N,Greenlake/Wallingford,X,106,Mar-2019,,6717,Roosevelt Way NE,Seattle,98115, 36.00 ,Pasco Properties,2804
+King,K-N,North Seattle,U,215,Sep-2018,Sedona II,8500,20th Avenue NE,Seattle,98115, 21.00 ,Epic Asset Management,2978
+King,K-C,Belltown/Dwntn/S Lk Union,x,152,Jan-2050,Car Toys Building,307,Broad Street,Seattle,98121, 72.00 ,Connell Real Estate & Development,3076
+King,K-E,Issaquah,X,110,Dec-2018,Vale,955,7th Avenue NW,Issaquah,98027, 321.03 ,SeaLevel Properties,3104
+Snohomish,Sno,Silver Lake,X,42,Jan-2050,148th Street Townhouses,3123,148th Street SW,Lynnwood,98087, 418.04 ,Mietzner Group,3129
+King,K-C,Queen Anne,C,70,Jan-2050,,1415,Dexter Avenue N,Seattle,98109, 67.00 ,Polygon Northwest,3202
+Snohomish,Sno,Mountlake Terrace,T,276,Jan-2050,Scriber Creek,20917,44th Avenue W,Lynnwood,98036, 519.05 ,Magnum Construction,3254
+Snohomish,Sno,Mountlake Terrace,x,100,Mar-2020,Andorra Estates II,22817,Lakeview Drive,Mountlake Terrace,98043, 510.00 ,Weidner Company,3275
+King,K-N,North Seattle,X,224,Oct-2020,,820 N,85th Street,Seattle,98103, 18.00 ,Shea Properties,3308
+King,K-C,First Hill,U,107,Feb-2018,Boylston Flats,1404,Boylston Avenue,Seattle,98122, 84.00 ,Johnson & Carr,3325
+King,K-E,Issaquah,x,93,Jan-2050,Inneswood Estates,905,Newport Way NW,Issaquah,98027, 321.03 ,Belmont Homes,3389
+King,K-N,Shoreline,X,81,Jan-2019,Arabella II,1301 NE,180th Street,Shoreline,98133, 207.00 ,Epic Asset Management,3391
+King,K-E,Issaquah,U,398,Sep-2018,Anthology,2290,Newport Way NW,Issaquah,98027, 321.03 ,Wolff Company,3393
+Pierce,Pie,Downtown Tacoma,S,44,Jun-2018,Colonial Court,702,Pacific Avenue,Tacoma,98402, 616.01 ,Capital Management Advisors,3441
+King,K-C,Capitol Hill/Eastlake,U,49,Mar-2018,TOD,120,10th Avenue E,Seattle,98102, 75.00 ,Eagle Rock Ventures,3561
+Pierce,Pie,Downtown Tacoma,X,239,Jan-2050,Sevencom,719,Broadway Street,Tacoma,98402, 616.01 ,Boulevard Group,3583
+King,K-S,West Seattle,U,58,Jul-2017,Vega,4528,44th Avenue SW,Seattle,98116, 105.00 ,Blueprint Capital,3590
+King,K-C,Belltown/Dwntn/S Lk Union,X,433,Jan-2050,3rd & Virginia,2000,3rd Avenue,Seattle,98121, 72.00 ,bcIMC,3602
+King,K-N,University,U,210,Jun-2017,Augusta,4041,Roosevelt Way NE,Seattle,98105, 52.00 ,Vulcan Northwest,3606
+King,K-S,West Seattle,R,48,Jan-2050,Living Care Senior Lifestyles,4515,41st Avenue SW,Seattle,98116, 105.00 ,BCK Investments,3608
+Snohomish,Sno,Lynnwood,R,308,Jan-2020,City Center at Lynnwood,19501,40th Avenue W,Lynnwood,98036, 517.02 ,Senior Housing Assistance Group,3628
+King,K-C,Belltown/Dwntn/S Lk Union,X,424,Aug-2019,1800,1800,Terry Avenue,Seattle,98101, 73.00 ,Seawest Investment Associates,3638
+King,K-N,North Seattle,R,80,Jan-2050,Lake City Seniors,13730,Lake City Way NE,Seattle,98125, 1.00 ,Steve Smith Development,3656
+King,K-C,Belltown/Dwntn/S Lk Union,X,400,Jan-2050,600 Wall,600,Wall Street,Seattle,98121, 72.00 ,Laconia Development,3676
+King,K-N,North Seattle,U,108,Nov-2017,Cubix 109,1008 N,109th Street,Seattle,98133, 4.02 ,Parkstone Properties,3726
+King,K-C,Central,T,70,Jan-2050,Gateway Square,1020 S,Dearborn Street,Seattle,98104, 91.00 ,Coho Real Estate,3802
+King,K-C,Magnolia,X,24,Jan-2050,Yoshikawa Mixed Use,2406,32nd Avenue W,Seattle,98199, 57.00 ,Yoshikawa Investments,3829
+King,K-C,Belltown/Dwntn/S Lk Union,U,398,Jul-2017,Helios,204,Pine Street,Seattle,98101, 81.00 ,Equity Residential,3834
+King,K-N,North Seattle,M,152,Jun-2017,Lake City,3310 NE,125th Street,Seattle,98125, 1.00 ,Kauri Investments,3907
+King,K-N,North Seattle,R,109,Jan-2018,Linden Village,13524,Linden Avenue N,Seattle,98133, 4.01 ,Tribrach Partners,3927
+King,K-C,Belltown/Dwntn/S Lk Union,X,236,Jan-2050,Altitude Hotel & Residences,1903,5th Avenue,Seattle,98101, 72.00 ,Cresleigh Homes,3941
+King,K-S,Rainier Valley,C,27,Jan-2050,,6515,38th Avenue S,Seattle,98118, 110.00 ,,3950
+King,K-C,Central,U,52,Aug-2017,Le Madison,2305 E,Madison Street,Seattle,98112, 77.00 ,Hamilton Urban Partners,3967
+King,K-C,Central,U,41,Jul-2017,,1141,Martin Luther King Jr Way,Seattle,98122, 88.00 ,Madrona Company,3980
+King,K-C,Queen Anne,U,296,Oct-2017,Leeward,1305,Dexter Avenue N,Seattle,98109, 67.00 ,Shea Properties,4016
+Pierce,Pie,Downtown Tacoma,X,233,Sep-2019,Elan on St Helens,429,St Helens Avenue,Tacoma,98402, 616.01 ,Commencement Bay Development,4019
+King,K-E,Bellevue-West,X,100,Jan-2050,Bellevue Plaza,117,106th Avenue NE,Bellevue,98004, 238.02 ,Vulcan Northwest,4029
+King,K-N,Ballard,M,61,Jan-2018,Giardino,1514 NW,52nd Street,Seattle,98107, 47.00 ,Calhoun Properties,4032
+King,K-N,Ballard,X,30,May-2018,,1443 NW,63rd Street,Seattle,98107, 33.00 ,Greenbuild Development,4045
+King,K-S,Rainier Valley,S,31,Jan-2050,,2914 S,McClellan Street,Seattle,98144, 95.00 ,Mt Baker Housing Association,4051
+King,K-N,University,M,59,Mar-2018,Cielo South,4520,7th Avenue NE,Seattle,98105, 52.00 ,Calhoun Properties,4055
+King,K-C,Central,X,42,Jan-2050,,355,15th Avenue,Seattle,98122, 86.00 ,Dep Homes,4076
+King,K-N,Greenlake/Wallingford,X,20,Jan-2050,,811 NE,66th Street,Seattle,98115, 36.00 ,Mid City Builders,4079
+King,K-E,Woodinville/Totem Lake,R,60,Jan-2050,Jefferson House Memory Care,12217 NE,128th Street,Kirkland,98034, 219.03 ,,4123
+King,K-N,North Seattle,S,70,Jan-2050,,12705,30th Avenue NE,Seattle,98125, 2.00 ,Low Income Housing Institute,4126
+King,K-S,White Center,T,298,Jan-2050,Southside,11241,1st Avenue S,Seattle,98168, 268.01 ,Vintage Housing,4135
+Snohomish,Sno,Marysville/Monroe,X,360,Apr-2019,Shohomish Garden,9321,Paradise Lake Road,Snohomish,98296, 521.12 ,Wolff Company,4155
+King,K-N,University,S,148,Jan-2050,,7101,62nd Avenue NE,Seattle,, 40.00 ,Mercy Housing Northwest,4156
+King,K-C,Queen Anne,X,90,Mar-2019,Stream Dexios,1600,Dexter Avenue N,Seattle,98109, 67.00 ,Stream Real Estate Development,4170
+King,K-N,North Seattle,X,31,Oct-2018,Pinehurst,12303,15th Avenue NE,Seattle,98125, 6.00 ,XH Realty,4175
+King,K-C,First Hill,X,72,Jul-2019,Esker,1208,Pine Street,Seattle,98101, 84.00 ,Solterra Systems,4188
+King,K-N,North Seattle,X,44,Dec-2018,,3500 NE,125th Street,Seattle,98125, 1.00 ,Greenbuild Development,4201
+King,K-N,Greenlake/Wallingford,X,146,Apr-2019,North 39th,3838,Aurora Avenue N,Seattle,98103, 54.00 ,MRN Homes,4205
+King,K-N,North Seattle,X,23,Jan-2050,,1109 N,92nd Street,Seattle,98103, 18.00 ,Opex Investments,4232
+King,K-C,Capitol Hill/Eastlake,R,78,Oct-2018,Aegis Eastlake,1916,Eastlake Avenue E,Seattle,98102, 66.00 ,Aegis Senior Communities,4237
+King,K-E,Redmond,X,360,Jun-2019,Fairfield Bear Creek,15900,Bear Creek Parkway,Redmond,98052, 323.09 ,Fairfield Residential,4242
+King,K-C,Central,X,288,Oct-2019,Modera First Hill,1051 E,Yesler Way,Seattle,98122, 86.00 ,Mill Creek Residential Trust,4243
+King,K-N,North Seattle,U,117,Mar-2019,Lake City Way Apts & Townhomes,3025 NE,130th Street,Seattle,98125, 1.00 ,American Family,4251
+King,K-N,North Seattle,U,34,Jun-2017,Athlon,12544,15th Avenue NE,Seattle,98125, 2.00 ,Lin Properties,4252
+King,K-S,Riverton/Tukwila,X,144,Jul-2019,Empire Way,5725 S,129th Street,Seattle,98178, 261.00 ,Sherron Associates,4259
+King,K-N,North Seattle,X,28,Sep-2018,Cascadia Flats,1141 N,91st Street,Seattle,98103, 18.00 ,Turnkey Builders Inc.,4292
+King,K-N,Greenlake/Wallingford,H,100,Jan-2050,,3926,Aurora Avenue N,Seattle,98103, 54.00 ,Kauri Investments,4298
+King,K-N,North Seattle,X,23,Sep-2018,Mochi Flats,9221,Ashworth Avenue N,Seattle,98103, 18.00 ,gProjects LLC,4299
+King,K-S,West Seattle,X,118,Apr-2019,Foundry,4754,Fauntleroy Way SW,Seattle,98116, 105.00 ,Holland Residential,4309
+King,K-SE,Auburn,R,140,Jan-2050,Treeo Senior Living,12301 SE,304th Place,Auburn,98092, 296.02 ,,4318
+King,K-S,Beacon Hill,X,100,Jan-2050,,2505,Beacon Avenue S,Seattle,98144, 94.00 ,Claremont Partners,4328
+King,K-N,University,S,20,Jan-2050,,4734,15th Avenue NE,Seattle,98105, 53.01 ,Bellwether Housing,4332
+King,K-C,Capitol Hill/Eastlake,X,61,Jan-2020,,1208 E,Olive Street,Seattle,98122, 75.00 ,RYI Olive LLC,4340
+King,K-C,Queen Anne,X,59,May-2019,Uptown Passive House,320,Queen Anne Avenue N,Seattle,98109, 71.00 ,Atef Matini,4342
+King,K-SE,Renton,S,46,Jan-2050,Renton Commons,215,Whitworth Avenue S,Renton,98057, 253.00 ,Low Income Housing Institute,4344
+King,K-N,North Seattle,U,153,May-2017,Origin,12311,32nd Avenue NE,Seattle,98125, 7.00 ,SummerHill Apartment Communities,4348
+King,K-C,Belltown/Dwntn/S Lk Union,X,100,Jan-2050,5th & Lenora,2017,5th Avenue,Seattle,98121, 72.00 ,Vulcan Northwest,4362
+Pierce,Pie,Puyallup/Sumner,U,56,Jul-2017,Lipoma Firs Townhomes,18002,Lipoma Firs E,Puyallup,98374, 731.12 ,Falk Development,4368
+King,K-C,Belltown/Dwntn/S Lk Union,U,357,Jul-2017,Kinects,1823,Minor Avenue,Seattle,98101, 73.00 ,Security Properties,4390
+King,K-E,Bellevue-West,X,500,Jan-2050,Bellevue Plaza,10510,Main Street,Bellevue,98004, 238.02 ,Vulcan Northwest,4396
+Pierce,Pie,Puyallup/Sumner,R,136,Jan-2050,,13211,94th Avenue E,Puyallup,98373, 713.04 ,,4399
+King,K-N,Greenlake/Wallingford,X,33,Jan-2019,Shared Roof,7009,Greenwood Avenue N,Seattle,98103, 29.00 ,evolution Projects,4400
+King,K-N,Greenlake/Wallingford,X,24,Apr-2018,,949 N,80th Street,Seattle,98103, 28.00 ,DC Granger Inc,4414
+King,K-C,Queen Anne,X,37,Jan-2050,Geneva,1945,Aurora Avenue N,Seattle,98109, 67.00 ,Money Grass Investment,4420
+King,K-N,Greenlake/Wallingford,X,59,Aug-2019,LIV Stone Way,4025,Stone Way N,Seattle,98103, 54.00 ,Paar Development,4437
+King,K-C,Belltown/Dwntn/S Lk Union,C,107,Aug-2017,Gridiron,589,Occidental Avenue S,Seattle,98104, 73.00 ,Daniels Real Estate,4445
+King,K-E,Redmond,X,286,May-2019,Redmond Town Center,16700 NE,74th Street,Redmond,98052, 323.09 ,Lowe Enterprises Northwest,4453
+Pierce,Pie,Parkland/Spanaway,X,87,Jan-2050,Avila Berg,17521,50th Avenue E,Tacoma,98446, 714.06 ,SEB,4454
+King,K-N,Greenlake/Wallingford,X,42,Sep-2018,Maple Leaf Flats,442 NE,Maple Leaf Place,Seattle,98115, 36.00 ,Flatiron Properties Inc,4474
+King,K-N,North Seattle,M,200,Jan-2050,Caspian,12741,30th Avenue NE,Seattle,98125, 2.00 ,Dream-Build Inc,4479
+King,K-S,West Seattle,U,74,Jan-2019,,4532,42nd Avenue SW,Seattle,98116, 105.00 ,Braseth Construction,4480
+King,K-E,Bellevue-East,S,361,Jan-2050,,3000,Landerholm Circle SE,Bellevue,98007, 234.01 ,,4483
+King,K-N,University,X,130,May-2019,Block 3A,6502,15th Avenue NE,Seattle,98115, 26.00 ,HB Capital,4485
+King,K-N,University,X,155,Jul-2019,Block 1A,1300 NE,65th Street,Seattle,98115, 26.00 ,HB Capital,4486
+King,K-C,Belltown/Dwntn/S Lk Union,X,75,Jun-2019,,408,Aurora Avenue N,Seattle,98109, 72.00 ,Metropolitan Development Company,4490
+King,K-N,North Seattle,X,145,Jan-2050,Greenwood Mixed Use,8612,Palatine Avenue N,Seattle,98103, 17.00 ,Greenwood Shopping Center,4493
+King,K-N,Shoreline,X,238,Nov-2019,Shoreline Post Office site,17233,15th Avenue NE,Shoreline,98155, 205.00 ,Wolff Company,4517
+Pierce,Pie,Other Pierce Co,X,82,Jan-2050,Park Place,7001 W,Tapps Hwy E,Bonney Lake,98391, 703.03 ,Azure Green Consultants,4523
+Pierce,Pie,North Tacoma,X,136,Jan-2019,Madison25,2502 N,Proctor Street,Tacoma,98406, 605.00 ,Rush Development,4524
+King,K-C,Belltown/Dwntn/S Lk Union,X,132,Jan-2050,Civic Square,601,4th Avenue,Seattle,98104, 81.00 ,Bosa Brothers Construction,4526
+King,K-E,Mercer Island,X,57,Jan-2050,Shorewood Heights,3209,Shorewood Drive,Mercer Island,98040, 244.00 ,Goodman Real Estate,4528
+King,K-C,Capitol Hill/Eastlake,X,77,Apr-2019,Howell,514 E,Howell Street,Seattle,98122, 74.00 ,Blueprint Capital,4531
+King,K-S,Rainier Valley,X,111,Sep-2019,Columbia City Place,5201,Rainier Avenue S,Seattle,98118, 103.00 ,Gordian Development,4533
+Snohomish,Sno,Marysville/Monroe,R,130,Feb-2019,,11013,State Avenue,Marysville,98271, 528.05 ,Edge Developers,4540
+Snohomish,Sno,Edmonds,X,91,Jan-2050,Westgate Village,10032,Edmonds Way,Edmonds,98020, 507.00 ,Henbart LLC,4544
+King,K-E,Bellevue-East,U,309,Jun-2017,Sparc - Spring District Phase I,1227,124th Avenue NE,Bellevue,98005, 237.00 ,Security Properties,4551
+King,K-N,North Seattle,R,80,Jul-2017,Aegis Ravenna,8511,15th Avenue NE,Seattle,98115, 20.00 ,Aegis Senior Communities,4561
+Pierce,Pie,Mid Tacoma,X,90,Sep-2020,,1940,Yakima Avenue,Tacoma,98405, 617.00 ,McCormick International,4567
+King,K-S,Rainier Valley,U,177,Jul-2017,Othello Station North I,4200 S,Othello Street,Seattle,98118, 111.01 ,Woodbridge Northwest Communities,4571
+King,K-C,Belltown/Dwntn/S Lk Union,X,431,Jan-2050,,1933,5th Avenue,Seattle,98101, 72.00 ,G4 Capital Partners,4576
+King,K-C,Belltown/Dwntn/S Lk Union,X,964,Jun-2019,1200 Stewart,1200,Stewart Street,Seattle,98101, 73.00 ,Westbank Projects Corp,4582
+King,K-C,Queen Anne,X,32,Oct-2018,,118 W,Mercer Street,seattle,98119, 70.00 ,SeaLevel Properties,4585
+King,K-S,Rainier Valley,X,66,Jan-2019,Air & Water,2019,24th Avenue S,Seattle,98144, 95.00 ,Columbia Modern Urban,4592
+King,K-S,Beacon Hill,X,96,Mar-2019,Sonata West,4651,Martin Luther King Jr Way S,Seattle,98108, 100.00 ,BDR Capital Partners LLC,4603
+King,K-C,Central,U,171,Aug-2017,550 Broadway,550,Broadway,Seattle,98122, 86.00 ,Intracorp,4613
+King,K-C,Belltown/Dwntn/S Lk Union,U,166,Dec-2017,Palette Building A,1212,Harrison Street,Seattle,98109, 73.00 ,Holland Residential,4616
+King,K-C,First Hill,S,80,Jul-2017,,710,Cherry Street,Seattle,98104, 85.00 ,Plymouth Housing Group,4638
+King,K-C,Belltown/Dwntn/S Lk Union,X,900,Sep-2020,1901 Minor,1901,Minor Avenue,Seattle,98101, 73.00 ,Crescent Heights Inspirational Living,4642
+King,K-C,Central,U,157,Oct-2017,Twenty20 MAD,2020 E,Madison Street,Seattle,98122, 79.00 ,Lennar Multifamily,4644
+King,K-N,University,U,23,Sep-2017,Pomelo Heights,4229,7th Avenue NE,Seattle,98105, 52.00 ,Tsay Development LLC,4645
+King,K-S,West Seattle,X,150,Jan-2050,,2501,Harbor Avenue SW,Seattle,98126, 99.00 ,,4651
+King,K-S,Burien,X,90,Feb-2019,Emerald Pointe on the Sound - Ph 1,13401,12th Avenue SW,Burien,98146, 276.00 ,Westmark Development,4658
+Snohomish,Sno,Edmonds,X,20,Sep-2018,Edmonds Pst Office Apts Ph II,130,2nd Avenue N,Edmonds,98020, 505.00 ,Spee Construction,4666
+King,K-C,Belltown/Dwntn/S Lk Union,U,340,Apr-2018,West Edge Tower,1430,2nd Avenue,Seattle,98101, 81.00 ,Urban Visions,4677
+Snohomish,Sno,Mountlake Terrace,X,258,Jul-2019,Mountlake Terrace TOD - Phase I,6000,236th Street SW,Mountlake Terrace,98043, 511.00 ,Westridge Land,4678
+Snohomish,Sno,Mountlake Terrace,X,160,Oct-2019,Mountlake Terrace TOD - Phase II,6000,236th Street SW,Mountlake Terrace,98043, 511.00 ,Westridge Land,4681
+Snohomish,Sno,Mountlake Terrace,X,196,Jul-2020,Mountlake Terrace TOD - Phase III,6000,236th Street SW,Mountlake Terrace,98043, 511.00 ,Westridge Land,4689
+King,K-E,Bothell,U,122,Dec-2017,Mercantile,10201,Main Street,Bothell,98011, 218.04 ,Goodman Real Estate,4692
+Pierce,Pie,East Tacoma,X,70,Dec-2050,Pacific Ridge,8445,Pacific Avenue,Tacoma,98444, 634.00 ,Benjamin Ryan Communities,4712
+King,K-C,Central,U,144,Jun-2018,East Union,2220 E,Union Street,Seattle,98122, 88.00 ,Lake Union Partners,4716
+King,K-C,Belltown/Dwntn/S Lk Union,U,314,Jun-2017,Tower 12,2015,2nd Avenue,Seattle,98121, 80.02 ,Continental Properties,4722
+King,K-C,Central,X,125,Jan-2050,,1730,19th Avenue,Seattle,98122, 79.00 ,Hardy Development Companies,4723
+King,K-N,Greenlake/Wallingford,X,70,Jun-2018,Crew,8228,Green Lake Drive N,Seattle,98103, 27.00 ,Goodman Real Estate,4734
+King,K-N,Ballard,U,106,Apr-2017,Keelson,1537 NW,56th Street,Seattle,98107, 47.00 ,Pryde + Johnson,4736
+King,K-C,Queen Anne,U,80,Aug-2018,2nd & John,200,2nd Avenue W,Seattle,98119, 71.00 ,Continental Properties,4745
+King,K-E,Bellevue-West,U,137,Aug-2018,Bellevue Vuecrest,1000,100th Avenue NE,Bellevue,98004, 238.02 ,Continental Properties,4746
+Snohomish,Sno,Thrashers Corner,R,296,Jan-2050,Reserve at Scriber Lake,800,198th Street SW,Lynnwood,98036, 519.15 ,,4749
+Pierce,Pie,Puyallup/Sumner,R,182,Apr-2017,Silver Creek,9301,176th Street E,Puyallup,98375, 731.07 ,,4758
+King,K-E,Bellevue-East,R,185,Jan-2050,Crossroads Senior Living,15600 NE,8th Street,Bellevue,98008, 232.02 ,,4759
+Pierce,Pie,Downtown Tacoma,X,115,Dec-2018,TRAX - Pierce Transit TOD Site,415 E,25th Street,Tacoma,98421, 602.00 ,,4762
+King,K-C,Belltown/Dwntn/S Lk Union,U,385,May-2018,Florist Block,1255,Harrison Street,Seattle,98109, 73.00 ,Vulcan Northwest,4766
+Pierce,Pie,Fife/Milton/Browns Pt,U,154,Apr-2017,Simon's Mill,2629,Meridian Avenue E,Edgewood,98371, 707.03 ,Rush Development,4780
+King,K-SE,Federal Way,T,216,Jan-2050,Federal Way Village,33701,Pacific Highway S,Federal Way,98003, 303.03 ,Magnum Construction,4795
+King,K-C,Belltown/Dwntn/S Lk Union,S,50,Jan-2017,Market Front,1501,Pike Place,Seattle,98101, 81.00 ,,4800
+King,K-SE,Des Moines,U,89,May-2018,,22325,7th Avenue S,Des Moines,98198, 289.01 ,Ammgen Development Group,4806
+King,K-N,North Seattle,U,131,Sep-2017,Parla,9176,Holman Road NW,Seattle,98117, 16.00 ,ConAm,4807
+King,K-SE,Renton,U,105,Apr-2017,Lofts at 2nd and Main,207,Main Avenue S,Renton,98057, 253.00 ,Cosmos Development,4808
+King,K-C,Belltown/Dwntn/S Lk Union,U,145,Apr-2018,2134,2134,Western Avenue,Seattle,98121, 80.02 ,JDA West,4822
+King,K-C,Central,X,38,Jan-2050,,203,24th Avenue E,Seattle,98112, 77.00 ,Ewing & Clark,4824
+King,K-S,West Seattle,X,40,Jul-2018,Roxhill,9030,35th Avenue SW,Seattle,98126, 115.00 ,Linardic Design Group,4827
+Snohomish,Sno,Lynnwood,X,231,Jan-2050,Evergreen Village,18626,Highway 99,Lynnwood,98037, 516.02 ,TCG Investment LLC,4830
+King,K-N,University,U,60,Jun-2017,Roosevelt & 50th,4750,Roosevelt Way NE,Seattle,98105, 53.01 ,A&T Investments,4832
+King,K-C,Belltown/Dwntn/S Lk Union,U,92,Jan-2019,3031 Western,3031,Western Avenue,Seattle,98121, 80.01 ,Martin Selig Real Estate,4833
+King,K-E,Bellevue-West,X,317,Jan-2050,Cadillac Site I,1001,106th Avenue NE,Bellevue,98004, 238.02 ,MetLife Real Estate Investments,4834
+King,K-N,Greenlake/Wallingford,X,23,Jan-2050,,3860,Bridge Way N,Seattle,98103, 54.00 ,Wallingford Mortgage,4866
+Pierce,Pie,Puyallup/Sumner,X,105,Jan-2050,Meridian Park Place II,9719,131st Street Ct E,Puyallup,98373, 713.04 ,Bill Riley Communities,4873
+King,K-N,North Seattle,X,164,Feb-2019,Artisan,12706,33rd Avenue NE,Seattle,98125, 1.00 ,Lin Properties,4886
+King,K-S,Seatac,X,215,Jan-2050,Patterson Place II,3712 S,188th Street,SeaTac,98188, 284.03 ,Schneider Homes,4907
+King,K-C,Central,S,111,Jan-2050,duplicate,921 S,Washington Street,Seattle,98104, 91.00 ,Seattle Housing Authority,4908
+King,K-C,Belltown/Dwntn/S Lk Union,X,520,Apr-2020,BB6,2300,6th Avenue,Seattle,98121, 72.00 ,HB Capital,4910
+King,K-SE,Renton,C,28,Jan-2050,Wayne's Place,17911,140th Avenue SE,Renton,98058, 319.09 ,Schneider Homes,4914
+King,K-E,Bellevue-West,U,218,Oct-2017,Lincoln Square II,410,Bellevue Way NE,Bellevue,98004, 238.02 ,Kemper Development,4916
+King,K-E,Bellevue-West,R,152,Jan-2050,Pacific Regent II,919,109th Avenue NE,Bellevue,98004, 238.02 ,,4917
+Snohomish,Sno,Central Everett,C,34,Jan-2050,,37xx,Rucker Avenue,Everett,98201, 410.00 ,Double Tree Holdings,5043
+King,K-E,Bellevue-East,U,618,Sep-2018,Hyde Square,15400 NE,20th Street,Bellevue,98007, 230.00 ,Carmel Partners,5054
+King,K-E,Bellevue-West,U,57,Feb-2018,Metro 112 Phase II,288,111th Avenue NE,Bellevue,98004, 238.02 ,Simpson Housing,5055
+King,K-E,Bellevue-West,A,40,Jan-2017,Tulum Downs,515,102nd Avenue SE,Bellevue,98004, 239.00 ,Diller Associates,5074
+Pierce,Pie,Mid Tacoma,S,127,Jan-2050,Hillside Terrace Expansion,2000 S,G Street,Tacoma,98405, 617.00 ,Tacoma Housing Authority,5077
+King,K-C,Capitol Hill/Eastlake,U,70,Aug-2017,Harvard Flats,802 E,Thomas Street,Seattle,98102, 74.00 ,WRP Associates,5080
+King,K-S,Rainier Valley,S,40,Jan-2050,Mercy Othello West,6930,Martin Luther King Jr. Way S,Seattle,98118, 111.01 ,Mercy Housing Northwest,5086
+King,K-E,Redmond,R,74,Jan-2017,,8550,160th Avenue NE,Redmond,98052, 323.09 ,,5088
+King,K-C,Central,X,25,Jun-2019,207 18th,207,18th Avenue,Seattle,98122, 87.00 ,M2K Partners,5091
+King,K-E,Bellevue-East,C,176,Apr-2020,Crossroads Village,15751 NE,15th Street,Bellevue,98008, 232.02 ,William Lyon Homes,5092
+King,K-E,Factoria,X,346,Jan-2020,Quendall Terminals I,4350,Lake Washington Blvd N,Renton,98056, 247.02 ,Century Pacific,5094
+King,K-E,Redmond,X,34,Jan-2050,Stelvio,15815,Bear Creek Parkway,Redmond,98052, 323.09 ,Spee Construction,5107
+King,K-C,First Hill,U,195,Feb-2018,Batik,123,Broadway Avenue,Seattle,98122, 85.00 ,Vulcan Northwest,5111
+King,K-C,Central,X,236,Mar-2019,Block 3,120,Broadway Avenue,Seattle,98122, 86.00 ,Vulcan Northwest,5113
+Snohomish,Sno,Marysville/Monroe,R,55,Jan-2050,Hewitt Retirement Home,10227,20th Street SE,Lake Stevens,98258, 526.04 ,,5116
+Pierce,Pie,Mid Tacoma,X,111,Aug-2018,Sixth & Alder,3112,6th Avenue,Tacoma,98406, 612.00 ,Affinity Real Estate Management,5132
+King,K-S,White Center,x,61,Jan-2050,Delridge,7100,Delridge Way SW,Seattle,98106, 108.00 ,SU Development,5136
+King,K-C,First Hill,U,325,Nov-2018,Broadstone Saxton,1001,James Street,Seattle,98104, 85.00 ,Alliance Residential,5152
+King,K-C,First Hill,U,75,Nov-2018,Broadstone Lexington,1050,James Street,Seattle,98104, 85.00 ,Alliance Residential,5173
+King,K-N,Greenlake/Wallingford,X,29,Dec-2050,Formosa Roosevelt,831 NE,66th Street,Seattle,98115, 36.00 ,Kathy Chen,5178
+King,K-N,University,U,36,Dec-2017,,5221,Ravenna Avenue NE,Seattle,98105, 43.00 ,MRN Homes,5205
+King,K-E,Woodinville/Totem Lake,X,200,Jul-2019,Village at Totem Lake - Ph 1,12560,120th Avenue NE,Kirkland,98034, 219.03 ,CenterCal Properties,5206
+King,K-C,Capitol Hill/Eastlake,X,34,Jan-2050,1715 12th,1715,12th Avenue,Seattle,98122, 75.00 ,Johnson & Carr,5207
+King,K-E,Bellevue-West,U,162,Feb-2018,Mirador,1085,103rd Avenue NE,Bellevue,98004, 238.02 ,Create World America,5208
+King,K-C,Belltown/Dwntn/S Lk Union,U,132,Aug-2018,Urban Green Villa,2401,3rd Avenue,Seattle,98121, 80.01 ,Alekson Development Group,5209
+King,K-N,University,X,201,Jan-2050,MOD Studios,4510,11th Avenue NE,Seattle,98105, 53.01 ,Pong's Corporation Inc.,5210
+King,K-C,Capitol Hill/Eastlake,X,33,Apr-2019,2227 Yale,2227,Yale Avenue E,Seattle,98102, 66.00 ,Marc Coluccio,5212
+King,K-S,Rainier Valley,U,155,Mar-2018,CityLine Phase 2,4730,32nd Avenue S,Seattle,98118, 103.00 ,Wolff Company,5216
+King,K-C,Belltown/Dwntn/S Lk Union,U,109,Dec-2017,Palette Building B,1232,Harrison Street,Seattle,98109, 73.00 ,Holland Residential,5217
+King,K-N,North Seattle,X,67,Apr-2018,,8558,Nesbitt Avenue N,Seattle,98103, 18.00 ,Stratford Company,5218
+King,K-C,Belltown/Dwntn/S Lk Union,X,60,Jul-2019,2nd & Bell,2234,2nd Avenue,Seattle,98121, 80.01 ,Minglian Holdings,5219
+King,K-N,University,X,28,Jul-2018,15th Avenue,5253,15th Avenue NE,Seattle,98105, 44.00 ,G & C Frost Co.,5222
+King,K-C,Capitol Hill/Eastlake,U,27,Feb-2018,,1814 E,John Street,Seattle,98112, 76.00 ,Build Urban,5225
+King,K-S,Rainier Valley,U,27,Mar-2018,NOCO 2,4527,Rainier Avenue S,Seattle,98118, 101.00 ,Dwell Development,5226
+King,K-S,Rainier Valley,X,242,Jan-2020,Columbia City,3717 S,Alaska Street,Seattle,98118, 103.00 ,Lake Union Partners,5227
+King,K-N,North Seattle,C,38,Apr-2018,Beacon Mixed Use,12510,15th Avenue NE,Seattle,98125, 2.00 ,PSW Seattle,5228
+King,K-E,Bellevue-East,U,279,Sep-2018,Sparc - Spring District - Phase II,1229,124th Avenue NE,Bellevue,98005, 237.00 ,Security Properties,5229
+King,K-S,West Seattle,R,80,Jan-2050,Aegis Living of West Seattle,4700 SW,Admiral Way,Seattle,98116, 97.02 ,Aegis Senior Communities,5231
+King,K-C,Capitol Hill/Eastlake,U,80,Nov-2017,Hugo House,1634,11th Avenue,Seattle,98122, 75.00 ,Meriwether Partners,5232
+King,K-S,West Seattle,U,104,May-2018,Upton Flats,6058,35th Avenue SW,Seattle,98126, 107.00 ,Shelter Holdings,5233
+King,K-E,Woodinville/Totem Lake,X,65,Dec-2018,Chelsea Courte,12411 NE,Totem Lake Way,Kirkland,98034, 219.03 ,Main Street Property Group,5234
+King,K-S,West Seattle,X,108,Jul-2019,PCC,2749,California Avenue SW,Seattle,98116, 98.00 ,Madison Development,5237
+King,K-N,North Seattle,U,20,Feb-2018,,8543,Midvale Avenue N,Seattle,98103, 18.00 ,Traditional Urban Builders,5238
+King,K-N,University,X,61,Jul-2018,,4516,Union Bay Place NE,Seattle,98105, 42.00 ,InCity Properties,5241
+King,K-C,Belltown/Dwntn/S Lk Union,X,200,Jan-2050,,2005,5th Avenue,Seattle,98121, 72.00 ,Alekson Development Group,5242
+Snohomish,Sno,Lynnwood,C,172,Dec-2050,Central Park,16725,Ash Way,Lynnwood,98037, 518.02 ,Pleasant Creek,5243
+King,K-C,Capitol Hill/Eastlake,X,41,Jun-2018,,308,12th Avenue E,Seattle,98102, 75.00 ,Hybrid Architecture,5244
+King,K-S,Rainier Valley,R,70,Jan-2050,,5740,Martin Luther King Jr Way S,Seattle,98118, 103.00 ,,5245
+King,K-C,Queen Anne,X,105,Jan-2050,Niwa,513,1st Avenue N,Seattle,98109, 71.00 ,Solterra Systems,5246
+King,K-N,University,U,40,Nov-2017,Ecoluxe,1319 NE,65th Street,Seattle,98115, 44.00 ,HB Capital,5247
+King,K-N,Shoreline,S,59,Jan-2050,Compass at Ronald Commons,17839,Aurora Avenue N,Shoreline,98133, 207.00 ,Compass Housing Alliance,5248
+King,K-C,Belltown/Dwntn/S Lk Union,X,61,Sep-2018,Ainsworth & Dunn,2815,Elliott Avenue,Seattle,98121, 80.01 ,Meriwether Partners,5249
+King,K-C,Belltown/Dwntn/S Lk Union,X,400,Jul-2019,Convention Center,920,Olive Way,Seattle,98101, 73.00 ,Pine Street Group,5250
+King,K-S,West Seattle,U,53,Mar-2018,LIV West Seattle,4801,Fauntleroy Way SW,Seattle,98116, 105.00 ,Paar Development,5251
+King,K-C,Capitol Hill/Eastlake,X,45,May-2018,Fran's Lofts,1300 E,Pike Street,Seattle,98122, 75.00 ,Cascade Built,5253
+King,K-E,Redmond,U,95,Sep-2017,Heron Flats and Lofts,7662,159th Place,Redmond,98052, 323.09 ,Main Street Property Group,5254
+King,K-E,Bothell,X,100,Jan-2050,Junction - Phase II,18501,Bothell Way NE,Bothell,98011, 218.03 ,Main Street Property Group,5255
+Snohomish,Sno,Thrashers Corner,X,316,Aug-2019,Avalon North Creek,19720,Bothell Everett Highway,Bothell,98012, 519.19 ,Avalon Bay Communities,5256
+King,K-N,North Seattle,C,20,Nov-2017,,11202,Roosevelt Way NE,Seattle,98125, 12.00 ,Noren Development,5257
+King,K-N,University,U,20,Sep-2017,Willet,4252,8th Avenue NE,Seattle,98105, 52.00 ,Kamiak Real Estate,5260
+Pierce,Pie,Puyallup/Sumner,X,220,Jun-2018,Edgewood Heights I,1801,Meridian Avenue E,Edgewood,98371, 707.01 ,Falk Development,5261
+Pierce,Pie,Puyallup/Sumner,X,232,Dec-2019,Edgewood Heights II,1801,Meridian Avenue E,Edgewood,98371, 707.01 ,Falk Development,5262
+King,K-N,University,X,74,Aug-2018,,4700,Brooklyn Avenue NE,Seattle,98105, 53.01 ,Fields Holdings,5263
+King,K-N,Greenlake/Wallingford,X,45,Aug-2018,Meter,417 NE,73rd Street,Seattle,98115, 36.00 ,Meter LLC,5264
+King,K-C,Capitol Hill/Eastlake,X,55,Aug-2018,Capitol Hill Lofts,1820,Boylston Avenue,Seattle,98122, 74.00 ,,5265
+King,K-C,Magnolia,X,59,Jun-2018,Werner,3046,17th Avenue W,Seattle,98119, 58.02 ,Kamin Properties,5266
+King,K-C,First Hill,X,90,Jun-2018,Pike Flats,722 E,Pike Street,Seattle,98122, 84.00 ,Johnson & Carr,5268
+King,K-N,Greenlake/Wallingford,S,884,Jan-2050,,4318,Whitman Court NE,Seattle,98103, 50.00 ,University of Washington Capital Projects,5269
+King,K-SE,Auburn,T,294,Jan-2050,Promenade,13200 SE,312th Street,Auburn,98092, 312.05 ,Magnum Construction,5270
+King,K-N,Greenlake/Wallingford,U,71,Feb-2018,Luna,6921,Roosevelt Way NE,Seattle,98115, 36.00 ,Blueprint Capital,5271
+King,K-S,Beacon Hill,M,33,Apr-2018,ArtWorks,901,Hiawatha Place S,Seattle,98144, 94.00 ,Neiman Taber Architecture,5274
+King,K-C,Belltown/Dwntn/S Lk Union,X,436,Jan-2050,,121,Boren Avenue N,Seattle,98109, 73.00 ,H5 Capital,5275
+King,K-E,Kirkland,U,128,Apr-2018,Kirkland Main Street,207,Park Lane,Kirkland,98033, 225.00 ,Continental Properties,5276
+King,K-C,Belltown/Dwntn/S Lk Union,X,1020,Apr-2022,4th & Columbia,701,4th Avenue,Seattle,98104, 81.00 ,Crescent Heights Inspirational Living,5277
+King,K-S,Rainier Valley,R,20,Jan-2050,,5214,42nd Avenue S,Seattle,98118, 103.00 ,Kin on Community Health Care,5278
+Pierce,Pie,Parkland/Spanaway,X,162,Mar-2019,Rosemont II,17404,44th Avenue E,Tacoma,98446, 714.06 ,Tarragon,5280
+King,K-E,Redmond,U,195,Jul-2018,Redmond Triangle,16450,Redmond Way,Redmond,98052, 323.09 ,Legacy Partners,5281
+King,K-C,Capitol Hill/Eastlake,X,32,Jan-2050,,1830 E,Mercer Street,Seattle,98112, 76.00 ,Epic Property Management LLC,5282
+King,K-N,Greenlake/Wallingford,R,22,Jan-2017,Hearthstone Expansion,3870,Woodlawn Avenue N,Seattle,98103, 54.00 ,,5284
+King,K-C,Capitol Hill/Eastlake,U,36,Jul-2018,Wren,121,15th Avenue E,Seattle,98112, 61.00 ,Isola Capital Management,5285
+King,K-N,Greenlake/Wallingford,X,57,Aug-2019,,7011,Roosevelt Way NE,Seattle,98115, 36.00 ,MRN Homes,5286
+King,K-C,Belltown/Dwntn/S Lk Union,X,80,Aug-2019,,123,3rd Avenue S,Seattle,98104, 92.00 ,Spectrum Development Solutions,5287
+Pierce,Pie,Fircrest/University Place,s,60,Jan-2050,Cottages at University Place,5417,64th Street W,University Place,98467, 723.06 ,,5288
+King,K-SE,Federal Way,T,308,Jan-2050,Uptown Square,1066 S,320th Street,Federal Way,98003, 302.02 ,Magnum Construction,5289
+King,K-SE,Kent,R,98,Feb-2018,,17006 SE,Wax Road,Covington,98042, 317.02 ,,5290
+King,K-N,Ballard,X,54,Jul-2019,Noren 59th,1501 NW,59th Street,Seattle,98107, 47.00 ,Noren Development,5291
+King,K-S,Rainier Valley,X,35,Apr-2018,Pax Futura,3700 S,Hudson Street,Seattle,98118, 103.00 ,Cascade Built,5292
+King,K-E,Bellevue-East,R,100,Jan-2050,,2120,116th Avenue NE,Bellevue,98004, 237.00 ,,5293
+King,K-N,University,C,244,Jul-2018,University Place at Union Bay,4609,Union Bay Place NE,Seattle,98105, 43.00 ,University Place WA LLC,5294
+Snohomish,Sno,Central Everett,H,120,Jan-2050,,1002,Broadway,Everett,98201, 401.00 ,,5295
+King,K-N,Ballard,X,22,Jan-2050,,1427 NW,65th Street,Seattle,98117, 33.00 ,Birdhouse Development,5296
+King,K-N,Shoreline,S,60,Jan-2050,Ronald Commons,17837,Aurora Avenue N,Shoreline,98133, 207.00 ,,5297
+King,K-N,Ballard,M,74,Jan-2018,Riano,5611,17th Avenue NW,Seattle,98107, 47.00 ,Calhoun Properties,5298
+King,K-N,Greenlake/Wallingford,R,28,Jan-2050,Hearthstone Retirement,6870,Woodlawn Avenue NE,Seattle,98115, 36.00 ,,5300
+King,K-E,Bellevue-West,X,165,Mar-2019,Main Street Flats II,10697,Main Street,Bellevue,98004, 238.01 ,Alamo Manhattan,5301
+King,K-S,Rainier Valley,X,140,Jan-2019,Othello Mixed Use,6901,Martin Luther King Jr. Way S,Seattle,98118, 110.00 ,Dynasty Group,5302
+King,K-C,Queen Anne,X,128,Aug-2018,Zella,203 W,Republican Street,Seattle,98119, 71.00 ,CJD Investments,5303
+King,K-C,First Hill,X,440,Jan-2050,,707,Terry Avenue,Seattle,98104, 85.00 ,Westbank Projects Corp,5305
+King,K-C,Belltown/Dwntn/S Lk Union,X,87,Jan-2050,Block 56 North,433,8th Avenue N,Seattle,98109, 72.00 ,Vulcan Northwest,5306
+Pierce,Pie,Downtown Tacoma,X,180,Jan-2019,Tacoma Town Center Phase 1,2100,Jefferson Avenue,Tacoma,98402, 616.02 ,North American Asset Management Group,5307
+King,K-N,University,U,60,Mar-2018,Stax,5001,Brooklyn Avenue NE,Seattle,98105, 44.00 ,Xander Real Holdings LLC,5308
+King,K-S,Rainier Valley,X,84,Feb-2019,,2950 S,Dakota Street,Seattle,98108, 101.00 ,Stratford Company,5310
+King,K-S,Rainier Valley,S,81,Jan-2050,,3616,34th Avenue S,Seattle,98144, 101.00 ,SEED (SE Effective Dev),5311
+King,K-S,West Seattle,C,44,Dec-2019,Alki Beach Residences,1250,Alki Avenue SW,Seattle,98116, 96.00 ,Solterra Systems,5312
+King,K-S,White Center,X,32,Jan-2050,Edric,9021,17th Avenue SW,Seattle,98106, 114.00 ,Arsene Construction,5313
+King,K-E,Bellevue-West,X,270,Jan-2020,Four 106,320,106th Avenue NE,Bellevue,98004, 238.02 ,Fana Group of Companies,5314
+King,K-C,Central,S,20,Jan-2050,,3603,35th Avenue S,Seattle,98144, 89.00 ,SEED (SE Effective Dev),5316
+Pierce,Pie,East Tacoma,X,117,Jan-2050,,7843,Pacific Avenue,Tacoma,98408, 634.00 ,Pacific NW Pro LLC,5317
+King,K-E,Bellevue-West,X,124,Sep-2019,Bellevue Parkside,99,102nd Avenue NE,Bellevue,98004, 238.02 ,Continental Properties,5318
+King,K-C,Central,X,130,Mar-2021,,208,10th Avenue,Seattle,98122, 86.00 ,WestCorp Construction,5323
+King,K-E,Bellevue-East,X,210,Jan-2022,,1215,120th Avenue NE,Bellevue,98005, 237.00 ,Pine Forest Properties,5330
+King,K-N,Ballard,U,30,Apr-2017,Vitality on 62nd,1436 NW,62nd Street,Seattle,98107, 33.00 ,Greenbuild Development,5331
+King,K-C,Belltown/Dwntn/S Lk Union,A,169,Feb-2017,Cyrene,50,University Street,Seattle,98101, 81.00 ,Mack Urban,5334
+King,K-E,Mercer Island,R,89,Sep-2017,Aegis Mercer Island,7445 SE,24th Street,Mercer Island,98040, 243.00 ,Aegis Senior Communities,5336
+Snohomish,Sno,Marysville/Monroe,X,48,Mar-2018,Creekside,7021,Pioneer Highway,Stanwood,98292, 533.01 ,Coast Real Estate Services,5340
+Pierce,Pie,Downtown Tacoma,X,140,Oct-2019,,1305 S,Fawcett Avenue,Tacoma,98402, 616.01 ,Commencement Bay Development,5341
+King,K-S,White Center,X,23,Jun-2018,Shoreline,12260,Ambaum Blvd SW,Burien,98146, 268.02 ,NW Development,5342
+King,K-E,Factoria,A,378,Feb-2017,Avalon Newcastle Commons I,6620,Coal Creek Pkwy SE,Newcastle,98059, 250.04 ,Avalon Bay Communities,5344
+King,K-E,Factoria,X,272,Aug-2019,Avalon Newcastle Commons II,6620,Coal Creek Pkwy SE,Newcastle,98059, 250.04 ,Avalon Bay Communities,5345
+King,K-C,Belltown/Dwntn/S Lk Union,X,48,Mar-2019,Encore,3010,1st Avenue,Seattle,98121, 80.01 ,Performance Properties,5346
+Snohomish,Sno,Marysville/Monroe,C,31,Jan-2050,,6100,134th Place SE,Everett,98208, 521.10 ,SLA Properties,5347
+King,K-S,Rainier Valley,U,174,Oct-2017,Othello Station North II,4200 S,Othello Street,Seattle,98118, 111.01 ,Woodbridge Northwest Communities,5351
+King,K-N,Ballard,X,38,Jan-2050,Salt Ballard,5601,20th Avenue NW,Seattle,98107, 47.00 ,,5356
+Snohomish,Sno,Lynnwood,X,140,May-2019,Allegro at Ash Creek II,16525,Ash Way,Lynnwood,98037, 518.02 ,Integral Northwest Corp.,5357
+King,K-N,Ballard,U,25,May-2017,,1762 NW,59th Street,Seattle,98107, 47.00 ,MRN Homes,5359
+King,K-C,Magnolia,X,237,Jan-2050,Interbay,3435,15th Avenue W,Seattle,98119, 58.01 ,,5360
+King,K-S,West Seattle,U,54,Sep-2017,AJ,4505,42nd Avenue SW,Seattle,98116, 105.00 ,CAPCO Investments,5362
+King,K-C,Belltown/Dwntn/S Lk Union,U,396,Jan-2018,Stratus,2101,9th Avenue,Seattle,98121, 73.00 ,GID Urban Development Group,5363
+King,K-C,Central,M,38,Mar-2017,Modena,2320 E,Madison Street,Seattle,98112, 77.00 ,Calhoun Properties,5367
+King,K-N,Greenlake/Wallingford,X,57,Sep-2018,Phinney Flats,6720,Greenwood Avenue N,Seattle,98103, 35.00 ,Johnson & Carr,5368
+King,K-C,First Hill,U,60,Feb-2018,Cove,601 E,Pike Street,Seattle,98122, 84.00 ,Solterra Systems,5372
+King,K-N,North Seattle,U,27,Jun-2018,Mid Town,8820,Aurora Avenue N,Seattle,98103, 18.00 ,William Lilleness,5373
+King,K-N,University,C,75,Jan-2050,,3300 NE,65th Street,Seattle,98115, 38.00 ,Polygon Northwest,5377
+King,K-C,Belltown/Dwntn/S Lk Union,S,40,Jan-2050,,1901,Western Avenue,Seattle,98101, 81.00 ,,5378
+King,K-N,University,U,69,Aug-2017,5260 Mixed Use,5260,University Way NE,Seattle,98105, 44.00 ,Ying Development,5381
+King,K-C,Central,S,100,Jan-2050,,221,10th Avenue,Seattle,98122, 86.00 ,Seattle Housing Authority,5387
+King,K-S,West Seattle,X,49,Aug-2019,Admiral Station,2715,California Avenue SW,Seattle,98116, 98.00 ,BCK Investments,5388
+King,K-C,Magnolia,S,97,Jan-2050,,2208,15th Avenue W,Seattle,98119, 58.02 ,Downtown Emergency Services Center,5390
+King,K-N,Ballard,U,93,Jul-2017,Lillehammer,7016,15th Avenue NW,Seattle,98117, 30.00 ,Gramor Development,5399
+King,K-C,Belltown/Dwntn/S Lk Union,A,294,Jan-2017,Modera South Lake Union,435,Dexter Avenue N,Seattle,98109, 72.00 ,Mill Creek Residential Trust,5402
+King,K-N,Ballard,X,54,Jan-2019,Crown Hill Mixed Use,7730,15th Avenue NW,Seattle,98117, 30.00 ,Lake Union Partners,5404
+King,K-E,Bothell,A,94,Feb-2017,Linq at Spencer Square,18151,68th Avenue NE,Kenmore,98028, 216.00 ,Main Street Property Group,5409
+King,K-C,Belltown/Dwntn/S Lk Union,X,292,Dec-2050,901 Harrison,901,Harrison Street,Seattle,98109, 72.00 ,Vulcan Northwest,5412
+King,K-N,North Seattle,X,75,Jun-2019,,14337,32nd Avenue NE,Seattle,98125, 1.00 ,Stratford Company,5413
+King,K-C,Belltown/Dwntn/S Lk Union,U,450,Jun-2018,2202,2202,8th Avenue,Seattle,98121, 72.00 ,Clise Properties,5415
+Snohomish,Sno,Mill Creek,U,63,May-2017,Meadows at Martha Lake,16202,Meadow Road,Lynnwood,98087, 417.02 ,First Northwest Development,5418
+King,K-N,Ballard,X,25,Jan-2050,,2417 NW,57th Street,Seattle,98107, 32.00 ,Mid City Builders,5420
+King,K-C,Belltown/Dwntn/S Lk Union,U,393,Oct-2017,AMLI Arc,1810,Boren Avenue,Seattle,98101, 73.00 ,AMLI Residential,5421
+King,K-C,Belltown/Dwntn/S Lk Union,C,382,Jun-2019,Nexus Tower,1806,Minor Avenue,Seattle,98101, 73.00 ,Burrard Group,5425
+King,K-C,Queen Anne,R,124,Jan-2050,,2900,3rd Avenue W,Seattle,98119, 60.00 ,Aegis Senior Communities,5434
+King,K-S,Burien,X,90,Mar-2020,Emerald Pointe on the Sound - Ph 2,13401,12th Avenue SW,Burien,98146, 276.00 ,Westmark Development,5436
+King,K-C,Queen Anne,U,45,Jun-2017,Garden Court,219,1st Avenue N,Seattle,98109, 71.00 ,Ranjiv Hayre,5439
+King,K-S,Burien,R,126,Apr-2017,Burien Town Square,457 SW,152nd Street,Burien,98166, 279.00 ,Pillar Properties,5440
+King,K-C,Queen Anne,U,317,Jul-2017,One Lakefront,1287,Westlake Avenue N,Seattle,98109, 67.00 ,Holland Residential,5442
+King,K-C,Capitol Hill/Eastlake,U,49,Jul-2017,1722,1722,Summit Avenue,Seattle,98122, 74.00 ,Neiman Taber Architecture,5443
+King,K-C,First Hill,U,112,Feb-2018,423,423,Terry Avenue,Seattle,98104, 85.00 ,Sharkey Properties,5446
+King,K-C,Capitol Hill/Eastlake,X,32,Jan-2050,,3120,Harvard Avenue E,Seattle,98102, 61.00 ,Traditional Urban Builders,5451
+Pierce,Pie,Stadium District,C,117,Jan-2050,Broadview,212,Stadium Way S,Tacoma,98402, 615.00 ,O'Connor and Associates,5500
+King,K-E,Woodinville/Totem Lake,T,91,Dec-2017,Athene,12531 NE,124th Street,Kirkland,98034, 219.03 ,Imagine Housing,5507
+Snohomish,Sno,Silver Lake,C,51,Jan-2050,Melody at Penny Creek II,3309,132nd Street SE,Everett,98208, 416.06 ,Real Property Investments,5508
+Pierce,Pie,North Tacoma,U,94,Jan-2019,,4900,Main Street,Tacoma,98407, 603.00 ,MC Construction Consultants,5514
+King,K-C,Belltown/Dwntn/S Lk Union,U,206,Dec-2017,624 Yale,624,Yale Avenue N,Seattle,98109, 73.00 ,Blume Company,5517
+King,K-S,Burien,T,80,Jan-2050,Burien TOD,300 SW,150th Street,Burien,98166, 279.00 ,Alliance Property Group,5523
+Pierce,Pie,Parkland/Spanaway,U,234,May-2018,Rosemont I,17412,44th Avenue E,Tacoma,98446, 714.06 ,Tarragon,5527
+King,K-E,Bellevue-West,U,154,Sep-2017,Evergreen Plaza,10845 NE,2nd Place,Bellevue,98004, 238.02 ,Evergreen Point Development,5531
+Pierce,Pie,Puyallup/Sumner,x,240,Apr-2020,Cedar Springs,8127,179th Street E,Puyallup,98375, 731.09 ,Cedar Springs Associates,5544
+King,K-SE,Renton,A,53,Feb-2017,Taylor Creek,7050 S,116th Place,Seattle,98178, 260.01 ,CHG Building Systems,5547
+King,K-E,Redmond,x,213,Jan-2050,Redmond City Center,16135 NE,85th Street,Redmond,98052, 323.09 ,Cosmos Development,5552
+King,K-C,Belltown/Dwntn/S Lk Union,H,150,Jan-2050,2nd & Virginia - South tower,1933,2nd Avenue,Seattle,98101, 80.02 ,Columbia West Properties,5568
+King,K-N,North Seattle,X,85,Sep-2018,,9039,Greenwood Avenue N,Seattle,98103, 17.00 ,Pastakia & Associates,5571
+King,K-SE,Renton,S,77,Jan-2050,,10500 SE,180th Street,Renton,98055, 293.03 ,King County Housing Authority,5575
+Pierce,Pie,Puyallup/Sumner,X,151,Oct-2019,Emerald Pointe at Sunrise,11150,Sunrise Blvd E,Puyallup,98374, 731.12 ,Oakpointe,5576
+King,K-N,Greenlake/Wallingford,X,293,Oct-2019,Iron Flats,802 NE,66th Street,Seattle,98115, 36.00 ,Emerald Bay Equity,5578
+King,K-C,Capitol Hill/Eastlake,x,20,May-2019,11th & Republican,505,11th Avenue E,Seattle,98102, 75.00 ,Nik | Chick,5582
+Snohomish,Sno,Edmonds,X,2600,Jan-2050,Point Wells,20500,Richmond Beach Road NW,Edmonds,98020, 506.00 ,Blue Square Real Estate,5587
+King,K-E,Factoria,X,230,Jan-2050,Kenneydale,1901 NE,48th Street,Renton,98056, 247.02 ,Seelig Properties,5599
+King,K-C,Capitol Hill/Eastlake,X,26,May-2018,Roxette,1720 E,Denny Way,Seattle,98122, 76.00 ,Hamilton Urban Partners,5600
+King,K-N,Greenlake/Wallingford,X,28,May-2018,,3618,2nd Avenue NW,Seattle,98107, 48.00 ,MRN Homes,5608
+King,K-C,Belltown/Dwntn/S Lk Union,U,256,Jun-2017,Cascade I,221,Minor Avenue N,Seattle,98109, 73.00 ,Equity Residential,5609
+King,K-C,Queen Anne,U,82,Apr-2017,Broadstone Clarendon,105,Warren Avenue N,Seattle,98109, 71.00 ,Alliance Residential,5616
+Snohomish,Sno,Marysville/Monroe,R,228,Jan-2050,,11929,Smokey Point Blvd,Marysville,98271, 528.04 ,Dujardin Homes,5617
+King,K-C,First Hill,C,287,Sep-2020,800 Columbia,800,Columbia Street,Seattle,98104, 85.00 ,Daniels Real Estate,5619
+Pierce,Pie,Mid Tacoma,X,83,Mar-2019,McCarver Heights,2330,Yakima Court,Tacoma,98405, 617.00 ,McCormick International,5640
+King,K-S,West Seattle,U,20,Sep-2017,,4122,36th Avenue SW,Seattle,98126, 98.00 ,,5650
+King,K-C,Belltown/Dwntn/S Lk Union,X,242,Jan-2020,,427,9th Avenue N,Seattle,98109, 72.00 ,Create World America,5657
+King,K-C,Belltown/Dwntn/S Lk Union,U,49,Oct-2017,,525,Boren Avenue N,Seattle,98109, 73.00 ,Wilshire Capital Partners,5658
+King,K-C,Capitol Hill/Eastlake,U,61,May-2017,Shelton Eastlake,2359,Franklin Avenue E,Seattle,98102, 61.00 ,Shilshole Development LLC,5661
+King,K-E,Issaquah,A,344,Feb-2017,Atlas,1118,7th Avenue NW,Issaquah,98027, 321.03 ,Lennar Multifamily,5662
+King,K-C,Capitol Hill/Eastlake,X,138,Mar-2019,,1401 E,Madison Street,Seattle,98122, 75.00 ,Equity Residential,5663
+King,K-E,Issaquah,C,176,Jan-2050,Brownstone at Issaquah Highlands,1380 NE,Brooklyn Loop,Issaquah,, 322.10 ,,5664
+King,K-C,Belltown/Dwntn/S Lk Union,X,465,Jan-2050,Block 48,101,Westlake Avenue N,Seattle,98109, 72.00 ,Vulcan Northwest,5665
+King,K-C,Queen Anne,U,385,Jul-2017,Westlake Steps/Marina SLU,1209,Westlake Avenue N,Seattle,98109, 67.00 ,Holland Residential,5669
+Pierce,Pie,Downtown Tacoma,C,200,Jan-2050,,1501,Broadway,Tacoma,98402, 616.02 ,,5671
+King,K-N,Greenlake/Wallingford,X,56,Apr-2018,Fremont,743 N,35th Street,Seattle,98103, 49.00 ,Hardy Development Companies,5673
+Pierce,Pie,Fircrest/University Place,C,34,Jan-2050,Morrison Townhomes,7406,29th Street W,University Place,98466, 723.11 ,,5674
+King,K-SE,Federal Way,R,500,Jan-2050,,1524 S,328th Street,Federal Way,98003, 303.03 ,,5675
+King,K-N,University,S,133,Mar-2018,Arbora Court,4738,15th Avenue NE,Seattle,98105, 53.01 ,Bellwether Housing,5676
+Pierce,Pie,Puyallup/Sumner,U,130,Oct-2017,Arbors at Edgewood II,2013,Meridian Avenue E,Edgewood,98371, 707.01 ,Eagle Creek Land & Development,5677
+King,K-C,Capitol Hill/Eastlake,U,45,Sep-2017,Waterton,2203,Eastlake Avenue E,Seattle,98102, 66.00 ,Metropolitan Homes,5678
+King,K-N,North Seattle,X,20,Jul-2018,,8521,Roosevelt Way NE,Seattle,98115, 19.00 ,MRN Homes,5680
+King,K-S,Rainier Valley,X,30,Jun-2019,Henderson Mixed Use,4354 S,Henderson Street,Seattle,98118, 117.00 ,Eagle Ridge Plaza,5683
+King,K-E,Factoria,U,76,May-2017,Tria,12833,Newcastle Way,Newcastle,98056, 250.01 ,Goodman Real Estate,5684
+King,K-C,Belltown/Dwntn/S Lk Union,X,202,Oct-2019,Rainier Square,1301,5th Avenue,Seattle,98101, 81.00 ,Wright Runstad,5685
+King,K-N,Greenlake/Wallingford,U,124,Apr-2017,Hayes on Stone Way,3627,Stone Way N,Seattle,98103, 54.00 ,Pollard Entities,5686
+King,K-N,University,U,28,Feb-2018,Lavender Suites,4519,18th Avenue NE,Seattle,98105, 53.01 ,Money Grass Investment,5687
+King,K-N,Shoreline,X,72,Jan-2050,205,1795 NE,205th Street,Shoreline,98026, 204.01 ,Goodman Real Estate,5691
+King,K-C,Belltown/Dwntn/S Lk Union,X,406,Mar-2021,,1001,John Street,Seattle,98109, 73.00 ,Mack Urban,5696
+King,K-N,University,U,98,Feb-2018,DXU,4230,11th Avenue NE,Seattle,98105, 53.01 ,Arion Investments LLC,5697
+King,K-C,Belltown/Dwntn/S Lk Union,X,294,Jan-2050,Block 56E,401,8th Avenue N,Seattle,98109, 72.00 ,Vulcan Northwest,5698
+King,K-N,Greenlake/Wallingford,U,79,May-2017,Medora,6800,Roosevelt Way NE,Seattle,98115, 36.00 ,Emerald Bay Equity,5699
+Pierce,Pie,Fircrest/University Place,R,142,Jan-2050,Grandview Senior Living,8427,27th Street W,University Place,98466, 723.09 ,,5700
+King,K-E,Bellevue-West,X,435,Feb-2020,Elev8,752,108th Avenue NE,Bellevue,98004, 238.02 ,Plus Investments USA,5702
+King,K-N,Ballard,U,48,Sep-2017,,1731 NW,57th Street,Seattle,98107, 47.00 ,Meter LLC,5706
+King,K-N,Greenlake/Wallingford,U,27,Jul-2017,Red Cedar,3635,Phinney Avenue N,Seattle,98103, 49.00 ,Build Urban,5708
+King,K-C,Queen Anne,U,182,Sep-2017,Uptown Flats,300,1st Avenue W,Seattle,98119, 71.00 ,Greystar Development,5709
+King,K-N,University,X,37,May-2018,,4046,8th Avenue NE,Seattle,98105, 52.00 ,Build Urban,5710
+King,K-C,Capitol Hill/Eastlake,U,57,Jul-2017,,1420 E,Howell Street,Seattle,98122, 75.00 ,Greenbuild Development,5711
+King,K-N,University,X,20,Jan-2050,,4320,8th Avenue NE,Seattle,98105, 52.00 ,S & B Capital Inc,5712
+King,K-C,Capitol Hill/Eastlake,U,51,Feb-2018,12th Ave,121,12th Avenue E,Seattle,98102, 75.00 ,Hardy Development Companies,5713
+King,K-E,Issaquah,R,146,Nov-2017,,2450,Newport Way NW,Issaquah,98027, 321.03 ,Wolff,5715
+King,K-N,Greenlake/Wallingford,U,130,Aug-2017,Eddy at Green Lake Village,419 NE,71st Street,Seattle,98115, 36.00 ,Wallace Properties,5716
+King,K-C,Capitol Hill/Eastlake,X,59,Apr-2019,Bellevue Place,736,Bellevue Place E,Seattle,98102, 66.00 ,Walls Property Management,5717
+King,K-C,Capitol Hill/Eastlake,U,34,Aug-2018,11th & Aloha,750,11th Avenue E,Seattle,98102, 65.00 ,Hardy Development Companies,5718
+King,K-N,Ballard,U,33,Sep-2017,Bespoke,1506 NW,61st Street,Seattle,98107, 33.00 ,Xander Real Holdings LLC,5719
+King,K-N,Ballard,U,132,Jun-2017,Modera Ballard,2003 NW,57th Street,Seattle,98107, 47.00 ,Mill Creek Residential Trust,5720
+King,K-N,Greenlake/Wallingford,M,105,Aug-2017,NOVO,6105,Roosevelt Way NE,Seattle,98115, 36.00 ,CWD Investments,5721
+King,K-N,North Seattle,U,41,Jul-2017,Cubix 95,714 N,95th Street,Seattle,98103, 13.00 ,Parkstone Properties,5722
+King,K-S,Rainier Valley,X,91,Aug-2018,Sonata East,3004 S,Alaska Street,Seattle,98108, 101.00 ,BDR Capital Partners LLC,5726
+King,K-N,Greenlake/Wallingford,U,81,Mar-2018,LIV Roosevelt,6404,9th Avenue NE,Seattle,98115, 36.00 ,Paar Development,5728
+King,K-C,Queen Anne,U,75,Jul-2017,Cora,19 W,Harrison Street,Seattle,98119, 71.00 ,Barrientos + Ryan,5729
+King,K-C,Belltown/Dwntn/S Lk Union,X,54,May-2018,Cannery,213 S,Main Street,Seattle,98104, 92.00 ,Amundson Properties,5730
+King,K-C,Capitol Hill/Eastlake,X,61,Jan-2019,Robin's Nest,3272,Fuhrman Avenue E,Seattle,98102, 61.00 ,GranCorp Real Estate,5731
+King,K-E,Redmond,U,222,Jun-2018,Alexan Marymoor,6499 E,Lake Sammamish Parkway NE,Redmond,98052, 323.13 ,Trammel Crow Residential,5732
+King,K-C,Central,X,230,Dec-2020,Yesler Terrace Block 4,900 E,Yesler Way,Seattle,98122, 86.00 ,Vulcan Northwest,5733
+King,K-E,Bellevue-West,X,158,Jan-2019,Eight-Eighty-Eight,888,108th Avenue NE,Bellevue,98004, 238.02 ,CD Heritage,5734
+King,K-N,Greenlake/Wallingford,U,48,Apr-2018,Wallingford,1601 N,45th Street,Seattle,98103, 50.00 ,Hardy Development Companies,5735
+King,K-C,First Hill,U,44,Aug-2017,101 Broadway,101,Broadway Avenue E,Seattle,98122, 85.00 ,Henbart LLC,5737
+King,K-E,Bothell,U,130,Oct-2017,Junction - Phase I,18505,Bothell Way NE,Bothell,98011, 218.03 ,Main Street Property Group,5739
+King,K-N,North Seattle,X,83,Jan-2050,,9510,Stone Avenue N,Seattle,98103, 13.00 ,Oriental Development LLC,5740
+King,K-N,Ballard,U,63,Dec-2018,,6301,15th Avenue NW,Seattle,98107, 33.00 ,Noren Development,5743
+King,K-E,Redmond,A,180,Jan-2017,Carter on the Park,7502,159th Place NE,Redmond,98052, 323.09 ,Main Street Property Group,5744
+King,K-E,Redmond,R,75,Jan-2050,,8707,160th Avenue N,Redmond,98052, 323.09 ,Shelter Resources,5746
+Snohomish,Sno,Central Everett,X,265,Jul-2019,Fisherman's Harbor,1301 W,Marine View Drive,Everett,98201, 402.00 ,SeaLevel Properties,5747
+King,K-N,Greenlake/Wallingford,A,30,Jan-2017,LIV Wallingford,1240 N,Midvale Place,Seattle,98103, 50.00 ,Paar Development,5748
+King,K-C,Belltown/Dwntn/S Lk Union,X,361,Apr-2019,Third and Lenora,2031,3rd Avenue,Seattle,98121, 80.02 ,Martin Selig Real Estate,5749
+King,K-S,Beacon Hill,U,26,Oct-2017,Holgate 12 - Phase II,1808,12th Avenue S,Seattle,98144, 94.00 ,Rudd Development,5751
+King,K-C,Belltown/Dwntn/S Lk Union,X,300,Mar-2020,,2302,4th Avenue,Seattle,98121, 72.00 ,TeamRise,5753
+King,K-C,Belltown/Dwntn/S Lk Union,C,160,Jan-2050,888 2nd,888,2nd Avenue,Seattle,98104, 81.00 ,Urban Visions,5754
+King,K-N,North Seattle,X,108,Jul-2018,NaturalLofts,12320,32nd Avenue NE,Seattle,98125, 7.00 ,GLP Holdings,5755
+King,K-C,Belltown/Dwntn/S Lk Union,X,98,Jan-2020,,403,Dexter Avenue N,Seattle,98109, 72.00 ,Wilshire Capital Partners,5756
+King,K-E,Kirkland,U,185,Sep-2018,Kirkland Urban,457,Central Way,Kirkland,98033, 224.00 ,Talon Private Capital,5757
+King,K-E,Factoria,U,98,Jul-2017,Atlas,12901,Newcastle Way,Newcastle,98056, 250.01 ,Solterra Systems,5758
+King,K-N,Greenlake/Wallingford,U,76,Sep-2017,Maude,836 NE,67th Street,Seattle,98115, 36.00 ,CWD Investments,5759
+King,K-E,Bellevue-West,C,143,Jan-2050,One88,120,Bellevue Way NE,Bellevue,98004, 238.02 ,Bosa Brothers Construction,5760
+King,K-C,Capitol Hill/Eastlake,X,36,Sep-2018,,1010 E,Republican Street,Seattle,98102, 75.00 ,Noren Development,5761
+King,K-N,University,U,40,Apr-2017,J-Pan,5216,Brooklyn Avenue NE,Seattle,98105, 44.00 ,J-Pan Investment,5763
+King,K-C,Belltown/Dwntn/S Lk Union,U,433,Aug-2018,Fairview,425,Fairview Avenue N,Seattle,98109, 73.00 ,Greystar Development,5764
+King,K-C,First Hill,U,265,Aug-2018,Danforth,1001,Broadway Avenue,Seattle,98122, 84.00 ,Columbia Pacific Advisors,5765
+King,K-C,Magnolia,U,38,Aug-2017,Crane,1518 W,Dravus Street,Seattle,98119, 58.01 ,Pacific Crest Property Mgmt,5766
+King,K-C,Capitol Hill/Eastlake,U,30,Sep-2017,Joos Mixed Use,2200,24th Avenue E,Seattle,98112, 62.00 ,2200 Boston LLC,5768
+King,K-E,Bellevue-West,X,240,Oct-2021,Bellevue Square Expansion,523,Bellevue Way NE,Bellevue,98004, 238.02 ,Kemper Development,5771
+King,K-N,Ballard,R,105,Jan-2050,Pillar Properties Ballard,5601,24th Avenue NW,Seattle,98107, 32.00 ,Pillar Properties,5773
+King,K-N,Greenlake/Wallingford,X,125,Jan-2050,Pillar Properties Stone Way,4106,Stone Way N,Seattle,98103, 54.00 ,Pillar Properties,5774
+King,K-E,Kirkland,X,59,Jan-2050,Kirkland Aqua,1006,Lake Street S,Kirkland,98033, 227.01 ,Path America,5780
+King,K-N,University,X,55,May-2018,65th,1222 NE,65th Street,Seattle,98115, 26.00 ,Blueprint Capital,5781
+King,K-E,Factoria,X,346,Apr-2021,Quendall Terminals II-III-IV,4350,Lake Washington Blvd NE,Renton,98056, 247.02 ,Century Pacific,5786
+King,K-S,Rainier Valley,X,156,Feb-2019,Link at Mount Baker,3208,Claremont Avenue S,Seattle,98144, 95.00 ,Columbia Modern Urban,5787
+King,K-N,University,X,235,Jul-2019,Centerline - Block 2,6505,15th Avenue NE,Seattle,98115, 26.00 ,HB Capital,5789
+King,K-S,Rainier Valley,x,194,Jan-2050,Mount Baker Station I,2715,25th Avenue S,Seattle,98144, 101.00 ,Boulevard Group,5797
+King,K-N,Ballard,U,164,Mar-2019,Valdok 1702,1718 NW,56th Street,Seattle,98107, 47.00 ,Lennar Multifamily,5798
+King,K-SE,Des Moines,T,326,Sep-2018,Waterview Crossing,21920,Pacific Highway S,Des Moines,98198, 289.02 ,Magnum Construction,5800
+Snohomish,Sno,Silver Lake,X,136,Jan-2050,Garden Grove,515,112th Street SE,Everett,98208, 418.08 ,Mietzner Group,5806
+King,K-C,Capitol Hill/Eastlake,C,100,Jan-2017,Carmela,1320 E,Pike Street,Seattle,98122, 75.00 ,Madrona Real Estate Investors,5811
+King,K-C,Belltown/Dwntn/S Lk Union,U,461,Aug-2018,,970,Denny Way,Seattle,98109, 73.00 ,Holland Residential,5815
+King,K-N,North Seattle,X,139,Jul-2019,Northgate III,10711,8th Avenue NE,Seattle,98125, 12.00 ,Wallace Properties,5816
+King,K-S,Rainier Valley,x,107,Jan-2050,Mount Baker Station II,2615,25th Avenue S,Seattle,98144, 101.00 ,Boulevard Group,5827
+King,K-N,Ballard,C,53,Jul-2017,Isola 15th,7530,15th Avenue NW,Seattle,98117, 30.00 ,Isola Capital Management,5830
+King,K-S,Rainier Valley,S,92,Jan-2050,,3004 S,Alaska Street,Seattle,98108, 101.00 ,Seattle Housing Authority,5835
+King,K-E,Issaquah,X,100,Jan-2050,Hyla Crossing,Route 900 &,Gilman Blvd,Issaquah,98027, 321.03 ,Rowley Properties,5844
+King,K-E,Bellevue-West,X,100,Jan-2050,,201,106th Avenue NE,Bellevue,98004, 238.02 ,12 Bellevue International Investment,5847
+King,K-SE,Des Moines,R,363,Jan-2050,,815 S,216th Street,Des Moines,98198, 289.01 ,,5854
+King,K-S,White Center,A,44,Mar-2017,Bluestone,9051,20th Avenue SW,Seattle,98106, 114.00 ,STS Construction Services,5864
+King,K-C,Belltown/Dwntn/S Lk Union,X,1128,Mar-2020,Denny/Fairview,1120,Denny Way,Seattle,98109, 73.00 ,Onni Group,5867
+King,K-C,First Hill,X,50,Dec-2018,Crosby Capitol Hill,1517,Bellevue Avenue,Seattle,98122, 84.00 ,Gardens Studios LLC,5875
+King,K-C,Queen Anne,X,161,Dec-2018,701 Valley,701,Valley Street,Seattle,98109, 67.00 ,Tarragon,5877
+King,K-C,Queen Anne,X,113,Jan-2020,,14 W,Roy Street,Seattle,98119, 70.00 ,Val Thomas Inc,5880
+King,K-E,Bothell,C,100,Jan-2050,Bothell Landing (Parcel O),18320,98th Avenue NE,Bothell,98011, 218.03 ,Polygon Northwest,5882
+King,K-S,West Seattle,U,29,Sep-2017,,3829,California Avenue SW,Seattle,98116, 98.00 ,Arrow Construction,5887
+King,K-C,Belltown/Dwntn/S Lk Union,X,275,Apr-2019,Avalon Belltown,210,Wall Street,Seattle,98121, 80.01 ,Avalon Bay Communities,5889
+King,K-C,Capitol Hill/Eastlake,U,41,Sep-2017,Summit,1728,Summit Avenue,Seattle,98122, 74.00 ,Calhoun Properties,5890
+Pierce,Pie,South Tacoma,T,60,Jan-2050,Oak Trace,7419 S,Verde,Tacoma,98409, 628.02 ,MacDonald Ladd Development,5891
+King,K-C,Belltown/Dwntn/S Lk Union,U,221,Jul-2017,Cascade II,222,Fairview Avenue N,Seattle,98109, 73.00 ,Equity Residential,5894
+King,K-S,West Seattle,X,71,Mar-2019,Union Street,3039 SW,Avalon Way,Seattle,98126, 99.00 ,Chelan Custom Homes,5896
+King,K-C,First Hill,X,200,Jan-2050,,1013,8th Avenue,Seattle,98104, 82.00 ,bcIMC,5899
+King,K-C,Queen Anne,S,60,Jan-2050,,223 W,Galer Street,Seattle,98119, 70.00 ,,5903
+King,K-C,Central,U,160,Oct-2018,Modera Jackson,1801 S,Jackson Street,Seattle,98144, 90.00 ,Mill Creek Residential Trust,5905
+King,K-E,Bellevue-West,X,130,Jan-2050,NOMA,10246,Main Street,Bellevue,98004, 238.02 ,Vander Hoek Corp,5906
+King,K-E,Kirkland,X,175,Mar-2021,434,434,Kirkland Way,Kirkland,98033, 225.00 ,MRM Capital,5907
+King,K-C,Belltown/Dwntn/S Lk Union,C,266,Nov-2019,Emerald,1613,2nd Avenue,Seattle,98101, 81.00 ,Create World America,5911
+King,K-C,Belltown/Dwntn/S Lk Union,U,47,Dec-2017,Koz 1206,1210,Republican Street,Seattle,98109, 73.00 ,Koz Development,5912
+King,K-N,North Seattle,X,28,Jan-2050,,308 N,90th Street,Seattle,98103, 17.00 ,Kapsner Homes,5915
+King,K-C,Queen Anne,X,164,May-2019,Alexan 100,104,Denny Way,Seattle,98109, 71.00 ,Trammel Crow Residential,5916
+King,K-S,Beacon Hill,S,70,Jan-2050,,5701,Martin Luther King Jr. Way S,Seattle,98118, 104.00 ,,5918
+Snohomish,Sno,Edmonds,C,68,Sep-2017,Driftwood,50,Pine Street,Edmonds,98020, 504.02 ,Goodman Real Estate,5919
+King,K-S,Beacon Hill,S,47,Jan-2050,,2721,17th Avenue S,Seattle,98144, 100.00 ,Pacific Housing NW,5928
+King,K-C,Capitol Hill/Eastlake,X,150,Dec-2019,Capitol Hill Station - A,118,Broadway Avenue E,Seattle,98102, 75.00 ,Gerding Edlen Development,5929
+King,K-C,Capitol Hill/Eastlake,S,86,Dec-2019,Sound Transit Site B North,175,10th Avenue E,Seattle,98102, 75.00 ,Capitol Hill Housing,5930
+King,K-C,Capitol Hill/Eastlake,X,100,Dec-2019,Capitol Hill Station - B South,123,10th Avenue E,Seattle,98102, 75.00 ,Gerding Edlen Development,5931
+King,K-C,Capitol Hill/Eastlake,X,94,Dec-2019,Capitol Hill Station - C,1830,Broadway Avenue,Seattle,98122, 75.00 ,Gerding Edlen Development,5932
+King,K-C,Capitol Hill/Eastlake,X,44,Dec-2019,Capitol Hill Station - D,1821,Broadway,Seattle,98122, 74.00 ,Gerding Edlen Development,5933
+King,K-C,Capitol Hill/Eastlake,U,74,Jul-2017,Broadcast,1420 E,Madison Street,Seattle,98122, 75.00 ,Metropolitan Homes,5934
+King,K-E,Bothell,U,147,Nov-2017,Village at Beardslee Crossing III,19121,112th Avenue NE,Bothell,98011, 218.04 ,Westridge Land,5935
+King,K-S,Seatac,X,243,Jan-2050,Patterson Place I,3712 S,188th Street,SeaTac,98188, 284.03 ,Schneider Homes,5938
+King,K-N,University,U,110,Aug-2017,Hub on Campus Seattle,5000,University Way NE,Seattle,98105, 44.00 ,Core Spaces Inc,5940
+King,K-N,North Seattle,X,207,Jan-2050,,11060,2nd Avenue NE,Seattle,98125, 12.00 ,Mullally Development,5944
+King,K-C,Belltown/Dwntn/S Lk Union,S,340,Jan-2050,RISE (Block 59),513,Dexter Avenue N,Seattle,98109, 72.00 ,Vulcan Northwest,5947
+King,K-C,Belltown/Dwntn/S Lk Union,X,436,Apr-2020,Denny Centre,2014,Fairview Avenue,Seattle,98121, 73.00 ,Bosa Brothers Construction,5958
+King,K-C,Central,S,35,Jan-2050,,1013 S,Weller Street,Seattle,98104, 91.00 ,Seattle Housing Authority,5960
+King,K-C,Capitol Hill/Eastlake,S,45,Jan-2050,,431,Boylston Avenue E,Seattle,98102, 74.00 ,,5961
+King,K-C,Central,S,115,Nov-2018,,2320 E,Union Street,Seattle,98122, 77.00 ,Capitol Hill Housing,5965
+King,K-C,Belltown/Dwntn/S Lk Union,X,216,Jan-2050,Mercer Blocks - Block 37,630,Westlake Avenue N,Seattle,98109, 73.00 ,Vulcan Northwest,5970
+Snohomish,Sno,Lynnwood,X,114,Jun-2018,Allegro at Ash Creek I,16617,Ash Way,Lynnwood,98037, 518.02 ,Integral Northwest Corp.,5974
+King,K-E,Bellevue-East,U,31,Nov-2017,Westridge II,512,121st Place NE,Bellevue,98005, 236.01 ,SeaMark Properties,5982
+King,K-C,Belltown/Dwntn/S Lk Union,X,843,Mar-2021,,1120,John Street,Seattle,98109, 73.00 ,Onni Group,5988
+Snohomish,Sno,Lynnwood,X,344,Jan-2050,Lynnwood Place,3001,184th Street SW,Lynnwood,98037, 518.02 ,,5991
+King,K-S,Burien,U,229,Jun-2017,Maverick,15045,5th Avenue SW,Burien,98166, 279.00 ,Legacy Partners,5992
+King,K-S,Riverton/Tukwila,U,371,Jan-2018,Washington Place,223,Andover Park E,Tukwila,98188, 262.00 ,Great Wall Development Inc,5994
+King,K-C,Capitol Hill/Eastlake,X,41,Jan-2050,,1312 E,Olive Street,Seattle,98122, 75.00 ,SECO Development,5996
+Snohomish,Sno,Paine Field,R,167,Jan-2050,,1806,Hollow Dale Place,Everett,98204, 419.05 ,,5997
+King,K-C,Queen Anne,A,100,Jan-2017,Henry,22,Etruria Street,Seattle,98109, 60.00 ,Daly Partners,6001
+King,K-E,Bellevue-East,R,72,Jan-2050,,1835,116th Avenue NE,Bellevue,98004, 237.00 ,Aegis Senior Communities,6002
+King,K-N,North Seattle,X,20,Jan-2050,,14002,Midvale Avenue N,Seattle,98133, 3.00 ,Martin Lunde,6003
+King,K-C,Capitol Hill/Eastlake,X,27,Apr-2018,Eastlake/Yale,2037,Yale Avenue E,Seattle,98102, 66.00 ,Blueprint Capital,6005
+Pierce,Pie,Gig Harbor,R,275,May-2017,Heron's Key,41xx,Borgen Boulevard,Gig Harbor,98332, 725.05 ,,6008
+King,K-E,Bellevue-West,X,100,Jan-2050,,437,108th Avenue NE,Bellevue,98004, 238.02 ,NIU Enterprises,6011
+Pierce,Pie,Downtown Tacoma,S,50,Jan-2050,,1411,Yakima Avenue,Tacoma,98405, 614.00 ,Catholic Housing Services,6017
+King,K-C,Magnolia,X,39,Sep-2018,Loft Haus,3430,15th Avenue W,Seattle,98119, 58.01 ,,6019
+King,K-C,Capitol Hill/Eastlake,A,50,Feb-2017,AW Larson Building,3206,Harvard Avenue E,Seattle,98102, 61.00 ,Sound West Group,6023
+King,K-N,Ballard,U,178,Aug-2018,Valdok 1701,1701 NW,56th Street,Seattle,98107, 47.00 ,Lennar Multifamily,6025
+King,K-N,Shoreline,X,165,Jan-2019,Vail,17962,Midvale Avenue N,Seattle,98133, 207.00 ,Seawest Investment Associates,6026
+King,K-SE,Des Moines,R,135,Jul-2017,Adriana,22525,7th Avenue S,Des Moines,98198, 289.01 ,,6027
+King,K-C,Capitol Hill/Eastlake,U,41,Jul-2017,Harvard,741,Harvard Avenue E,Seattle,98102, 65.00 ,Blueprint Capital,6028
+King,K-N,Greenlake/Wallingford,A,35,Feb-2017,3633 Linden,3633,Linden Avenue N,Seattle,98103, 49.00 ,MRN Homes,6029
+King,K-C,First Hill,X,209,Oct-2018,,1001,Minor Avenue,Seattle,98104, 83.00 ,Holland Residential,6030
+King,K-E,Redmond,X,104,Apr-2019,Village,8336,165th Avenue NE,Redmond,98052, 323.09 ,RK Getty Corp,6032
+King,K-N,North Seattle,X,53,Jul-2020,HALO Studios,9002,Greenwood Avenue N,Seattle,98103, 17.00 ,Metrostructure Corp,6033
+King,K-C,Central,X,23,Jan-2050,,2305 S,Dearborn Street,Seattle,98144, 89.00 ,Dep Homes,6035
+King,K-N,North Seattle,U,217,May-2018,Lane,10720,5th Avenue NE,Seattle,98125, 12.00 ,Goodman Real Estate,6036
+King,K-C,Capitol Hill/Eastlake,X,43,Oct-2018,Sterling,323,Bellevue Avenue E,Seattle,98102, 74.00 ,Sunrise DC LLC,6037
+King,K-S,Rainier Valley,S,108,Mar-2017,Mercy Othello Plaza East,6940,Martin Luther King Jr Way S,Seattle,98118, 111.01 ,Mercy Housing Northwest,6038
+King,K-E,Bothell,U,53,Jul-2017,Swedish Crest,9625 NE,191st Street,Bothell,98011, 218.03 ,Harbour Homes,6039
+King,K-C,Queen Anne,X,65,Jan-2050,,400,Roy Street,Seattle,98109, 67.00 ,Plus Investments USA,6040
+King,K-C,Belltown/Dwntn/S Lk Union,X,638,Jun-2021,2301,2301,7th Avenue,Seattle,98121, 72.00 ,Clise Properties,6042
+Snohomish,Sno,Silver Lake,T,177,Jan-2050,Gateway,13000,21st Drive SE,Everett,98208, 416.06 ,Magnum Construction,6044
+King,K-N,Shoreline,U,60,Jul-2017,Sunrise Eleven,20015,Ballinger Way NE,Shoreline,98155, 204.01 ,Sunrise Eleven,6046
+King,K-E,Kirkland,X,50,Sep-2018,Olympic Building,200,Central Way,Kirkland,98033, 224.00 ,Seawest Investment Associates,6047
+King,K-C,Belltown/Dwntn/S Lk Union,X,79,Mar-2019,Mercer Blocks - Block 31,625,Boren Avenue N,Seattle,98109, 73.00 ,Vulcan Northwest,6048
+King,K-C,Belltown/Dwntn/S Lk Union,X,70,Mar-2019,Mercer Blocks - Block 25,630,Boren Avenue N,Seattle,98109, 73.00 ,Vulcan Northwest,6049
+King,K-C,Belltown/Dwntn/S Lk Union,X,129,Sep-2018,Block 47,200,9th Avenue N,Seattle,98109, 72.00 ,Vulcan Northwest,6050
+King,K-N,Greenlake/Wallingford,X,48,Apr-2018,Cubix Fremont,3519,Fremont Place N,Seattle,98103, 49.00 ,Parkstone Properties,6051
+King,K-C,Capitol Hill/Eastlake,U,47,Aug-2017,Stream 403,403,Belmont Avenue E,Seattle,98102, 74.00 ,Stream Real Estate Development,6052
+King,K-N,University,U,85,Aug-2017,Parsonage,4132,Brooklyn Avenue NE,Seattle,98105, 53.01 ,Barrientos + Ryan,6053
+Snohomish,Sno,Central Everett,R,100,Jan-2050,,3214,Broadway,Everett,98201, 407.00 ,American Capital Development,6054
+King,K-C,Belltown/Dwntn/S Lk Union,X,54,Aug-2019,Ocean City,608,6th Avenue S,Seattle,98104, 72.00 ,Ocena City Investment,6055
+King,K-E,Factoria,C,24,Jan-2050,Windward Townhomes,4029,129th Place SE,Bellevue,98006, 248.00 ,Windward Real Estate Services,6056
+King,K-N,Shoreline,X,309,Jan-2050,Potala Shoreline,15501,Aurora Avenue N,Shoreline,98133, 209.00 ,Path America,6057
+King,K-E,Bothell,A,59,Feb-2017,Spencer 68 - Phase II,6631 NE,182nd Street,Kenmore,98028, 216.00 ,Main Street Property Group,6058
+King,K-S,Rainier Valley,U,60,Apr-2017,,2939 S,Mount Baker Blvd,Seattle,98144, 95.00 ,Build Urban,6059
+King,K-C,Central,X,135,Oct-2018,718 Rainier,718,Rainier Avenue S,Seattle,98144, 90.00 ,Daly Partners,6060
+Snohomish,Sno,Marysville/Monroe,U,160,Apr-2017,Cascadia at the Lodge,17500,25th Avenue NE,Marysville,98271, 531.01 ,Wakefield Properties,6061
+King,K-E,Issaquah,X,159,Aug-2018,Sky (Village at Sammamish Town Center),100,228th Avenue SE,Sammamish,98074, 322.09 ,Main Street Property Group,6062
+Snohomish,Sno,Silver Lake,T,180,Jan-2050,,14615,Madison Way,Lynnwood,98087, 418.04 ,Magnum Construction,6063
+King,K-N,Shoreline,X,165,Jun-2019,RLD Aurora Square,15323,Westminster Way N,Shoreline,98133, 209.00 ,RLD Aurora Square,6064
+King,K-C,Belltown/Dwntn/S Lk Union,X,95,Jul-2018,Louisa Hotel,665 S,King Street,Seattle,98104, 72.00 ,Barrientos + Ryan,6065
+King,K-E,Woodinville/Totem Lake,X,338,Jun-2019,Woodin Creek Village II,17300,135th Avenue NE,Woodinville,98072, 323.19 ,Weidner Company,6067
+King,K-C,Queen Anne,X,103,Jan-2022,,701,5th Avenue N,Seattle,98109, 67.00 ,F&M Development,6068
+King,K-C,Magnolia,U,226,Jun-2018,Axle,3230,16th Avenue W,Seattle,98119, 58.01 ,Lennar Multifamily,6069
+King,K-E,Redmond,U,96,Oct-2017,162 TEN,16210 NE,80th Street,Redmond,98052, 323.09 ,Natural & Built Environments,6070
+Pierce,Pie,Mid Tacoma,X,121,Aug-2018,1500 Orchard,1502 S,Orchard Street,Tacoma,98465, 611.00 ,Port Landing,6073
+King,K-C,Central,X,385,Aug-2019,First Central Station,1203 E,Spruce Street,Seattle,98122, 86.00 ,Hardy Development Companies,6074
+King,K-C,Central,X,50,Jun-2018,,2100 E,Madison Street,Seattle,98112, 79.00 ,JC Mueller,6075
+King,K-S,Burien,U,32,Apr-2018,Parkside,12600,Ambaum Blvd SW,Burien,98146, 275.00 ,Benjamin Ryan Communities,6076
+Snohomish,Sno,Lynnwood,R,295,Aug-2017,Reserve at Lynnwood,19815,Scriber Lake Road,Lynnwood,98036, 514.00 ,AVS Communities,6077
+King,K-SE,Des Moines,X,49,Jan-2050,Seascape,22607,Marine View Drive S,Des Moines,98198, 289.01 ,Fortun Development,6079
+King,K-E,Redmond,U,102,Apr-2018,Ravello,16180 NE,80th Street,Redmond,98052, 323.09 ,Shelter Holdings,6080
+King,K-N,North Seattle,T,170,May-2018,Linden Flats,13280,Linden Avenue N,Seattle,98133, 4.01 ,GMD Development LLC,6081
+King,K-N,University,X,110,Dec-2018,Roosevelt Way Mixed Use,4218,Roosevelt Way NE,Seattle,98105, 53.01 ,G & K Brothers,6082
+King,K-N,Ballard,X,90,Jun-2018,,5512,17th Avenue NW,Seattle,98107, 47.00 ,Greenbuild Development,6083
+King,K-S,West Seattle,M,104,Jan-2019,,3050 SW,Avalon Way,Seattle,98126, 99.00 ,Stratford Company,6085
+King,K-S,Rainier Valley,U,27,Mar-2018,NOCO 1,4525,Rainier Avenue S,Seattle,98118, 101.00 ,Dwell Development,6086
+King,K-C,Belltown/Dwntn/S Lk Union,S,40,Feb-2018,MarketFront,1501,Western Avenue,Seattle,98101, 81.00 ,,6091
+King,K-C,Queen Anne,X,113,Apr-2020,MOD Studios,601,Aurora Avenue N,Seattle,98109, 67.00 ,Pong's Corporation Inc.,6092
+King,K-E,Redmond,U,196,Oct-2018,Station House Lofts,16545 NE,80th Street,Redmond,98052, 323.09 ,Deal Development,6094
+King,K-C,Queen Anne,C,98,Nov-2018,Dexter,1405,Dexter Avenue N,Seattle,98109, 67.00 ,William Lyon Homes,6095
+King,K-C,Belltown/Dwntn/S Lk Union,X,50,Jan-2050,Cambria Hotel & Residences,1915,3rd Avenue,Seattle,98101, 80.02 ,Ariel Development,6096
+Snohomish,Sno,Marysville/Monroe,U,106,Feb-2018,Park 77 - Phase 1,20201,77th Avenue NE,Arlington,98223, 535.04 ,Williams Investments,6097
+King,K-C,Belltown/Dwntn/S Lk Union,X,160,Sep-2018,Hana,525,Yesler Way,Seattle,98104, 92.00 ,Stream Real Estate Development,6098
+Pierce,Pie,Fife/Milton/Browns Pt,X,292,Apr-2019,,207,Meridian Avenue E,Edgewood,98371, 707.03 ,Contour Engineering,6099
+King,K-N,University,M,58,Jan-2050,Cielo North,4524,7th Avenue NE,Seattle,98105, 52.00 ,Calhoun Properties,6100
+King,K-E,Bellevue-West,X,260,Jan-2050,Plaza Center Residences,10850 NE,8th Street,Bellevue,98004, 238.02 ,KBS Realty Advisors,6101
+King,K-N,Greenlake/Wallingford,X,75,Oct-2018,Track 66,836 NE,66th Street,Seattle,98115, 36.00 ,Blueprint Capital,6102
+Snohomish,Sno,Thrashers Corner,X,41,Oct-2018,Silver Creek Estates Division 6,18913,Bothell Everett Highway,Bothell,98012, 519.20 ,Mietzner Group,6262
+King,K-C,Queen Anne,X,75,May-2019,,215,1st Avenue N,Seattle,98109, 71.00 ,Stratford Company,6263
+King,K-C,Queen Anne,X,250,Dec-2050,,225,Roy Street,Seattle,98109, 70.00 ,Barrientos + Ryan,6264
+King,K-E,Redmond,X,300,Jul-2019,Modera Redmond,8709,161st Avenue NE,Redmond,98052, 323.09 ,Mill Creek Residential Trust,6265
+King,K-SE,Renton,X,31,Jun-2019,Sunset Mixed Use,1409,Monroe Avenue NE,Renton,98056, 255.00 ,Eagle Ridge Plaza,6266
+King,K-E,Redmond,X,158,Mar-2020,Blackbird,7600,159th Place NE,Redmond,98052, 323.09 ,Deal Development,6267
+Pierce,Pie,Downtown Tacoma,X,104,Sep-2018,Koz Market Street,1552,Market Street,Tacoma,98402, 616.02 ,Koz Development,6268
+Pierce,Pie,Downtown Tacoma,X,145,Mar-2019,Koz Dome District,304,Puyallup Avenue,Tacoma,98421, 602.00 ,Koz Development,6269
+Pierce,Pie,Mid Tacoma,X,45,Jan-2050,iStudios South,2515 S,48th Street,Tacoma,98409, 626.00 ,SNR Northwest Properties,6271
+Pierce,Pie,Mid Tacoma,U,33,Jun-2017,iStudios North,3825 S,Junett Street,Tacoma,98409, 626.00 ,SNR Northwest Properties,6272
+Pierce,Pie,Stadium District,U,172,May-2018,Stadium,102 N,G Street,Tacoma,98403, 615.00 ,Carino & Associates,6273
+Pierce,Pie,Gig Harbor,X,115,Sep-2019,Judson Street - Ph 1,3118,Judson Street,Gig Harbor,98335, 725.07 ,Olympic Property Group,6274
+Pierce,Pie,Other Pierce Co,X,600,Jan-2050,,10100,214th Avenue E,Bonney Lake,98391, 703.10 ,Tarragon,6276
+King,K-S,White Center,X,66,Jul-2019,Barton Terrace,2222 SW,Barton Street,Seattle,98106, 114.00 ,KJB Properties,6277
+King,K-E,Woodinville/Totem Lake,X,340,Oct-2019,Totem Lake,11811 NE,128th Street,Kirkland,98034, 219.03 ,Lennar Multifamily,6278
+King,K-E,Redmond,U,243,May-2018,3040,3040,148th Avenue NE,Redmond,98052, 228.03 ,White/Peterman Properties,6279
+Pierce,Pie,Gig Harbor,X,115,Jan-2050,Judson Street - Ph 2,3118,Judson Street,Gig Harbor,98335, 725.07 ,Olympic Property Group,6281
+King,K-E,Woodinville/Totem Lake,X,655,Jun-2019,Village at Totem Lake - Ph 2,12650,120th Avenue NE,Kirkland,98034, 219.03 ,CenterCal Properties,6282
+King,K-S,Rainier Valley,X,70,Apr-2020,Arc Light,2023,24th Avenue S,Seattle,98144, 95.00 ,Columbia Modern Urban,6283
+King,K-C,Belltown/Dwntn/S Lk Union,X,232,Nov-2020,9th & John,820,John Street,Seattle,98109, 72.00 ,Pillar Properties,6284
+King,K-N,University,R,116,Jan-2050,Aegis Laurelhurst,3200 NE,45th Street,Seattle,98105, 42.00 ,Aegis Senior Communities,6285
+King,K-S,Seatac,X,100,May-2019,SeaTac,17234,International Blvd,SeaTac,98188, 284.02 ,,6286
+Pierce,Pie,Downtown Tacoma,U,135,Jul-2018,Napolean,1515,Tacoma Avenue S,Tacoma,98402, 616.02 ,Hebert Construction,6287
+King,K-C,Central,X,84,Jan-2020,ID Mixed Use,616,8th Avenue S,Seattle,98104, 91.00 ,Hotel Concepts,6288
+King,K-C,Capitol Hill/Eastlake,X,50,May-2019,Bellevue Court,1020,Bellevue Court E,Seattle,98102, 66.00 ,XH Realty,6290
+King,K-C,Central,X,200,Jul-2019,Rainier,622,Rainier Avenue S,Seattle,98144, 90.00 ,Rainiers Consulting Inc,6291
+King,K-N,Greenlake/Wallingford,X,42,Sep-2018,,3825,Bridge Way N,Seattle,98103, 54.00 ,Shilshole Development LLC,6292
+King,K-N,University,X,31,Jan-2050,20th Avenue,4544,20th Avenue NE,Seattle,98105, 43.00 ,Sara Chunfang,6293
+Pierce,Pie,Mid Tacoma,U,58,Nov-2017,,2349 S,State Street,Tacoma,98405, 617.00 ,Better Properties Real Estate,6294
+King,K-SE,Kent,X,492,Sep-2020,Marquee on Meeker,2030 W,Meeker Street,Kent,98032, 292.01 ,Landmark Development,6295
+King,K-N,University,X,201,Nov-2018,VIDA,6516,12th Avenue NE,Seattle,98115, 26.00 ,HB Capital,6297
+King,K-E,Redmond,C,26,Jan-2050,,11844 NE,70th Street,Kirkland,98033, 226.04 ,Toll Brothers Cam West,6298
+King,K-E,Issaquah,U,92,Oct-2017,SAMM,120,228th Avenue SE,Sammamish,98074, 322.09 ,SeaLevel Properties,6299
+King,K-N,North Seattle,S,59,Mar-2019,,13125,Greenwood Avenue N,Seattle,98133, 4.01 ,Compass Housing Alliance,6300
+King,K-N,Greenlake/Wallingford,X,21,Aug-2018,,119 N,85th Street,Seattle,98103, 29.00 ,Noren Development,6301
+King,K-C,Central,X,77,Feb-2019,,2524 S,Jackson Street,Seattle,98144, 89.00 ,Dep Homes,6302
+King,K-N,Greenlake/Wallingford,X,70,Jul-2019,,8403,Greenwood Avenue N,Seattle,98103, 29.00 ,Slattery Properties,6303
+King,K-N,University,X,52,Feb-2019,Kellan,4710,20th Avenue NE,Seattle,98105, 43.00 ,Alchemy Investments,6304
+King,K-N,University,X,55,Jun-2019,LUKA,5300,Roosevelt Way NE,Seattle,98105, 44.00 ,Alchemy Investments,6305
+Snohomish,Sno,Marysville/Monroe,X,112,Jun-2019,Lake,18727,Blueberry Lane,Monroe,98272, 522.05 ,Same Investments,6306
+King,K-S,Rainier Valley,X,100,Jan-2050,,2306 S,Hill Street,Seattle,98144, 95.00 ,Chong & Company,6307
+King,K-S,Rainier Valley,X,35,Jan-2050,,3219,Claremont Avenue S,Seattle,98144, 95.00 ,Hybrid Architecture,6308
+King,K-S,West Seattle,X,41,Jan-2050,,5952,California Avenue SW,Seattle,98136, 106.00 ,GNC Seattle,6309
+King,K-E,Redmond,R,74,Mar-2017,Providence John Gabriel House,8632,160th Avenue NE,Redmond,98052, 323.09 ,,6310
+Snohomish,Sno,Mountlake Terrace,X,298,Jan-2050,Melody Hill,6205,222nd Street SW,Mountlake Terrace,98043, 510.00 ,Magnum Construction,6311
+King,K-E,Bellevue-West,X,100,Jan-2050,,10605 NE,8th Street,Bellevue,98004, 238.02 ,Bosa Brothers Construction,6312
+Snohomish,Sno,Mill Creek,T,256,Aug-2018,Puget Park Urban Center,13127,Meridian Avenue S,Everett,98208, 417.02 ,Magnum Construction,6313
+King,K-N,University,X,31,Jan-2050,,5020,15th Avenue NE,Seattle,98105, 44.00 ,CLD Properties Investment,6314
+King,K-C,Belltown/Dwntn/S Lk Union,X,331,Jan-2050,Shilla Tower,2300,8th Avenue,Seattle,98121, 72.00 ,North American Asset Management Group,6315
+King,K-C,Capitol Hill/Eastlake,X,28,Jan-2050,Sola,1818,Harvard Avenue,Seattle,98122, 74.00 ,Sola on Harvard LLC,6316
+King,K-C,Belltown/Dwntn/S Lk Union,X,470,Jan-2050,,2025,5th Avenue,Seattle,98121, 72.00 ,Vulcan Northwest,6317
+King,K-N,Ballard,M,83,Jun-2019,,8311,15th Avenue NW,Seattle,98117, 30.00 ,Hamilton Urban Partners,6318
+King,K-N,North Seattle,S,59,Jan-2050,,13047,Greenwood Avenue N,Seattle,98133, 4.02 ,,6319
+King,K-C,Capitol Hill/Eastlake,X,29,Jan-2050,,525,Federal Avenue E,Seattle,98102, 75.00 ,G2 Development,6320
+King,K-C,Central,S,53,Jan-2050,,2215 S,Jackson Street,Seattle,98144, 90.00 ,,6321
+King,K-C,Capitol Hill/Eastlake,X,50,Dec-2019,Union Street,953 E,Union Street,Seattle,98122, 75.00 ,SeaLevel Properties,6322
+King,K-N,University,X,31,Jan-2050,,5637,University Way NE,Seattle,98105, 44.00 ,Coombs Development,6323
+King,K-N,North Seattle,S,100,Jan-2050,,937 N,96th Street,Seattle,98103, 13.00 ,,6324
+King,K-SE,Kent,X,165,Sep-2018,Madison Plaza,905 W,Meeker Street,Kent,98032, 292.03 ,DMG Capital Group,6325
+King,K-E,Redmond,X,623,Sep-2020,Redmond Square,16425,Cleveland Street,Redmond,98052, 323.09 ,Legacy Partners,6326
+King,K-C,Belltown/Dwntn/S Lk Union,X,70,Jan-2050,,2218,1st Avenue,Seattle,98121, 80.01 ,,6327
+King,K-C,Central,X,28,Jan-2050,,111,21st Avenue,Seattle,98122, 87.00 ,Cadence Real Estate,6328
+King,K-C,Queen Anne,X,85,Feb-2019,,1110,Dexter Avenue N,seattle,98109, 67.00 ,Invesco Real Estate,6329
+King,K-C,Belltown/Dwntn/S Lk Union,X,348,Jan-2050,,200,8th Avenue N,Seattle,98109, 72.00 ,Greystar Development,6330
+King,K-N,University,R,74,Jan-2050,,4020 NE,55th Street,Seattle,98105, 42.00 ,,6331
+King,K-N,University,X,36,Mar-2019,Block 4A,6420,Brooklyn Avenue NE,Seattle,98115, 44.00 ,HB Capital,6333
+King,K-N,North Seattle,X,54,Jan-2050,,9731,Greenwood Avenue N,Seattle,98103, 17.00 ,GMM Construction & Development,6334
+Pierce,Pie,Puyallup/Sumner,X,38,Jan-2050,,2006 S,Meridian,Puyallup,98371, 734.01 ,CES NW,6336
+King,K-E,Redmond,X,658,Feb-2020,Esterra Park Blocks 5 & 6A,2500,152nd Avenue NE,Redmond,98052, 228.03 ,Lincoln Property Company,6337
+King,K-C,Belltown/Dwntn/S Lk Union,C,168,Jan-2050,,450 S,Main Street,Seattle,98104, 92.00 ,,6338
+Snohomish,Sno,Silver Lake,X,192,Jun-2019,Silver Lake Garden,101,128th Street SE,Everett,98208, 417.01 ,Wolff Company,6339
+King,K-S,West Seattle,X,39,Jan-2050,,6016,California Avenue SW,Seattle,98136, 106.00 ,Hybrid Architecture,6340
+Pierce,Pie,Puyallup/Sumner,C,20,Aug-2017,Trio Residences IV,13517,97th Avenue E,Puyallup,98373, 713.04 ,JR Sampson Company,6341
+King,K-C,Queen Anne,X,170,Nov-2020,,1121,Dexter Avenue N,Seattle,98109, 67.00 ,Capstone Partners,6342
+King,K-S,West Seattle,X,308,Nov-2020,,4722,Fauntleroy Way SW,Seattle,98116, 105.00 ,Legacy Partners,6343
+King,K-C,Capitol Hill/Eastlake,X,50,Jan-2050,,1833,Broadway,Seattle,98122, 74.00 ,Champion Development,6345
+King,K-N,University,X,51,Mar-2019,Block 5A,1403 NE,65th Street,Seattle,98115, 44.00 ,HB Capital,6346
+King,K-C,Queen Anne,X,22,Jan-2019,Bungalows at Queen Anne - Ph 2,617,Queen Anne Avenue N,Seattle,98109, 70.00 ,Metropolitan Management,6347
+Pierce,Pie,Downtown Tacoma,X,165,Oct-2018,Washington Building,1019,Pacific Avenue,Tacoma,98402, 616.01 ,Unico Properties,6348
+King,K-C,Belltown/Dwntn/S Lk Union,X,91,Jan-2050,,1170,Republican Street,Seattle,98109, 73.00 ,Plus Investments USA,6349
+King,K-C,Magnolia,X,39,Sep-2018,,3420,15th Avenue W,Seattle,98119, 58.01 ,Fletchco LLC,6350
+King,K-C,First Hill,S,119,Jan-2050,,808 E,Fir Street,Seattle,, 85.00 ,Seattle Housing Authority,6351
+Pierce,Pie,Lakewood,X,208,Sep-2018,Springbrook,12623,Bridgeport Way SW,Lakewood,98499, 718.06 ,,6353
+Pierce,Pie,Gig Harbor,R,82,Jan-2050,Cottages at Rosedale Village,4117,Rosedale Street NW,Gig Harbor,98335, 725.07 ,Norpoint Communities,6354
+Snohomish,Sno,Mill Creek,X,70,Jan-2050,Harmony II,14815,41st Avenue SE,Bothell,98012, 520.03 ,Saeed Abtahi,6355
+King,K-N,Greenlake/Wallingford,X,38,Jan-2019,,106 N,36th Street,Seattle,98103, 48.00 ,Rudd Development,6357
+King,K-S,Riverton/Tukwila,R,145,Jan-2050,Quail Park Assisted Living,13112,Military Road S,Tukwila,98168, 271.00 ,,6358
+King,K-S,Rainier Valley,X,81,Aug-2019,Rainier Central Ph. 1,5256,Rainier Avenue S,Seattle,98118, 103.00 ,PSW Seattle,6359
+King,K-S,Rainier Valley,X,87,Aug-2019,Rainier Central Ph. 2,5712,42nd Avenue S,Seattle,98118, 103.00 ,PSW Seattle,6360
+King,K-SE,Kent,R,127,Jan-2050,Holiday of Kent Independent Senior Living,25035,104th Avenue SE,Kent,98030, 295.03 ,,6361
+Pierce,Pie,Fircrest/University Place,R,114,Jan-2050,Grandview Lodge,2656,Crystal Springs Road W,University Place,98466, 723.09 ,,6362
+King,K-C,Capitol Hill/Eastlake,R,79,Jan-2050,,1920,Eastlake Avenue E,Seattle,98102, 66.00 ,,6364
+Pierce,Pie,Puyallup/Sumner,T,100,Jan-2050,,12111,104th Avenue E,Puyallup,98374, 712.08 ,Inland Group,6365
+King,K-C,Belltown/Dwntn/S Lk Union,X,100,Jan-2050,,731,Westlake Avenue N,Seattle,98109, 72.00 ,Vulcan Northwest,6366
+King,K-C,Magnolia,X,93,May-2019,,3008,16th Avenue W,Seattle,98119, 58.02 ,Pastakia & Associates,6367
+King,K-S,Beacon Hill,X,300,Nov-2020,Pacific Tower,1200,12th Avenue S,Seattle,98144, 94.00 ,Barrientos + Ryan,6369
+King,K-C,Central,X,50,Jan-2050,,701,16th Avenue,Seattle,98122, 87.00 ,Sabey Corp,6370
+King,K-S,Rainier Valley,C,40,Jul-2019,,7118,Beacon Avenue S,Seattle,98108, 110.00 ,Isola Capital Management,6371
+King,K-S,Rainier Valley,X,55,Jan-2050,,4221,37th Avenue S,Seattle,98118, 101.00 ,Jabooda Homes,6372
+King,K-E,Bothell,U,25,Jul-2017,Spencer 68 Phase III,6641 NE,182nd Street,Kenmore,98028, 216.00 ,Main Street Property Group,6373
+Pierce,Pie,Puyallup/Sumner,X,97,Mar-2018,,5605,112th Street E,Puyallup,98373, 712.06 ,Port Landing,6374
+King,K-C,Queen Anne,X,80,Jan-2019,,417,2nd Avenue W,Seattle,98119, 71.00 ,,6375
+Snohomish,Sno,Central Everett,X,140,Mar-2019,,1005,Broadway,Everett,98201, 401.00 ,Koz Development,6376
+King,K-S,White Center,X,23,Jan-2018,,1055 SW,122nd Street,Burien,98146, 267.00 ,NW Development,6377
+King,K-E,Bothell,X,185,May-2018,,18420,102nd Avenue NE,Bothell,98011, 218.04 ,Tarragon,6378
+King,K-N,Greenlake/Wallingford,X,28,Jan-2050,,800 NE,64th Street,Seattle,98115, 36.00 ,Metrostructure Corp,6379
+King,K-E,Woodinville/Totem Lake,X,100,Jan-2050,,12620,120th Avenue NE,Kirkland,98034, 219.03 ,Fairfield Residential,6381
+King,K-S,Rainier Valley,X,220,Jan-2020,Othello Station,7301,Rainier Avenue S,Seattle,98118, 111.02 ,Barrientos + Ryan,6382
+King,K-S,Beacon Hill,X,40,Dec-2019,,1200 S,Angelo Street,Seattle,98108, 109.00 ,Barrientos + Ryan,6383
+Snohomish,Sno,Marysville/Monroe,X,200,Mar-2019,Lodge III,17500,25th Avenue NE,Marysville,98271, 531.01 ,Wakefield Properties,6384
+Snohomish,Sno,Mountlake Terrace,X,350,Jan-2050,Andorra Estates III,22817,Lakeview Drive,Mountlake Terrace,98043, 510.00 ,Weidner Company,6386
+King,K-E,Juanita,X,400,Jan-2020,Lifebridge site,11725 NE,118th Street,Kirkland,98034, 220.05 ,Wolff Company,6387
+King,K-SE,Des Moines,S,274,Jun-2018,Highline Place,23609,Pacific Hwy S,Des Moines,98198, 290.03 ,,6388
+Snohomish,Sno,Edmonds,X,70,Oct-2018,Gateway Court,8029,238th Street SW,Edmonds,98026, 509.00 ,,6389
+King,K-N,North Seattle,X,30,Jan-2050,,8559,Mary Avenue NW,Seattle,98117, 16.00 ,Noren Development,6391
+King,K-C,Capitol Hill/Eastlake,C,27,Jan-2050,,2236,Franklin Avenue E,Seattle,98102, 66.00 ,gProjects LLC,6392
+Pierce,Pie,Downtown Tacoma,X,160,Oct-2019,HQC,1210,Tacoma Avenue S,Tacoma,98402, 614.00 ,HQC USA,6393
+King,K-N,University,X,56,May-2019,,5639,University Way NE,Seattle,98105, 44.00 ,,6394
+King,K-N,University,X,45,May-2019,,4244,11th Avenue NE,Seattle,98105, 53.01 ,,6395
+King,K-N,University,X,300,Feb-2021,,4810,24th Avenue NE,Seattle,98105, 43.00 ,Trinity Partnership,6396
+King,K-C,Capitol Hill/Eastlake,S,110,Jan-2050,,923 E,John Street,Seattle,98102, 75.00 ,Capitol Hill Housing,6397
+King,K-E,Kirkland,X,111,Mar-2020,,330,4th Street,Kirkland,98033, 224.00 ,Natural & Built Environments,6398
+King,K-S,West Seattle,X,62,Oct-2019,Junction Landing,4417,42nd Avenue SW,Seattle,98116, 98.00 ,BCK Investments,6399
+Pierce,Pie,Mid Tacoma,S,74,Apr-2017,Bay Terrace Ph 2,2510 S,G Street,Tacoma,98405, 617.00 ,Tacoma Housing Authority,6400
+King,K-C,Capitol Hill/Eastlake,X,22,Dec-2050,,223,12th Avenue E,Seattle,98102, 75.00 ,Elliott Severson,6401
+Snohomish,Sno,Central Everett,S,40,Feb-2019,Cocoon House: 100,3530,Colby Avenue,Everett,98201, 410.00 ,,6402
+Snohomish,Sno,Central Everett,S,76,Jan-2050,Hopeworks Everett Station Ph 2,3319,Broadway,Everett,98201, 407.00 ,,6403
+King,K-C,Central,X,28,Jan-2050,,109,21st Avenue S,Seattle,98144, 90.00 ,,6404
+King,K-C,Capitol Hill/Eastlake,X,36,Jun-2019,,510,10th Avenue E,Seattle,98102, 75.00 ,,6405
+King,K-N,Greenlake/Wallingford,X,31,Aug-2019,,3959,Fremont Avenue N,Seattle,98103, 49.00 ,,6406
+King,K-C,Central,T,249,Jan-2050,,913 S,Jackson Street,Seattle,98104, 91.00 ,Inland Group,6407
+King,K-SE,Auburn,T,206,Jan-2050,,31815,Military Road S,Auburn,98001, 299.01 ,Magnum Construction,6408
+Snohomish,Sno,Marysville/Monroe,X,72,Oct-2018,Park 77 - Phase 2,20201,77th Avenue NE,Arlington,98223, 535.04 ,Williams Investments,6409
+King,K-SE,Renton,X,200,Jul-2018,Monarch,24000,Maple Valley Black Diamond Road SE,Maple Valley,98038, 320.09 ,Landmark Development,6410
+King,K-E,Issaquah,X,135,Jun-2020,,1401,10th Avenue NE,Issaquah,98029, 322.10 ,Trammel Crow Residential,6411
+King,K-N,Greenlake/Wallingford,M,178,Oct-2017,,829 NE,67th Street,Seattle,98115, 36.00 ,Barcelo Homes,6503
+King,K-S,Beacon Hill,M,24,Jun-2017,15th Avenue S Townhomes,1340,15th Avenue S,Seattle,98144, 94.00 ,Mark Travers Architect,6504
+King,K-C,Capitol Hill/Eastlake,M,75,Jul-2017,Twenty First,111,21st Avenue E,Seattle,98112, 76.00 ,Johnson & Carr,6524
+King,K-S,West Seattle,U,389,Jul-2017,Whittaker,4755,Fauntleroy Way SW,Seattle,98116, 105.00 ,Lennar Multifamily,9099
+King,K-C,Capitol Hill/Eastlake,C,40,Jan-2050,,2719,Yale Terrace E,Seattle,98102, 61.00 ,Build Urban,44577
+King,K-S,Rainier Valley,U,43,Jan-2018,Link Flats at Mt Baker,3320,Martin Luther King Jr Way S,Seattle,98144, 95.00 ,Columbia Modern Urban,44589
+Snohomish,Sno,Lynnwood,X,400,Jan-2050,,18600,Highway 99,Lynnwood,98037, 516.02 ,PDSK Properties,6412
+King,K-C,Belltown/Dwntn/S Lk Union,U,477,Jun-2017,Cascade,221,Minor Avenue N,Seattle,98109, 73.00 ,Equity Residential,9110
+King,K-E,Bellevue-West,S,63,Jan-2050,,3030,Bellevue Way NE,Bellevue,98004, 240.00 ,,6413
+King,K-S,Rainier Valley,X,33,Oct-2018,,2807 S,Hanford Street,Seattle,98144, 95.00 ,Signature Custome Homes,6414
+King,K-SE,Des Moines,X,265,Jan-2050,Kent Midway,24050,Pacific Highway S,Kent,98032, 290.04 ,,6415
+King,K-S,West Seattle,X,45,Mar-2019,,5242,California Avenue SW,Seattle,98136, 105.00 ,Hybrid Architecture,1591
